@@ -1,7 +1,7 @@
 ---
 published: true
-layout: default
-title: FontForge Interface
+layout: default.ja
+title: FontForge インターフェース
 ---
 
 
@@ -14,7 +14,7 @@ title: FontForge Interface
     - [Hints](hintsmenu)
     - [Encoding](encodingmenu)
     - [View](viewmenu)
-    - [Metrics](metricsmenu)
+    - [メトリック](metricsmenu)
     - [CID](cidmenu)
     - [Multi Master](mmmenu)
     - [Window](windowmenu)

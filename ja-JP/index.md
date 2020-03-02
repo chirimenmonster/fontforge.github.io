@@ -1,5 +1,5 @@
 ---
 published: true
-layout: homepage
+layout: homepage.ja
 title: FontForge Open Source Font Editor
 ---

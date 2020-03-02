@@ -1,14 +1,14 @@
 ---
 published: true
-layout: default
+layout: default.ja
 title: Documentation
 ---
 
-[About FontForge](/en-US/project) &mdash; about the FontForge project  
-[Design With FontForge](http://designwithfontforge.com) &mdash; online book to get you started  
-[Developer](developers) &mdash; information for FontForge developers  
-[User Interface](interface) &mdash; guide to the views and menus in FontForge  
-[Customizing](customizing) &mdash; Fontforge, the way you like it  
-[General Reference](reference) &mdash; grab bag of other information related to FontForge and creating fonts  
-[Scripting](scripting) &mdash; how to automate tasks within FontForge  
-[Utilities](utilities) &mdash; links to auxiliary utilites that can complement FontForge  
+[About FontForge](/ja-JP/project) &mdash; FontForge プロジェクトについて  
+[Design With FontForge](http://designwithfontforge.com) &mdash; これから始める人のためのオンラインブック  
+[Developer](developers) &mdash; FontForge 開発者のための情報  
+[User Interface](interface) &mdash; FontForge の表示とメニューのガイド  
+[Customizing](customizing) &mdash; 自分好みの Fontforge にする方法  
+[General Reference](reference) &mdash; FontForge とフォント製作に関連する他の情報  
+[Scripting](scripting) &mdash; FontForge を自動的に実行する方法  
+[Utilities](utilities) &mdash; FontForge を補完する補助ユーティリティへのリンク  

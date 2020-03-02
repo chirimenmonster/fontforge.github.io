@@ -1,0 +1,97 @@
+{% include html-start.ja.html %}
+
+<body class="home">
+
+  {% include nav-main.ja.html %}
+
+  <!-- HERO UNIT -->
+  <div class="hero-unit">
+    <div class="container">
+      <img src="/assets/img/hero.png" />
+    </div>
+  </div>
+
+  <!-- DOWNLOAD BAR  -->
+  <div class="download-bar">
+    <div class="container">
+      <div class="row-fluid">
+        <ul class="masthead-links unstyled">
+          <li class="span3 ff-download">
+            <a href="downloads/windows/" class="btn btn-primary btn-large dl windows">Windows Install</a>
+            <a href="downloads/mac/" class="btn btn-primary btn-large dl macos">Mac OS Install</a>
+            <a href="downloads/gnulinux/" class="btn btn-primary btn-large dl gnulinux">GNU+Linux Install</a>
+            <a href="downloads/" class="btn btn-primary btn-large default">Install</a>
+          </li>
+          <li class="span5 statistic hide downloads"><span><strong id="cnt-downloads"></strong> <span>downloads of<br> this release</span></span>
+          </li>
+          <li class="span4 statistic hide contributors"><span><strong id="cnt-contributors"></strong> <span>code changes<br> this month</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <div class="content">
+    <div class="container">
+
+      <!-- WELCOME TEXT -->
+      <div class="row-fluid welcome">
+        <section class="span6">
+          <h3>はじめに</h3>
+          <p>本ページのドキュメントに移動する前に <a href="http://designwithfontforge.com/">Design With FontForge</a> を読んでおくことを推奨します。
+        </section>
+        <section class="span6">
+          <h3>ヘルプ</h3>
+          <p>何か行き詰るようなことがあって、ドキュメントでもウェブの検索でも回答が見つからなかった場合には <a href="https://lists.sourceforge.net/lists/listinfo/fontforge-users">本メーリングリスト</a> で質問してください。</p>
+        </section>
+      </div>
+      <div class="row-fluid">
+        <section class="span6">
+          <h3>無料</h3>
+          <p>FontForge は書体愛好家が集うコミュニティによって提供される無料かつオープンソースのフォントエディターです。
+            <a href="/en-US/funding/">寄付</a> することで、プロジェクトを金銭面で支援できます。</p>
+        </section>
+        <section class="span6">
+          <h3>参加</h3>
+          <p>誰でも支援することができます! プログラマーである必要はありません。
+            協力したいのにどこに行けばいいかわからない、というのであれば、
+            <a href="https://lists.sourceforge.net/lists/listinfo/fontforge-devel">開発者メーリングリスト</a> に参加して、
+            自己紹介しましょう。</p>
+        </section>
+      </div>
+      <div class="row-fluid social">
+        <section class="span4">
+          <p>
+            <a href="https://github.com/fontforge">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M19.998 0c-11.044 0-19.998 8.954-19.998 20.001 0 8.836 5.73 16.332 13.678 18.977 1 .183 1.365-.434 1.365-.965l-.027-3.401c-5.563 1.209-6.737-2.681-6.737-2.681-.91-2.309-2.221-2.925-2.221-2.925-1.816-1.241.137-1.216.137-1.216 2.008.142 3.064 2.061 3.064 2.061 1.784 3.056 4.681 2.173 5.821 1.663.181-1.293.697-2.175 1.269-2.675-4.441-.504-9.11-2.221-9.11-9.884 0-2.183.78-3.969 2.059-5.367-.206-.506-.893-2.539.195-5.293 0 0 1.68-.538 5.501 2.05 1.595-.443 3.306-.665 5.007-.673 1.698.008 3.409.23 5.007.673 3.818-2.588 5.494-2.05 5.494-2.05 1.091 2.754.405 4.787.199 5.293 1.282 1.398 2.056 3.184 2.056 5.367 0 7.683-4.676 9.374-9.132 9.868.718.618 1.358 1.838 1.358 3.705 0 2.673-.025 4.83-.025 5.485 0 .536.36 1.158 1.376.963 7.941-2.651 13.666-10.141 13.666-18.975 0-11.047-8.955-20.001-20.002-20.001" />
+              </svg>
+              <span>github.com/fontforge</span></a>
+          </p>
+        </section>
+        <section class="span4">
+          <p>
+            <a href="https://www.facebook.com/fontforge/">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="m 34.178125,4.08094 -28.3565625,0 C 4.85,4.08094 4.0625,4.8675025 4.0625,5.8381275 l 0,28.3237505 c 0,0.970312 0.7875,1.757187 1.7590625,1.757187 l 15.2662495,0 0,-12.329375 -4.154062,0 0,-4.805 4.154062,0 0,-3.543437 c 0,-4.1125 2.514688,-6.351563 6.187188,-6.351563 1.759375,0 3.27125,0.130625 3.711875,0.189375 l 0,4.2975 -2.547187,0.0013 c -1.9975,0 -2.384063,0.947813 -2.384063,2.339063 l 0,3.067812 4.763437,0 -0.62,4.805 -4.143437,0 0,12.329375 8.1225,0 c 0.971562,0 1.759375,-0.786875 1.759375,-1.757187 l 0,-28.3237505 c 0,-0.970625 -0.787813,-1.7571875 -1.759375,-1.7571875" />
+              </svg>
+              <span>facebook.com/fontforge</span></a>
+          </p>
+        </section>
+        <section class="span4">
+          <p>
+            <a href="https://twitter.com/fontforge">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M40 7.848c-1.472.653-3.053 1.094-4.713 1.292 1.694-1.015 2.995-2.624 3.608-4.54-1.586.941-3.342 1.623-5.211 1.991-1.497-1.595-3.63-2.591-5.99-2.591-4.532 0-8.207 3.674-8.207 8.206 0 .643.073 1.27.213 1.87-6.821-.342-12.868-3.609-16.915-8.574-.707 1.212-1.111 2.622-1.111 4.126 0 2.847 1.448 5.359 3.65 6.83-1.345-.042-2.61-.411-3.717-1.026v.103c0 3.976 2.828 7.293 6.583 8.047-.689.188-1.414.288-2.162.288-.529 0-1.043-.052-1.544-.147 1.044 3.26 4.075 5.633 7.666 5.699-2.809 2.201-6.347 3.513-10.192 3.513-.663 0-1.316-.039-1.958-.115 3.632 2.328 7.945 3.687 12.58 3.687 15.094 0 23.349-12.505 23.349-23.349 0-.356-.008-.71-.024-1.062 1.604-1.157 2.995-2.602 4.095-4.248" />
+              </svg>
+              <span>@fontforge</span></a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- END MAIN CONTENT CONTAINER -->
+
+  {% include footer.html %} {% include homepage-end.html %}
