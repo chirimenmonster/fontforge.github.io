@@ -15,8 +15,8 @@ The metrics view allows you to examine how glyphs look together and to
 alter the spacing between them. You may apply various OpenType features
 to those glyphs and see how they are altered.
 -->
-メトリックビューでは、複数のグリフがどのように見えるかを確認したり、
-それらの間の間隔を変更したりすることができます。
+メトリックビューは、グリフを並べた時にどのように見えるかを表示し、
+グリフ間のスペーシングを変更することができます。
 さまざまな OpenType の機能をこれらのグリフに適用し、
 見た目の変化を確認することができます。
 
@@ -30,15 +30,15 @@ bitmap font) then the metrics view will display bitmaps, but will not
 allow you to edit the bitmaps metrics (you must do your metrics editing
 in a view displaying outlines).
 -->
-メトリックビューがフォントビューから作成された場合、
-選択していたグリフ（最初の15個など）は、
-選択された順序でビューに表示されます。
-メトリックビューがアウトラインまたはビットマップグリフビューから作成された場合、
-そのグリフのみが表示されます。
-メトリックビューがビットマップグリフビューから作成された場合
-（またはそのビューがビットマップフォントを表示しているときにフォントビューから作成された場合）、
-メトリックビューにはビットマップが表示されますが、
-ビットマップのメトリックは編集できません（アウトラインを表示するビューでメトリックの編集を行う必要があります）。
+メトリックビューがフォントビューのメニューから呼び出された場合、
+選択されている任意のグリフ (おそらく、最初の 15 個程度) が選択された順番にビューに表示されます。
+アウトライン・ビットマップのどちらかのグリフビューから呼び出された場合、
+編集中のグリフだけが表示されます。
+ビットマップグリフビューから
+(またはビットマップフォントを表示中のフォントビューから)
+呼び出されたときはメトリックビューはビットマップ表示となりますが、
+そこではビットマップのメトリックを編集できません
+(メトリック編集は、アウトラインを表示しているビューから行わなければなりません)。
 
 <!--
 Underneath the menu bar is a series of fields. The first shows the
@@ -95,10 +95,11 @@ fits in this region. There are grey lines between the glyphs marking the
 origin of the glyph on the right and the width of the glyph on the left.
 The baseline is also drawn in grey.
 -->
-ビューの中央部分は、表示されているグリフで占められます。
-アウトライングリフの場合、フォントの em-height がこの領域にちょうど収まるようにこれらのサイズが設定されます。
-グリフの間に灰色の線があり、右側のグリフの原点と左側のグリフの幅を示しています。
-ベースラインも灰色で描画されます。
+ビューの中央部分は表示中のグリフが占めています。
+アウトライングリフの場合は、これらの大きさはフォントの em ハイトがこの領域にちょうど一致するように設定されます。
+グリフとグリフの間には灰色の線があり、
+右側にある次のグリフの原点と左側にある前のグリフの送り幅の位置を区切っています。
+ベースラインも灰色の線で表示されています。
 
 <!--
 A metrics view may be in one of three modes (Metrics->Window Type)
@@ -128,13 +129,16 @@ left by dragging the green line around. (If you wish to create a [Device
 Table](#Device+Table) for small pixel sizes you must use the [Kern Pair
 Closeup dialog](#Kern+Pair+Closeup))
 -->
-グリフうちの1つがアクティブになります。
-そのグリフには、左側（原点）に緑色の線があり、右側（幅）に青色の線があります。
-この線をドラッグして幅を変更できます。
-グリフをクリックして左または右にドラッグすると、グリフの左側のベアリング (lbearing) を変更できます。
-緑色の線をドラッグして、このグリフとその左のグリフの間のカーニングを変更できます。
-（小さなピクセルサイズの [デバイステーブル](#デバイステーブル) を作成する場合は、
-[カーニングペアクローズアップダイアログ](#kern-pair-closeup) を使用する必要があります）
+グリフのうちどれか 1 つがアクティブになっています。
+そのグリフは緑の線が左 (グリフの原点) 側にあり、
+青い線が右 (グリフの横幅) 側にあります。
+この線をドラッグすることにより幅を変更することができます。
+グリフの左サイドベアリング (lbearing) は、
+グリフをクリックして左から右に引っ張ることにより変更することができます。
+緑の線をドラッグして動かせば、
+このグリフと左にあるグリフの間のカーニングを設定することができます。
+(小さなピクセルサイズに対して [デバイステーブル](#デバイステーブル) を作成したい場合、
+[カーニングペアの詳細ダイアログ](#kern-pair-closeup) を使用する必要があります)
 
 
 <!--
@@ -147,7 +151,7 @@ Kerning
 <!--
 The active glyph may be changed by clicking on any of the glyphs.
 -->
-グリフをクリックしてアクティブなグリフを変更できます。
+アクティブなグリフは、グリフのどこかをクリックすれば変更することができます。
 
 <!--
 The up and down arrow keys will increase and decrease the field's value by
@@ -165,8 +169,9 @@ Underneath the display area are a set of text fields. You may type in
 new numbers for any of these fields to change the corresponding metrics
 of the glyph.
 -->
-表示領域の下には、テキストフィールドのセットがあります。
-これらのフィールドのいずれかに新しい数値を入力して、グリフの対応するメトリックを変更できます。
+表示エリアの下にあるのはテキストフィールドのグリフ一覧です。
+表示されているどの文字でも、このフィールドに新しい値を入力すれば、
+そのグリフの対応するメトリックの値を変更することができます。
 
 <!--
 Sometimes it is handy to be able to load a list of words into the
@@ -186,8 +191,9 @@ If the first glyph to be displayed is in Hebrew or Arabic (or any other
 right to left language) then the entire display area will be shown right
 to left
 -->
-表示される最初のグリフがヘブライ語やアラビア語（または他の右から左の言語）である場合、
-表示領域全体が右から左に表示されます
+最初のグリフがヘブライ文字またはアラビア文字
+(その他任意の右から左に書く言語) として表示される場合、
+表示エリア全体が右から左に表示されます。
 
 <!--
 **Note** there is a very complicated algorithm given in the Unicode spec
@@ -195,9 +201,10 @@ for displaying mixed right to left and left to right passages. This is
 not followed here. The direction determination is done by the first
 glyph alone.
 -->
-**注** 右から左、左から右への記述方向を混在して表示するために Unicode 仕様で規定されている非常に複雑なアルゴリズムがあります。
-ここではそれに従いません。
-記述方向の決定は、最初のグリフのみによって行われます。
+**注意** 右から左へ書く文字と左から右へ書く文字が混在したテキストを表示する、
+非常に複雑なアルゴリズムが Unicode の規格で定められていますが、
+このソフトウェアはそれに従っていません。
+書字方向は最初のグリフだけを見て決めています。
 
 ![](/assets/img/dialogs1-VerticalMetrics.png)
 
@@ -209,17 +216,19 @@ View->Vertical. (This is only available if your font has vertical
 metrics enabled, Element->Font Info->General->Has Vertical Metrics).
 In this mode you can change vertical width, vertical kerning, etc.
 -->
-View->Vertical により、垂直メトリックとカーニングする表示ウィンドウを生成できます。
-（これは、フォントで垂直メトリックが有効になっている場合にのみ使用できます。
-Element->Font Info->General->Has Vertical Metrics.
-このモードでは、垂直幅、垂直カーニングなどを変更できます。
+表示->縦書き を選ぶと、
+ウィンドウに縦書きメトリックとカーニングを表示することができます
+(フォントに縦書きメトリックが存在する場合に限ります。
+エレメント->フォント情報...->一般情報->縦書きメトリックが存在 をチェックする必要があります)。
+このモードでは縦書きの字送り、カーニングなどを変更できます。
 
 <!--
 If you double click on one of the displayed glyphs then FontForge will
 bring up a outline glyph view to allow you to edit that glyph.
 -->
-表示されているグリフのいずれかをダブルクリックすると、
-FontForge はアウトライングリフビューを表示して、そのグリフを編集できるようにします。
+表示されたグリフのどちらかをダブルクリックすると、
+FontForge はアウトライングリフビューを起動し、
+そのグリフが編集できる状態になります。
 
 ![](/assets/img/dialogs1-MetricsView-features.png)
 
@@ -253,36 +262,39 @@ applied to all glyphs. Baseline alignment will not be done.
 <!--
 ### Entering non-ASCII characters
 -->
-### 非 ASCII 文字の入力
+### 非 ASCII 文字の入力法
 
 <!--
 Most of us are stuck with keyboards that only have ASCII characters on
 them. Or at best some sub-set of ISO 8859-1 characters. How can the full
 range of unicode characters be entered?
 -->
-私たちのほとんどは、ASCII 文字しか持たないキーボードにこだわっています。
-あったとしても、せいぜい ISO 8859-1 文字のサブセットくらいです。
-Unicode 文字の全範囲を入力するにはどうすればよいでしょうか?
+ほとんどの人は、ASCII 文字しかキートップに書かれていないキーボードに制約されています。
+良くても ISO 8859-1 文字のわずかなサブセットだけです。
+Unicode の全領域の文字を入力するにはどうすればいいでしょうか?
 
 <!--
 X supplies a sophisticated mechanism for entering characters via
 stand-alone [input method servers](../../reference/xim/). FontForge supports
 this to some extent now.
 -->
-X Window System は、スタンドアロンの
+X Window System は、
+CJK 文字をスタンドアローンの
 [インプットメソッドサーバ](../../reference/xim/)
-によって文字を入力する洗練されたメカニズムを提供しています。
-FontForge は現在、これをある程度サポートしています。
+経由で入力する洗練されたメカニズムを提供しています。
+FontForge は現在、これにある程度対応しています。
 
 <!--
 Aside from that, many versions of X supply a "Compose Character" key, or
 something equivalent. The X software will map a sequence of keystrokes
 to one character in whatever the native encoding may be.
 -->
-それとは別に、X Window System の多くのバージョンは、
-"Compose Character" キーか、またはそれと同等のものを提供しています。
-X Window System のソフトウェアは、ネイティブなエンコーディングが何であったとしても、
-キーストロークのシーケンスを1つの文字にマッピングします。
+この方法の他に、
+X Window System の多くのバージョンは「合成文字」キーか、
+何らかの等価な手段を提供しています。
+X Window System のソフトウェアは、
+ネイティブなエンコーディングが何であっても、
+複数打鍵の列を 1 文字に変換するでしょう。
 
 <!--
 My keyboard doesn't have such a key, and my X doesn't do this. But I
@@ -291,11 +303,11 @@ expensive keyboards. If you are in a mode where text entry is possible
 then press the F12 key and follow it by a series of keystrokes. Accented
 characters may be built using the following:
 -->
-使用しているキーボードにそうしたキーがない場合、
-使用している X Window System でこれらが提供されていない場合に備えて、
-そうした方針に沿ったうえで、安価なキーボードが利用できるような仕組みを実装しました。
-テキスト入力が可能なモードの場合に、F12キーを押してから一連のキーストロークを実行してください。
-アクセント付き文字は以下のように作成することができます:
+私のキーボードにはその種のキーはありませんし、
+私の X Window System にもその機能はありません。
+しかし安価なキーボードを使う我々のために、私はその考えに沿ってある方法を実装しました。
+テキスト入力が可能なモードにいるときに F12 キーを押してから決まったやりかたで打鍵を行ってください。
+以下の入力方法で、アクセントつき文字が表示できます。
 
 <!--
     `   grave accent                
@@ -314,35 +326,35 @@ characters may be built using the following:
     _   macron          
     4   ogonec
 -->
-    `   グレイブ・アクセント (grave accent)
-    0   リング符号 (ring)
-    "   ダブルグレイブ（またはトノス） (double grave (or tonos))
-    '   アキュート・アクセント (acute accent)
-    /   ストローク符号 (slash)
-    .   上付きドット符号 (dot above)
-    :   ダイエレシス（ウムラウト） (diaeresis (umlaut))
-    7   ブレーヴェ (breve)
-    ,   下付きドット符号 (dot below)
-    ^   サーカムフレックス (circumflex)
-    6   ハーチェク (caron)
-    5   セディーユ (cedilla)
-    ~   チルダ (tilde)
-    _   マクロン (macron)
-    4   オゴネク (ogonec)
+    `   グレーブアクセント
+    0   リング
+    "   ダブルグレーブ (またはトノス)
+    '   アキュートアクセント
+    /   スラッシュ
+    .   ドットアバブ
+    :   ダイエレシス（ウムラウト）
+    7   ブリーブ
+    ,   ドットビロー
+    ^   サーカムフレクス
+    6   キャロン
+    5   セディラ
+    ~   チルダ
+    _   マクロン
+    4   オゴネク
 
 <!--
 So Â may be built by [F12] \^ A, and A with diaeresis and macron may be
 built with [F12] : \_ A.
 -->
-したがって、 Â は [F12] ^ A で作成でき、
-ダイエレシスとマクロンを含む A は [F12] ： \_ A で作成できます。
+これにより、 Â は [F12] ^ A で組み立てられ、
+ダイエレシスとマクロンのついた A は [F12] : \_ A で組み立てることができます。
 
 <!--
 Greek letters may also be created. If you start with [F12] @ and follow
 with:
 -->
-ギリシャ文字も作成できます。
-開始は [F12] @ で続いて以下を入力します：
+ギリシャ文字を作成することもできます。
+[F12] @ に続けて以下のとおり入力すると表の文字が入力できます。
 
     A   Alpha                     
     B   Beta            
@@ -376,15 +388,15 @@ This is the mapping used by the Symbol font. (Lower case letters are
 created similarly so [F12] @ a yields a lower case alpha). Accented
 greek letters may also be built up, [F12] @ " A yields Alpha tonos.
 -->
-これは Symbol フォントで使用されるマッピングです。
-（小文字も同様に作成されます。 [F12] @ a は小文字のアルファを生成します）
-アクセント付きのギリシャ文字も作成することができ、
-[F12] @ \" A は、トノス付きのアルファを生成します。
+これは Symbol フォントで使用されている対応です。
+(小文字も対応は同じなので、 [F12] @ a と入力すると小文字のアルファが入力できます)。
+アクセントつきギリシャ文字を組み立てることもできます。
+[F12] @ " A はトノスつき大文字アルファとなります。
 
 <!--
 Finally the following special characters may be built:
 -->
-最後になりますが、次の特殊文字を作成できます:
+それに加え、以下の特殊文字を組み立てることができます。
 
     [F12] <space>   <no break space>          
     [F12] *         °                              
@@ -437,21 +449,21 @@ This still misses most unicode characters. But pressing [F12] twice will
 bring up a dialog which will allow you to select any character in
 unicode.
 -->
-ここには、まだほとんどの unicode 文字を見つけることができません。
-ですが、 [F12] を2回押すとダイアログが表示され、
-unicode の任意の文字を選択することができます。
+これでもまだ、Unicode のほとんどの文字は入力できません。
+それでも、[F12] を 2 回押すと起動するダイアログで、
+Unicode の任意の文字を選択して入力することができます。
 
 <!--
 If you type [F12] by mistake then an Escape will get you out of accent
 mode.
 -->
-誤って [F12] をタイプすると、エスケープによりアクセントモードが終了します。
+間違って [F12] キーを押してしまった場合、 Escape キーを押すとアクセントモードを抜けることができます。
 
 
 <!--
 ### Kerning By Class
 -->
-### クラスを用いたカーニング
+### 文字クラスによるカーニング
 
 <!--
 Often it is a good idea to create classes of glyphs which kern alike.
@@ -460,14 +472,13 @@ that o and ô probably kern quite differently after a T), and rather than
 create separate kerning pairs for each of the "A"s above, they could all
 be placed in a class of glyphs which kern alike.
 -->
-多くの場合、同じようなカーニングをするグリフのクラスを作成することをお勧めします。
-たとえば、
+同じカーニングが適用されるグリフのクラスを定義することが良策であることがしばしばあります。
+例えば、
 A, À, Á, Â, Â, Ã, Ä
-はおそらくすべて同じようなカーニング
-（ただし、 o と ô はおそらく T の後ではかなり異なったカーニングをすることに注意してください）
-をします。
-上記の各 "A" について別々のカーニングペアを作成するよりも、
-そのすべてを同様なカーニングをするグリフのクラスとして配置したほうがよいです。
+の各文字のグリフはおそらく同じカーニングが適用でき
+(ただし、o と ô は、T の後ろに来たときのカーニングが全く異なるだろうことに注意してください)、
+上に挙げた "A" の類にそれぞれ別々のカーニングペアを定義せずに、
+同じようにカーニングを行う文字のクラスに対して定義を行うことができるでしょう。
 
 <!--
 The [Element->Font Info->Lookups](../lookups/) provides an interface
@@ -562,10 +573,11 @@ a space separated list of glyph names (For most glyphs you may also
 enter the unicode character itself, and fontforge will convert that to a
 glyph name).
 -->
-しかし、より興味深いものを次に示します。
-クラスによるカーニングは、実際には2セットのクラスで構成されます。
-1セットは最初のグリフを含むセット、もう1セットはペアとなるの2番目のグリフを含むセットです。
-グリフクラスは、空白で区切られたグリフ名のリストで構成されます
+その下にあるのはより興味深い情報です。
+1 個のカーニングクラスは、実際には 2 個のクラスの組からなります
+—— 1 つはペアの先頭のグリフの組、もう 1 つはペアの 2 番目のグリフの組です。
+それぞれのクラスのリストの下には新クラスの追加・既存クラスの編集・削除を行うためのボタンがあります。
+個々のグリフクラスはグリフ名を空白で区切ったリストです。
 （大抵のグリフでは、 unicode 文字自体を入力することができ、
 FontForge はそれをグリフ名に変換します）。
 
@@ -588,18 +600,21 @@ The kerning classes can be fairly complex. You can search for a glyph by
 typing its name in the "Select Glyph" field. This will highlight the
 class containing that glyph.
 -->
-カーニングクラスはかなり複雑になる場合があります。
-"Select Glyph" フィールドに名前を入力して、グリフを検索できます。
-これにより、そのグリフを含むクラスが強調表示されます。
+カーニングクラスは非常に複雑になることもあります。
+"グリフを選択" フィールドでグリフ名をタイプすることにより、
+グリフを検索することができます。
+その結果、そのグリフが含まれているクラスがハイライト表示されます。
 
 <!--
 Class 0 is usually magic. You almost never set it, it contains any
 glyphs not mentioned elsewhere. In OpenType, class 0 of the first
 character can be set and behaves normally.
 -->
-クラス0はたいてい呪文のようなものです。 
-設定することはほとんどなく、他の場所で言及されていないグリフが含まれています。
-OpenTypeでは、最初の文字のクラス0を設定でき、正常に動作します。
+通例、クラス 0 は特別な意味を持ちます。
+これをユーザが設定することはほとんど無いでしょうが、
+他のどのクラスにも含まれていない全ての文字の集まりのことです。
+OpenType では、最初の文字のクラス 0 を設定することができ、
+通常どおりにふるまいます。
 
 <!--
 Underneath the classes is a display of kerning values. The possible
@@ -612,12 +627,15 @@ which intersect at that point. If you click on a kerning value in the
 display, the dlg displays a visual representation of that amount of
 kerning.
 -->
-クラスの下には、カーニング値の表示があります。
-可能な最初のグリフクラスは垂直にリストされ、可能な2番目のグリフクラスは水平にリストされます。
-クラスを選択すると（上記のクラスリストのいずれかで）、カーニング値の表示がスクロールしてそのクラスが表示されます。
-マウスをディスプレイに移動して静止させると、ポップアップウィンドウが表示され、そのポイントで交差するクラスを構成するグリフが表示されます。
+各クラスの下にはカーニング値の一覧表があります。
+最初のグリフクラスとして利用可能な物は縦に並び、
+2 番目のグリフクラスは横に並んでいます。
+クラスを (上のクラスリストで) どれか 1 個選択すると、
+カーニング値の表示はそのクラスの欄までスクロールします。
+マウスを表示欄の上に移動してしばらく待つと、
+その欄の文字クラスの組合せを構成するグリフを表示するポップアップウィンドウが表示されます。
 ディスプレイでカーニング値をクリックすると、
-dlg がカーニングの視覚的な量を表示します。
+ダイアログがカーニングの視覚的な量を表示します。
 
 <!--
 The kerning dialog displays a representative glyph from each class and
@@ -627,10 +645,11 @@ pulldown menus. You can enter a new kerning offset by typing in a value,
 or you can click on the second glyph of the kern pair and drag it
 around.
 -->
-カーニングダイアログには、各クラスの代表的なグリフが表示され、
-グリフ間（そして各クラスの他のすべてのクラスメンバー間）のカーニングを調整できます。
-プルダウンメニューで表示するグリフを選択できます。
-値を入力して新しいカーニングオフセットを入力するか、カーニングペアの2番目のグリフをクリックしてドラッグします。
+カーニングダイアログは各クラスの代表グリフを表示し、
+そこでそれらグリフ字 (各クラスに含まれる他のグリフ全ての組合せを含む) の間のカーニングを調整することができます 。
+どのグリフを表示するかはプルダウンメニューで選ぶことができます。
+新しいカーニングオフセットはキーボードで数値入力することもできますし、
+2 番目のグリフをクリックしてからドラッグすることによっても設定可能です。
 
 
 <!--
@@ -648,16 +667,16 @@ glyphs, and the kerning value itself. The result is that something which
 looks perfectly kerned at 150pixels may be either too close or too far
 apart at 12pixels
 -->
-"デバイステーブル" と呼ばれるものを作成することもできますが、
-この名前はあまり的を射たものではありません。
-フォントが小さなピクセルサイズでラスタライズされると、丸め誤差が重要になってきます。
-これは特にカーニングに当てはまります。
-丸められるのは次の3つ、
-アウトラインの位置（ピクセルグリッドに合わせるため）、
-グリフの前進幅、
-そして、カーニング値そのものです。
-したがって、150 ピクセルでは完璧にカーニングされているように見えるものが、
-12 ピクセルでは近すぎるか離れすぎている、という可能性があります。
+また、 "デバイステーブル" というものを作成することができます。
+この名前からはそれが何だかよく分かりません。
+フォントを小さなピクセルサイズでラスタライズする時、
+丸め誤差が非常に重要になります。
+とくにカーニングでは、丸めの対象になるのがアウトラインの位置
+(それらをピクセルグリッドに合わせるため) と、
+グリフの送り幅およびカーニング値そのものの 3 つあるため、
+事態はとくに深刻です。
+その結果、150 ピクセルで完璧にカーニングが行われていたものが
+12 ピクセルで近すぎたり遠すぎたりすることになります。
 
 ![](/assets/img/dialogs1-kern-We-150.png)
 
@@ -671,7 +690,7 @@ Kerning at 150 pixels
 <!--
 Kerning at 12 pixels (magnified by 2)
 -->
-12 ピクセルでのカーニング（2倍に拡大したもの）
+12 ピクセルでのカーニング（2倍に拡大）
 
 <!--
 You could adjust the kerning value slightly until it looked right at
@@ -684,21 +703,25 @@ field, and this will change the spacing by that many pixels at the given
 display size (and no other). In the case above a correction of 1 might
 be appropriate for the 12px display.
 -->
-もちろん、12 ピクセルで正しく見えるようになるまでカーニング値を微調整できますが、
-それによって 14 ピクセルでは崩れてしまうかもしれません。
-そのため、 OpenType には、特定のポイントサイズで小さな修正を追加するようなデバイステーブルの概念があります。
-表示サイズを小さいがよく使う値（10〜24など）に設定し、カーニングを調べます。
-結果が良い場合は、 "Device Table Correction" フィールドに値を入力し、
-それにより、指定された表示サイズについてはそのピクセル数だけ間隔が変更されます（他の表示サイズについては変更されません）。
-上記の場合、12px の表示では 1 の修正が適切かもしれません。
+もちろん、カーニング値を微妙に調節して、
+12 ピクセルで正しく見えるようにできたはずですが、
+今度は 14 ポイントで問題が起こるでしょう。
+そういうわけで、 OpenType ではデバイステーブルという概念を導入し、
+このテーブルを用いて特定のポイントサイズで小さな修正ができるようにしています。
+単純にディスプレイサイズをよく使われる小さい値 (例えば 10-24) に設定して、
+カーニングを目で確かめてください。
+醜い結果が得られた場合、 "デバイステーブル補正" フィールドに値を入力すると、
+指定された表示サイズのスペーシング (だけ) が指定したピクセル数だけ変更されます。
+上の例では、12 ピクセル表示では 1 ピクセルの補正が適切でしょう。
 
 <!--
 Because small pixel sizes can be hard to examine, you can change the
 magnification (rasterized at the same size, but each pixel made twice as
 big).
 -->
-小さなピクセルサイズを調べるのは難しいため、
-倍率を変更できます（同じサイズでラスタライズされますが、各ピクセルは2倍になります）。
+小さなピクセルサイズは目で確かめるのが困難なため、
+拡大率を変更することができます
+(同じサイズでラスタライズされますが、各ピクセルが 2 倍に拡大されます)。
 
 
 ### Kern Pair Closeup
@@ -710,11 +733,10 @@ Kerning pairs may also have tables attached to them with the
 Metrics->Kern Pair Closeup dialog, which looks similar to the Kerning
 Class dialog above.
 -->
-[デバイステーブル](#デバイステーブル) は、他の多くの場面でも作成できます。
-上記の例はカーニングクラス用です。
-カーニングペアは、
-上記の Kerning Class ダイアログに似た
-Metrics->Kern Pair Closeup ダイアログを使用して、
-テーブルをアタッチすることもできます。
+[デバイステーブル](#デバイステーブル) は他の多数の場合にも作成することができます。
+上の例はカーニングクラスに対するものでした。
+カーニングペアにも、上のカーニングクラスダイアログとよく似た
+メトリック->カーニングペアの詳細
+ダイアログが用意されています。
 
 ![](/assets/img/dialogs1-kernpairclose.png)
