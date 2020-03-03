@@ -21,7 +21,7 @@ title: FontForge インターフェース
     - [Help](helpmenu)
     - [Hot Keys](hotkeys)
 - [Windows](fontview)
-    - [Font](fontview)
+    - [フォントビュー](fontview)
     - [Outline Glyph](charview)
     - [Debugging TrueType](charview#The+Debugging+View)
     - [Type3 Glyphs](multilayer)

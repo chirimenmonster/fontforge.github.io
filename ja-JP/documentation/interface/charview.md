@@ -1,8 +1,13 @@
 ---
 published: true
+layout: default.ja
+title: アウトライングリフビュー
+---
+<!---
+published: true
 layout: default
 title: Outline Glyph View
----
+--->
 
 
 [table_of_contents]
@@ -10,8 +15,12 @@ title: Outline Glyph View
 
 ![](/assets/img/windows-charview2.png)
 
+<!--
 The outline glyph view is the window in which most editing happens.
+-->
+アウトライングリフビューは、編集作業のほとんどが行われるウィンドウです。
 
+<!--
 At the top of the window, underneath the menu bar is an information
 line. The first item is the location of the mouse pointer (in the
 internal coordinate system of the glyph). If there is a single selected
@@ -22,20 +31,47 @@ horizontal (measured counter-clockwise). Then we have the current scale
 factor, and the layer which is active. Finally (in the debugging view)
 is an indication of whether the instruction pointer is in the glyph
 program, the 'prep' program of the 'fpgm'.
+-->
+ウィンドウの上部、メニューバーの直下にあるのは情報表示欄です。
+最初の項目は (グリフの内部座標系に換算した) マウスポインタの位置です。
+選択された点が 1 個だけの場合、
+2 番目の項目にその位置が表示され、
+その次の 3 項目は左から順に、選択された点から現在位置までのオフセット、
+選択された点からの距離および水平方向から (反時計周りに計って) 見た角度です。
+その後ろに現在の拡大率と、どのレイヤがアクティブになっているかの表示が来ます。
+最後に (デバッグ用ビューでは) 命令ポインタが
+'fpgm' の 'prep' プログラムであるグリフプログラムのどこにあるかを示しています。
 
+<!--
 Underneath the information is a ruler showing the current pointer
 location as a red line. There's a similar ruler on the left side.
+-->
+情報欄の下にあるのはものさしで、現在のポインタ位置がどこにあるかをその上に赤い線で示しています。
+左側にも同じようなものさしがあります。
 
+<!--
 Underneath that is the glyph itself. On the left edge of the screen is a
 grey line indicating the x=0 line, further right is a black line showing
 where the glyph's width is currently set. There are also grey lines
 showing the ascent, descent and baseline.
+-->
+その下にはグリフそのものがあります。
+スクリーンの左端には x=0 の線を示す灰色の線があり、
+そのずっと右には、現在設定されているグリフの幅の位置に黒い線が引かれています。
+アセント (フォントの高さ)、ディセント (深さ) とベースラインも灰色の線で示されています。
 
+<!--
 Background images and background splines are drawn in grey. Grid lines
 are also drawn in grey. Vertical hinting regions are drawn in light
 blue, Horizontal hints are drawn in light green. If any hints overlap
 the boundaries are drawn in cyan.
+-->
+背景画像と背景スプラインは灰色で描画されています。
+グリッド線もまた灰色で描画されています。
+垂直ヒント領域は水色で、水平ヒントは薄緑色で描画されています。
+ヒントが重なり合っているときは、境界線は藍色で描画されています。
 
+<!--
 The points of the glyph are of three types, corner points drawn as
 filled squares, curve points drawn as filled circles and tangent points
 drawn as filled triangles. If a point is selected then it will be drawn
@@ -44,29 +80,66 @@ drawn as little magenta or dull-cyan xs at the end of a similarly
 colored line. (in a curved point the control points will be collinear).
 (the "Next" control point will be drawn dull cyan, and the Prev point
 will be magenta).
+-->
+グリフを構成する点には 3 つのタイプがあります。
+角の点は塗りつぶされた正方形で、
+曲線上の点は塗りつぶされた円で、
+そして (曲線と直線の) 接点は塗りつぶされた三角形で表されます。
+点が選択されたときには白抜きの正方形・円・三角形になり、
+隣接する制御点がマゼンタと鈍いシアンの×印として、
+同じ色の直線の端に表示されます
+(曲線上の点の場合、制御点はちょうど反対方向になります)。
+(「次」の制御点が鈍いシアンで、前の制御点がマゼンタになります)。
 
 ![A quadratic glyph](/assets/img/windows-charview-quadratic.png)
 
+<!--
 In a TrueType font, an on-curve point can be implied between two control
 points. FontForge will draw these with an open circle.
+-->
+TrueType フォントでは、曲線上の点が 2 個の制御点の中点にあるときは、
+暗黙の位置指定を行うことができます。
+FontForge はそれらの点を開いた円として描画します。
 
+<!--
 The initial point in a contour will be drawn in green, and beside it
 will be a tiny arrow pointing in the direction of the contour.
+-->
+輪郭の最初の点は緑色で描かれ、
+そのそばに輪郭の進行方向を示す小さな矢印が表示されます。
 
 ![Showing extrema](/assets/img/windows-extrema-poi.png)
 
+<!--
 Sometimes it is important to know which points are at the extrema of
 splines (postscript likes for there to be points at the extrema of all
 splines), if this is important to you set the "Mark Extrema" flag in the
 View menu. After that points at extrema will show up as dull purple. And
 internal extrema will also be marked.
+-->
+スプラインの (水平・垂直に) 極大な点がどこかを知ることが重要であることがときどきあります。
+(PostScript では全てのスプラインに、極大値となる場所に点が置かれていることが望ましいとしています)。
+これが必要な場合は、
+表示
+メニューで 極大点を表示 フラグをオンにしてください。
+これを行うと、極値にあたる点が鈍い紫色で表示されます。
+また、中間にある極大値も同時に表示されます。
 
+<!--
 There are also two palettes, one, a layer palette, allowing you to
 control [which layers are visible](#Layers), and one, a tool palette,
 from which you [may pick editing tools](#Tools). Normally these are 
 docked in the window, but you may choose to make them free floating
 windows by unchecking View-\>Palettes-\>Dock Palettes.
+-->
+それに加えて、パレットが 2 個あります。
+片方は [どのレイヤが表示されるか](#Layers) を制御することができるレイヤパレットで、
+もう片方は [編集ツールを選択することができる](#Tools) ツールパレットです。
+これらは通常はそれぞれ自由に動かすことができますが、
+表示-\>パレット->パレットを連結表示
+によって、ウィンドウ内に埋め込まれるように変更できます。
 
+<!--
 You select an editing tool by clicking on the appropriate button on the
 tools palette, or you may depress the right mouse button and select a
 tool from a popup menu (you may also change layers and do a few other
@@ -79,32 +152,72 @@ palette with the control key down you can select something else. If you
 depress the middle mouse button you get a third tool (by default a
 magnifying glass), and the control key and middle button give you the
 fourth (a ruler).
+-->
+編集ツールは、ツールパレットの対応するボタンを押して選択することも可能ですし、
+右のマウスボタンを押してポップアップメニューからツールを選択することもできます
+(こちらのメニューでは、レイヤー変更やその他二、三の操作が可能です)。
+同時に、4 種類の異なる操作のツールを結びつけ可能です
+(これは面倒なだけで役に立たないかもしれません)。
+左マウスボタンにはツール操作が結びつけられていて、
+プログラムのアイドル時にはこのツールが表示されるでしょう。
+Control キーを押したときには、別のツールが使用可能で、
+デフォルトではポインタツールとなっていますが、Control キーを押しながらツールパレットをクリックすると、
+別の物を選ぶことができます。
+マウスの中ボタンを押したときには 3 番目のツールを使用できます (デフォルトでは虫めがねです)。
+Control キーを押しながら中ボタンを押すと 4 番目を (ものさしから) 切替えることができます。
 
+<!--
 If the mouse pointer is close to a point (within a few pixels) when you
 depress the mouse, then the effective location of the press will be the
 location of the point.
+-->
+マウスポインタの近く (約 2, 3 ピクセル以内) に点があるときにマウスボタンを押すと、その点がある位置でマウスを押したのと同じ効果になります。
 
+<!--
 If you drag a glyph from the font view and drop it into a glyph view
 then FontForge will drop a reference to the dragged glyph into the view.
+-->
+フォントビューからグリフをドラッグしてグリフビューに置くと、
+FontForge はその文字への参照をビュー上に配置します。
 
+<!--
 Warning: **If your glyph has truetype instructions then editing it may
 cause those instructions to behave very oddly. If your glyph has anchor
 points which depend on truetype point matching then editing the glyph
 may disconnect the points. If your glyph is used as a reference in
 another glyph that positions references by point matching then editing
 this glyph may reposition those references.**
+-->
+警告: 
+**編集中のグリフに TrueType 命令が含まれている場合、
+グリフ編集時にそれらの命令が非常に奇妙なふるまいをもたらすことがあります。
+TrueType の点の照合に依存するアンカーポイントがグリフに含まれている場合、
+そのグリフを編集することにより点の関連が途切れる可能性があります。
+編集中のグリフが、
+点の照合により参照の位置指定を行う他のグリフへの参照として使用されている場合、
+そのグリフを編集するとそれらの参照の位置が変更される可能性があります。**
 
-
+<!--
 ### Layers
+-->
+### レイヤ
 
 ![](/assets/img/windows-layers.png)
 
+<!--
 There are several drawing layers in the outline view.
 Each layer has an "eye box" (indicating whether it is visible or not),
 curve type ("C" for cubic, "Q"for quadratic, " " for Guide layer, which
 is always cubic), mode ("\#" for Guide layer, "B" for background layers,
 "F" for foreground layers) and a name.
+-->
+アウトラインビューには幾つかのレイヤがあり、
+それらのうちの 3 つが編集可能です。
+各レイヤには (それを表示するかしないかの) チェックボックスがあり、
+編集可能なレイヤには、
+(そのレイヤが表示可能であるかを示す) ラジオボタン がついています。
 
+<!--
 The first layer is a set of guide lines/splines. These are common to all
 glyphs in the font. A few lines are provided for you (the x=0 line, the
 ascent, descent and baseline). Other handy lines might be the x-height
@@ -112,7 +225,17 @@ of the font, the cap-height, ascender-height, descender-height, ... When
 you are working in any of the other layers, points will snap to splines
 in this layer (making it easy to force a consistent x-height for
 example).
+-->
+最初の のレイヤはガイドライン/スプラインの集まりです。
+これはフォント内の全てのグリフで共通に使用されます。
+最初から表示されているのは少数しかありません
+(x=0 の線、アセント、ディセントとベースラインです)。
+その他の助けになる線はフォントの x ハイト、キャップハイト、アセンダハイト、ディセンダハイト等があります。
+その他のレイヤのどれかで作業をしているとき、
+ポインタはこのレイヤに置かれた線に吸着します
+(例えば、x ハイトを一定値に強制的に揃えたいときなどに役立ちます)。
 
+<!--
 Next are the background layers, these contain background images and
 splines. These do not go into the font, but may be helpful to you in
 tracing the outline of your glyph. It is possible to paste an image into
@@ -121,14 +244,39 @@ selection by mime type (the kde family of applications does this,
 perhaps others), then FontForge will be able to read images in either
 "image/png" or "image/bmp", otherwise you may import background image
 files.
+-->
+次はは背面レイヤで、
+ここには背景画像とスプラインが含まれます。
+これらはフォントには書き出されませんが、
+グリフのアウトラインをトレースする作業の助けになります。
+画像を背面に貼りつけることも可能です。
+MIME タイプによる選択が可能な画像操作プログラムがある場合、
+画像を背面に貼りつけることもできます
+(KDE ファミリーのアプリケーションはこれを行いますし、多分他にもあるでしょう)。
+このとき、FontForge は
+"image/png" または "image/bmp" のどちらかで画像を読み出すか、
+そうでなければ背景画像をインポートすることができます。
 
+<!--
 When debugging truetype (`Hints->Debug)`, or showing gritfit outlines
 (`[View->Show Grid Fit](../viewmenu/#Show+Grid+Fit)`) the visibility of
 the gridfit outlines can be controlled by the background layer's
 visibility.
+-->
+TrueType のデバッグ
+( ヒント-\>デバッグ )
+や、
+アウトラインのグリッド合わせ
+( [表示->グリッド合わせを表示](../viewmenu/#Show+Grid+Fit) )
+を行っている時、
+グリッド合わせを行ったアウトラインの表示の有無はレイヤの表示の有無によって切り替えることができます。
 
+<!--
 The last is the foreground layer, this contains the splines that
 actually make up the glyph that will be placed into the font.
+-->
+最後が前面レイヤで、
+ここにはグリフを実際に構成し、フォントに出力されるスプラインが含まれます。
 
 One can actually have multiple foreground and background layers. They
 can be created and deleted with "+" and "-" buttons. FontForge, won't
@@ -142,26 +290,51 @@ it's done with right mouse button: a pop-up menu will appear, allowing
 for some additional operations, like moving contents between layers.
 
 
+<!--
 ### Tools
+-->
+### ツール
 
 ![](/assets/img/windows-tools.png)
 
+<!--
 There are 19 different editing tools, a mode button which
 alters the behavior of 5 of them, and two others (rectangle/ellipse and
 polygon/star) which come in two forms.
+-->
+編集ツールは 19 種類あり、
+編集ツールのうちの 1 つは 5 種の挙動を変更するモードボタンで、
+編集ツールのうちの 2 つ (長方形/楕円と多角形/星形) にはそれぞれ 2 種類の形状があります。
 
+<!--
 At the bottom of the palette is a list of the current bindings of the
 mouse buttons. Here mouse button 1 is bound to the pointer tool, mouse
 button 1 with the control key pressed is also bound to pointer, mouse
 button 2 is bound to magnify, and mouse button 2 with control is bound
 to ruler.
+-->
+パレットの一番下にはマウスボタンの現在の機能割り当ての一覧が表示されています。
+この図では、マウスボタン 1 はポインタツールに割り当てられていて、
+Control キー + マウスボタン 1 も同じくポインタに、
+マウスボタン 2 は拡大ツールに、
+Controlキー + マウスボタン 2 はものさしツールに割り当てられています。
 
+<!--
 Many of the tools have different <a name="alt-meta-capslock">behaviors</a>
 if you hold the shift or alt (meta) key down when using the tool.
 On the mac there is no alt/meta key, and the Option and Command keys are
 usually bound to making a one button mouse look like a three button mouse.
 So on the mac fontforge uses the caps-lock key rather than alt/meta.
-
+-->
+多くのツールは、
+Shift または Alt (Meta) キーを押しながら選択した場合には、
+通常と異なる<a name="alt-meta-capslock">挙動</a>を示します。
+Mac には Alt/Meta キーは存在せず、
+Option キーと Command キーは
+1 ボタンマウスを 3 ボタンマウスに見せかけるために使われるのが普通です。
+そこで FontForge は
+Mac では Alt/Meta の代わりに
+CapsLock キーを使用します。
 
 #### The pointer tool
 ![](/assets/img/windows-cvarrowicon.png)
