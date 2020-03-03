@@ -44,7 +44,7 @@ title: メトリックビュー
 3.  メトリックビューを開く前に、フォントビューで文字を個別に順番に選択します。
     メトリックビューを開いたときに選択した順序で表示されます
 4.  FontForgeには独自の風変わりな
-    [入力メソッド](#Entering+non-ASCII+characters)
+    [入力メソッド](#非-ascii-文字の入力)
     があります
 
 
@@ -66,8 +66,8 @@ title: メトリックビュー
 この線をドラッグして幅を変更できます。
 グリフをクリックして左または右にドラッグすると、グリフの左側のベアリング (lbearing) を変更できます。
 緑色の線をドラッグして、このグリフとその左のグリフの間のカーニングを変更できます。
-（小さなピクセルサイズの [デバイステーブル](#Device+Table) を作成する場合は、
-[カーニングペアクローズアップダイアログ](#Kern+Pair+Closeup) を使用する必要があります）
+（小さなピクセルサイズの [デバイステーブル](#デバイステーブル) を作成する場合は、
+[カーニングペアクローズアップダイアログ](#kern-pair-closeup) を使用する必要があります）
 
 
 カーニング
@@ -119,73 +119,55 @@ FontForge はアウトライングリフビューを表示して、そのグリ�
 これらは小文字ではなくスモールキャピタル文字になります。
 最後に "1", "/", "2" が入力され、
 'frac' （対角分数）機能がオンになると、
-これら3つの入力グリフは出力時には1/2のグリフになります。
+これら3つの入力グリフは出力時には「1/2」のグリフになります。
 
 注： このウィンドウは完全なレイアウトエンジンではありません。
 すべてのグリフは同じ文の中にあるかのように扱われ、すべての機能がすべてのグリフに適用されます。
 ベースラインの位置合わせは行われません。
 
-### ASCII以外の文字を入力する
+### 非 ASCII 文字の入力
 
-### Entering non-ASCII characters
+私たちのほとんどは、ASCII 文字しか持たないキーボードにこだわっています。
+あったとしても、せいぜい ISO 8859-1 文字のサブセットくらいです。
+Unicode 文字の全範囲を入力するにはどうすればよいでしょうか?
 
-私たちのほとんどは、ASCII文字のみがオンになっているキーボードで立ち往生しています
-それら。 または、せいぜいISO 8859-1文字のサブセット。 どうすればフル
-Unicode文字の範囲を入力しますか？
+X Window System は、スタンドアロンの
+[インプットメソッドサーバ](../../reference/xim/)
+によって文字を入力する洗練されたメカニズムを提供しています。
+FontForge は現在、これをある程度サポートしています。
 
-Most of us are stuck with keyboards that only have ASCII characters on
-them. Or at best some sub-set of ISO 8859-1 characters. How can the full
-range of unicode characters be entered?
+それとは別に、X Window System の多くのバージョンは、
+"Compose Character" キーか、またはそれと同等のものを提供しています。
+X Window System のソフトウェアは、ネイティブなエンコーディングが何であったとしても、
+キーストロークのシーケンスを1つの文字にマッピングします。
 
-Xは、文字を入力するための洗練されたメカニズムを提供します
-スタンドアロン[入力メソッドサーバー]（../../ reference / xim /）。 FontForgeのサポート
-これは今ある程度。
+使用しているキーボードにそうしたキーがない場合、
+使用している X Window System でこれらが提供されていない場合に備えて、
+そうした方針に沿ったうえで、安価なキーボードが利用できるような仕組みを実装しました。
+テキスト入力が可能なモードの場合に、F12キーを押してから一連のキーストロークを実行してください。
+アクセント付き文字は以下のように作成することができます:
 
-X supplies a sophisticated mechanism for entering characters via
-stand-alone [input method servers](../../reference/xim/). FontForge supports
-this to some extent now.
+    `   グレイブ・アクセント (grave accent)
+    0   リング符号 (ring)
+    "   ダブルグレイブ（またはトノス） (double grave (or tonos))
+    '   アキュート・アクセント (acute accent)
+    /   ストローク符号 (slash)
+    .   上付きドット符号 (dot above)
+    :   ダイエレシス（ウムラウト） (diaeresis (umlaut))
+    7   ブレーヴェ (breve)
+    ,   下付きドット符号 (dot below)
+    ^   サーカムフレックス (circumflex)
+    6   ハーチェク (caron)
+    5   セディーユ (cedilla)
+    ~   チルダ (tilde)
+    _   マクロン (macron)
+    4   オゴネク (ogonec)
 
-それとは別に、Xの多くのバージョンは「文字の作成」キーを提供します。
-同等のもの。 Xソフトウェアはキーストロークのシーケンスをマップします
-ネイティブエンコーディングが何であれ1文字になります。
+したがって、 Â は [F12] ^ A で作成でき、
+ダイエレシスとマクロンを含む A は [F12] ： \_ A で作成できます。
 
-Aside from that, many versions of X supply a "Compose Character" key, or
-something equivalent. The X software will map a sequence of keystrokes
-to one character in whatever the native encoding may be.
-
-私のキーボードにはそのようなキーがありませんし、Xはこれを行いません。 しかし、私
-少ない人たちのためにそれらの線に沿って何かを実装しました
-高価なキーボード。 テキスト入力が可能なモードの場合
-次に、F12キーを押して、一連のキーストロークを実行します。 アクセント付き
-文字は次を使用して作成できます。
-
-My keyboard doesn't have such a key, and my X doesn't do this. But I
-have implemented something along those lines for those of us with less
-expensive keyboards. If you are in a mode where text entry is possible
-then press the F12 key and follow it by a series of keystrokes. Accented
-characters may be built using the following:
-
-    `   grave accent                
-    0   ring           
-    "   double grave (or tonos)
-    '   acute accent                
-    /   slash           
-    .   dot above
-    :   diaeresis (umlaut)          
-    7   breve           
-    ,   dot below
-    ^   circumflex                  
-    6   caron           
-    5   cedilla
-    ~   tilde                       
-    _   macron          
-    4   ogonec
-
-So Â may be built by [F12] \^ A, and A with diaeresis and macron may be
-built with [F12] : \_ A.
-
-Greek letters may also be created. If you start with [F12] @ and follow
-with:
+ギリシャ文字も作成できます。
+開始は [F12] @ で続いて以下を入力します：
 
     A   Alpha                     
     B   Beta            
@@ -214,11 +196,13 @@ with:
     Y   Psi                       
     Z   Zeta                
 
-This is the mapping used by the Symbol font. (Lower case letters are
-created similarly so [F12] @ a yields a lower case alpha). Accented
-greek letters may also be built up, [F12] @ " A yields Alpha tonos.
+これは Symbol フォントで使用されるマッピングです。
+（小文字も同様に作成されます。 [F12] @ a は小文字のアルファを生成します）
+アクセント付きのギリシャ文字も作成することができ、
+[F12] @ \" A は、トノス付きのアルファを生成します。
 
-Finally the following special characters may be built:
+
+最後になりますが、次の特殊文字を作成できます:
 
     [F12] <space>   <no break space>          
     [F12] *         °                              
@@ -266,255 +250,139 @@ Finally the following special characters may be built:
     [F12] |         »                              
     [F12] @ |       <right single guillemot>
 
-This still misses most unicode characters. But pressing [F12] twice will
-bring up a dialog which will allow you to select any character in
-unicode.
+ここには、まだほとんどの unicode 文字を見つけることができません。
+ですが、 [F12] を2回押すとダイアログが表示され、
+unicode の任意の文字を選択することができます。
 
-If you type [F12] by mistake then an Escape will get you out of accent
-mode.
+誤って [F12] をタイプすると、エスケープによりアクセントモードが終了します。
 
 
-### Kerning By Class
+### クラスを用いたカーニング
 
-多くの場合、同様にカーニングするグリフのクラスを作成することをお勧めします。
-たとえば、A、À、Á、Â、Â、Ã、Äはおそらくすべてカーニングに似ています（ただし、
-そのoとôはT）の後、おそらくかなり異なったカーニングであり、
-上記の「A」のそれぞれに対して個別のカーニングペアを作成します。
-同様にカーニングするグリフのクラスに配置されます。
+多くの場合、同じようなカーニングをするグリフのクラスを作成することをお勧めします。
+たとえば、
+A, À, Á, Â, Â, Ã, Ä
+はおそらくすべて同じようなカーニング
+（ただし、 o と ô はおそらく T の後ではかなり異なったカーニングをすることに注意してください）
+をします。
+上記の各 "A" について別々のカーニングペアを作成するよりも、
+そのすべてを同様なカーニングをするグリフのクラスとして配置したほうがよいです。
 
-Often it is a good idea to create classes of glyphs which kern alike.
-For example A, À, Á, Â, Â, Ã and Ä probably all kern alike (but note
-that o and ô probably kern quite differently after a T), and rather than
-create separate kerning pairs for each of the "A"s above, they could all
-be placed in a class of glyphs which kern alike.
-
-The [Element->Font Info->Lookups](../lookups/) provides an interface
-to this.
+そのためのインターフェースが
+[Element->Font Info->Lookups](../lookups/)
+で提供されています。
 
 ![](/assets/img/dialogs1-kerningformat.png)
 
-それはすべてを示すダイアログを表示します
-GPOSルックアップ（カーニングは1つ）とそのサブテーブル。 各セット
-カーニングクラスは、独自のサブテーブルに存在します。 カーニングを作成するとき
-サブテーブルには、個々のカーニングのセットが必要かどうかを尋ねられます
-カーニングクラスに基づくペアまたは行列。
+すべての GPOS ルックアップ（カーニングはその1つです）とそのサブテーブルを示すダイアログが表示されます。
+カーニングクラスの各セットは、それ自身のサブテーブルに存在します。 カーニングサブテーブルを作成すると、
+個々のカーニングペアのセットが必要か、カーニングクラスに基づくマトリクスが必要かが尋ねられます。
 
-It brings up a dialog showing all the
-GPOS lookups (of which kerning is one) and their subtables. Each set of
-kerning classes lives in its own subtable. When you create a kerning
-subtable you will be asked whether you want a set of individual kerning
-pairs or a matrix based on kerning classes.
+後者を選択した場合、 FontForge は適切なクラスのセットを推測しようとします（選択されたグリフを見て、複数のクラスに分割します）。
+`Intra Class Distance` を使用すると、
+クラスに入るものについて、気難しい FontForge がどのようになるかをある程度制御できます。
+（これは em 単位、おおまかにいうと、
+2つの異なるグリフが他のグリフとどのように相互作用するかについての平均誤差として解釈されます）。
+値が 1 のときは非常にえり好みが激しく、ほとんどすべてのクラスはメンバーが1つとなります。
+値が 20 （1000 em フォントに対して）の場合はかなり緩いです。
 
-後者を選択した場合、FontForgeに良いものを推測させることができます
-クラスのセット（選択されたグリフを見て分割します）
-それらをクラスに入れます）。 「クラス内距離」により、いくつかの制御が可能になります
-FontForgeがクラスに入るものについていかにうるさいのかについて。 （これは
-em単位であり、おおよそ、平均誤差であると考えられます
-2つの異なるグリフが他のグリフと相互作用する方法）。 値1は
-非常にうるさく、ほぼすべてのクラスに1人のメンバーが含まれます。 20の値
-（1000emフォント）はかなりゆるいです。
-
-If you choose the latter then you may have fontforge try to guess a good
-set of classes for you (it will look at the glyphs selected and divide
-them into classes). The `Intra Class Distance` gives you some control
-over how picky fontforge will be about what goes into a class. (This can
-be thought of as being in em-units and being, roughly, the average error
-in how two different glyphs interact with other glyphs). A value of 1 is
-very picky and almost all classes will have one member. A value of 20
-(in a 1000em font) is fairly loose.
-
-AutoKerningでは、「デフォルトの分離」フィールドと「Min Kern」フィールドが使用されます。
-すべてのグリフを光学的に分離するカーニングの目標
-定数であり、「デフォルトの分離」フィールドは
-望ましい値。 「Min Kern」の値は、単にダイアログが
-無駄なジャンクでいっぱい。 AutoKerningが2つのグリフを示唆している場合
-1 em単位でカーニングする必要があります。これにより、
-人間の目とそれを含めることに意味はありません。カーニング値
-（絶対値で）AutoKernによって提案された値が「Min Kern」よりも小さい場合
-FontForgeはその値を無視します。 「[] Touching」を選択すると、
-AutoKerningは、作成を試みるのではなく、わずかに異なる方法で動作します
-光学距離は、これが
-最小間隔が望ましい値である（これはめったに役に立たないが、
-時折、文字が実際に触れる場所にテキストを設定したい
-お互い）。 `[]だけカーニンググリフが近い`フラグは、FontForge
-負のカーニングオフセットのみを生成します。つまり、
-グリフを互いに近づけます。
-
-The `Default Separation` and `Min Kern` fields are used in AutoKerning.
-The goal of kerning to to make the optical separation between all glyphs
-to be constant, and the `Default Separation   `field specifies that
-desired value. The `Min Kern` value is simply to prevent the dialog from
-filling with useless junk. If AutoKerning suggests that two glyphs
-should be kerned by 1 em unit then this won't make any difference to the
-human eye and there is no point in including it. So if the kerning value
-(in absolute value) suggested by AutoKern is less than `Min Kern` then
-fontforge will ignore that value. Selecting `[]   Touching` makes
-AutoKerning work in a slightly different way, instead of trying to make
-the optical distance be the desired value this attempts to make the
-minimum separation be the desired value (This is rarely useful, but
-occasionally people want to set text where the letters actually touch
-one another). The `[] Only kern glyphs closer `flag means that FontForge
-will only generate negative kerning offsets, that is, offsets which will
-move glyphs closer together.
+AutoKerning では、 `Default Separation` と `Min Kern` フィールドが使用されます。
+すべてのグリフ間の視覚的な間隔を一定にするというカーニングの目標に対して、
+`Default Separation` フィールドはその望ましい値を指定します。
+`Min Kern` の値は、単にダイアログが無駄なゴミでいっぱいになるのを防ぐためのものです。
+AutoKerning が2つのグリフを 1 em 単位でカーニングすることを提案している場合、
+人間の目には違いがわからないので、それを含める意味はありません。
+そのため、 AutoKern によって提案されたカーニングの値（絶対値）が `Min Kern` より小さい場合、
+FontForge はその値を無視します。
+`[] Touching` を選択すると、
+AutoKerning の動作は少し異なり、
+視覚的距離を目標値にしようとするのではなく、
+最小間隔を目標値にしようとします
+（これはめったに役立ちませんが、たまに、文字どうしが実際に接触するようなテキストが望まれることがあります）。
+`[] Only kern glyphs closer`　のフラグは、
+FontForge が負のカーニングオフセットのみを、
+つまりグリフを互いに近づけるようなオフセットのみを生成することを意味します。
 
 ![](/assets/img/dialogs1-kerningclass.png)
 
-各カーニングクラスは[lookup
-サブテーブル]（../ lookups /）とサブテーブル名が上部に表示されます
-ダイアログ。
+各カーニングクラスは
+[ルックアップサブテーブル](../lookups/)
+に属し、サブテーブル名がダイアログの上部に表示されます。
 
-Each kerning class belongs to a [lookup
-subtable](../lookups/) and the subtable name is displayed at the top of
-the dialog.
+しかし、より興味深いものを次に示します。
+クラスによるカーニングは、実際には2セットのクラスで構成されます。
+1セットは最初のグリフを含むセット、もう1セットはペアとなるの2番目のグリフを含むセットです。
+グリフクラスは、空白で区切られたグリフ名のリストで構成されます
+（大抵のグリフでは、 unicode 文字自体を入力することができ、
+FontForge はそれをグリフ名に変換します）。
 
-しかし、より興味深いものはこれに続きます。 クラスごとのカーニング
-クラスの2つのセットで構成されます-最初のグリフの1つのセット
-ペアとペアの2番目のグリフ用の1つ。 グリフクラスは、
-グリフ名のスペース区切りリスト（ほとんどのグリフについては、
-Unicode文字自体を入力すると、FontForgeはそれを
-グリフ名）。
+クラスの編集は、クラスをタイプするだけです
+（クラスリストの一番下に \<New\> というエントリがあり、
+ここをクリックすると、新しいクラスが作成されます）。
+クラスの右側にある小さな長方形を押すと、クラスをフォントビューウィジェットの選択項目として定義できます。
+クラスを削除するには、クラスを選択（クリック）して [削除] ボタンを押します。
 
-But the more interesting stuff follows this. A kerning by class actually
-consists of two sets of classes -- one set for the first glyph of the
-pair and one for the second glyph of the pair. A glyph class consists of
-a space separated list of glyph names (For most glyphs you may also
-enter the unicode character itself, and fontforge will convert that to a
-glyph name).
+カーニングクラスはかなり複雑になる場合があります。
+"Select Glyph" フィールドに名前を入力して、グリフを検索できます。
+これにより、そのグリフを含むクラスが強調表示されます。
 
-クラスを編集するには、単に入力します（クラスリストの一番下に
-\ <New \>というエントリです。ここをクリックすると、新しいクラスが作成されます）。
-クラスの右側にある小さな長方形を押すと、
-フォントビューウィジェットで選択としてクラスを定義します。 してもいいです
-クラスを選択（クリック）してクラスを削除します
-[削除]ボタン。
+クラス0はたいてい呪文のようなものです。 
+設定することはほとんどなく、他の場所で言及されていないグリフが含まれています。
+OpenTypeでは、最初の文字のクラス0を設定でき、正常に動作します。
 
-To edit a class, simply type in it (at the very bottom of the class list
-is an entry called \<New\>, clicking here will create a new class).
-Pressing the little rectangle at the right of the class will allow you
-to define your class as a selection in a font view widget. You may
-delete a class by selecting it (clicking in it) and pressing the
-[Delete] button.
-
-カーニングクラスはかなり複雑になる場合があります。 グリフを検索するには
-「Select Glyph」フィールドに名前を入力します。 これにより、
-そのグリフを含むクラス。
-
-The kerning classes can be fairly complex. You can search for a glyph by
-typing its name in the "Select Glyph" field. This will highlight the
-class containing that glyph.
-
-クラス0は通常魔法です。 設定することはほとんどありません。
-他で言及されていないグリフ。 OpenTypeでは、最初のクラス0
-文字を設定でき、正常に動作します。
-
-Class 0 is usually magic. You almost never set it, it contains any
-glyphs not mentioned elsewhere. In OpenType, class 0 of the first
-character can be set and behaves normally.
-
-クラスの下には、カーニング値の表示があります。 可能性
-最初のグリフクラスは垂直方向にリストされ、可能な2番目のグリフ
-クラスは水平にリストされます。 クラスを選択すると（
-上記のクラスリスト）カーニング値の表示はスクロールして表示されます
-そのクラス。 マウスをディスプレイに移動させて休ませると、
-ポップアップウィンドウが表示され、クラスを構成するグリフが表示されます
-そのポイントで交差します。 のカーニング値をクリックすると
-表示、dlgはその量の視覚的表現を表示します
-字詰め。
-
-Underneath the classes is a display of kerning values. The possible
-first glyph classes are listed vertically, the possible second glyph
-classes are listed horizontally. When you select a class (in one of the
-class lists above) the display of kerning values will scroll to display
-that class. If you move the mouse into the display and let it rest, a
-popup window will appear showing the glyphs that make up the classes
-which intersect at that point. If you click on a kerning value in the
-display, the dlg displays a visual representation of that amount of
-kerning.
+クラスの下には、カーニング値の表示があります。
+可能な最初のグリフクラスは垂直にリストされ、可能な2番目のグリフクラスは水平にリストされます。
+クラスを選択すると（上記のクラスリストのいずれかで）、カーニング値の表示がスクロールしてそのクラスが表示されます。
+マウスをディスプレイに移動して静止させると、ポップアップウィンドウが表示され、そのポイントで交差するクラスを構成するグリフが表示されます。
+ディスプレイでカーニング値をクリックすると、
+dlg がカーニングの視覚的な量を表示します。
 
 カーニングダイアログには、各クラスの代表的なグリフが表示され、
-それらの間のカーニングを調整することができます（および他のすべてのクラス
-各クラスのメンバー）。 表示するグリフを選択できます
-プルダウンメニュー。 値を入力して、新しいカーニングオフセットを入力できます。
-または、カーニングペアの2番目のグリフをクリックしてドラッグすることができます
-周り。
-
-The kerning dialog displays a representative glyph from each class and
-allows you to adjust the kerning between them (and all other class
-members of each class). You can select which glyphs to display in the
-pulldown menus. You can enter a new kerning offset by typing in a value,
-or you can click on the second glyph of the kern pair and drag it
-around.
+グリフ間（そして各クラスの他のすべてのクラスメンバー間）のカーニングを調整できます。
+プルダウンメニューで表示するグリフを選択できます。
+値を入力して新しいカーニングオフセットを入力するか、カーニングペアの2番目のグリフをクリックしてドラッグします。
 
 
-### Device Table
+### デバイステーブル
 
-また、「デバイステーブル」と呼ばれる名前を作成することもできます。
-あまり有益ではありません。 フォントが小さなピクセルサイズでラスタライズされる場合
-丸め誤差が重要になり、これは特に当てはまります
-カーニング、丸みを帯びる3つのものがあります。
-アウトライン（ピクセルグリッドに合わせるため）、
-グリフ、カーニング値自体。 結果はその何かです
-150pixelsで完全にカーニングされているように見えますが、近すぎるか遠すぎる可能性があります
-12ピクセル離れている
-
-You can also create something called a "Device Table", a name which is
-not very informative. When a font is rasterized at small pixel sizes
-rounding errors become important, and this is particularly true of
-kerning, there are three things that get rounded: The locations of the
-outlines (to fit them to a pixel grid), the advance widths of the
-glyphs, and the kerning value itself. The result is that something which
-looks perfectly kerned at 150pixels may be either too close or too far
-apart at 12pixels
+"デバイステーブル" と呼ばれるものを作成することもできますが、
+この名前はあまり的を射たものではありません。
+フォントが小さなピクセルサイズでラスタライズされると、丸め誤差が重要になってきます。
+これは特にカーニングに当てはまります。
+丸められるのは次の3つ、
+アウトラインの位置（ピクセルグリッドに合わせるため）、
+グリフの前進幅、
+そして、カーニング値そのものです。
+したがって、150 ピクセルでは完璧にカーニングされているように見えるものが、
+12 ピクセルでは近すぎるか離れすぎている、という可能性があります。
 
 ![](/assets/img/dialogs1-kern-We-150.png)
 
-Kerning at 150 pixels
+150 ピクセルでのカーニング
 
 ![](/assets/img/dialogs1-kern-We-12.png)
 
-Kerning at 12 pixels (magnified by 2)
+12 ピクセルでのカーニング（2倍に拡大したもの）
 
-カーニング値は、正しく見えるまでわずかに調整できます。
-もちろん12ピクセルですが、14ピクセルで壊れる可能性があります。 だからOpenType
-デバイステーブルの概念があります
-特定のポイントサイズでの修正。 表示サイズを単に
-小さいが一般的な値（10〜24など）とカーニングを調べます。 もし
-結果がいので、「Device Table Correction」に値を入力します
-フィールド。これにより、指定された位置のピクセル数だけ間隔が変更されます。
-表示サイズ（および他のサイズなし）。 上記の場合、1の修正は
-12pxディスプレイに適しています。
+もちろん、12 ピクセルで正しく見えるようになるまでカーニング値を微調整できますが、
+それによって 14 ピクセルでは崩れてしまうかもしれません。
+そのため、 OpenType には、特定のポイントサイズで小さな修正を追加するようなデバイステーブルの概念があります。
+表示サイズを小さいがよく使う値（10〜24など）に設定し、カーニングを調べます。
+結果が良い場合は、 "Device Table Correction" フィールドに値を入力し、
+それにより、指定された表示サイズについてはそのピクセル数だけ間隔が変更されます（他の表示サイズについては変更されません）。
+上記の場合、12px の表示では 1 の修正が適切かもしれません。
 
-You could adjust the kerning value slightly until it looked right at
-12pixels, of course, but that might break it at 14 pixels. So OpenType
-has the concept of a Device Table which allows you to add small
-corrections at particular point sizes. Simply set the Display Size to a
-small, but common, value (say 10-24) and examine the kerning. If the
-results are ugly then type a value into the "Device Table Correction"
-field, and this will change the spacing by that many pixels at the given
-display size (and no other). In the case above a correction of 1 might
-be appropriate for the 12px display.
-
-小さなピクセルサイズを調べるのは難しいため、変更することができます
-倍率（同じサイズでラスタライズされますが、各ピクセルは
-大きい）。
-
-Because small pixel sizes can be hard to examine, you can change the
-magnification (rasterized at the same size, but each pixel made twice as
-big).
+小さなピクセルサイズを調べるのは難しいため、
+倍率を変更できます（同じサイズでラスタライズされますが、各ピクセルは2倍になります）。
 
 
 ### Kern Pair Closeup
 
-[デバイステーブル]（＃Device + Table）は、
-その他のケースの数。 上記の例はカーニングクラス用です。
-カーニングペアには、
-「メトリック」->「カーニングペアクローズ」ダイアログ。カーニングに似ています
-上記のクラスダイアログ。
-
-[Device Tables](#Device+Table) may also be created in a
-number of other cases. The example above was for a kerning class.
-Kerning pairs may also have tables attached to them with the
-Metrics->Kern Pair Closeup dialog, which looks similar to the Kerning
-Class dialog above.
+[デバイステーブル](#デバイステーブル) は、他の多くの場面でも作成できます。
+上記の例はカーニングクラス用です。
+カーニングペアは、
+上記の Kerning Class ダイアログに似た
+Metrics->Kern Pair Closeup ダイアログを使用して、
+テーブルをアタッチすることもできます。
 
 ![](/assets/img/dialogs1-kernpairclose.png)
