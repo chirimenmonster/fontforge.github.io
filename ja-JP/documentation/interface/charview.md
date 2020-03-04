@@ -336,15 +336,26 @@ Option キーと Command キーは
 Mac では Alt/Meta の代わりに
 CapsLock キーを使用します。
 
+<!--
 #### The pointer tool
+-->
+#### ポインタツール
 ![](/assets/img/windows-cvarrowicon.png)
 
+<!--
 This tool is used for selecting points, images and referenced glyphs. It
 can also move these and scale images and referenced glyphs.
+-->
+このツールは点、画像や参照されたグリフを選択するのに使用します。
+これを使用して、それらを動かしたり画像や参照されたグリフを拡大/縮小することもできます。
 
+<!--
 Only things that are in the layer that is currently editable may be
 selected or moved or scaled.
+-->
+現在編集可能なレイヤに置かれている物だけが選択・編集・拡大/縮小することができます。
 
+<!--
 A simple click on an unselected point selects it and deselects
 everything else. A shift click on a point toggles whether that point is
 selected or not. A double click selects all points on the path
@@ -359,7 +370,23 @@ glyph happens to have the same outline and bounding box, then holding
 down the [meta/alt/caps-lock](#alt-meta-capslock) key will
 allow you to move it once it is selected, without the meta key you will
 resize it).
+-->
+選択されていない点の上で単純にクリックするとその点が選択され、
+その時選択されていた物は全て選択解除されます。
+Shift キーを押しながらクリックするとその点が選択されているかいないかの状態を反転します。
+ダブルクリックすると、その点を含むパス上の全ての点を選択します。
+トリプルクリックすると、レイヤ上の全ての物を選択します。
+何もない場所を選択し、ドラッグするとその領域の長方形に含まれる全ての物を選択します。
+直線や曲線の上で選択を行うと、その点の両側にある直線または曲線の端点を選択します。
+(画像を含むレイヤにいる時に)
+画像の暗い部分をクリックすると画像を選択します。
+参照された文字のアウトライン上をクリックすると参照を選択します
+(参照されているグリフのアウトラインとバウンディングボックスがぴったり一致しているときは、
+いちど選択を行い、
+[Meta/Alt/CapsLock](#alt-meta-capslock) キーを押すと移動が行え、
+Meta キーを押さない状態だとサイズ変更ができます)。
 
+<!--
 If a point has no visible control points, then they are at the same
 location as the point itself. If you want to select one of the control
 points then first select the point (to make the control points active)
@@ -370,6 +397,23 @@ way, repeat the process to get the other control and then put the first
 one back). Sadly some window managers (gnome-sawtooth for one) will
 steal meta-clicks. If this happens you will need to use Element-\>Get
 Info to set the control points.
+-->
+ある点に属する制御点が表示されていないときは、
+制御点はその点自身と重なる位置にあります。
+片方の制御点を選択したい場合は、
+まず (制御点をアクティブにするために) 点を選択して
+Meta キー (Mac では caps lock キー) を押したまま、
+点の上でマウスボタンを押します。
+この状態でドラッグすると、片方の制御点が引き出せます
+(間違った点を選択した場合、
+まずその制御点を引き出した後で、
+もう片方の制御点を引き出すためにもう一度同じ操作を繰り返し、
+それから最初の制御点を戻してください)。
+残念ながらいくつかのウィンドウマネージャ (gnome-sawtooth など) は
+Meta-クリック を奪い取ってしまいます。
+そうなる場合は、制御点を設定するには
+エレメント-\>情報を得る
+を使う必要があります。
 
 ![](/assets/img/windows-cpinfo.png)
 
@@ -383,6 +427,17 @@ an angle, and the curvature on this side of the base point. At the very
 bottom is the difference between the two curvatures. Try to make this
 number approach 0 for curved points.
 
+制御点を移動したときには、
+(表示-\>制御点の情報を表示 で)
+制御点 (およびオンカーブ点の反対側の数値) に関する情報を表示するポップアップボックスを表示することができます。
+表示されるのは、制御点が後側か前側か、
+比率で表した傾き、
+角度および、
+基点と同じ側での曲率です。
+一番下にあるのは 2 個の曲率の差です。
+曲線上の点の場合、この値を 0 に近くなるようにしてみて下さい。
+
+<!--
 Once something is selected you may drag it around. If you select
 something and drag the mouse then it and everything else selected will
 be moved. If you drag an open path and one of the end points happens to
@@ -392,25 +447,57 @@ into one (If you don't want open paths to merge, hold down the
 a control point then it will be moved (if you drag a control point
 defining an implied point, then the implied point(s) will also be
 moved).
+-->
+何かが選択されている状態のとき、それをドラッグして動かすことができます。
+何かを選択してマウスをドラッグすると、それと同時に選択された全ての物が移動します。
+開いたパスをドラッグしてその端点の 1 つが他の開いたパスと重なる場所に来た場合、
+2 本のパスは 1 本に融合されます
+(開いたパスが融合されることを避けたい場合は、
+[Alt/Meta/CapsLock](#alt-meta-capslock) キーを押してください)。
+制御点をドラッグすると、その制御点が移動します
+(暗黙の点を定義する制御点を移動すると、暗黙の点も一緒に移動します)。
 
+<!--
 If you selected a spline, then dragging it will drag the location on the
 spline where you pressed the mouse (so you are changing the shape of the
 spline).
+-->
+曲線を選択している場合、
+それをドラッグすると曲線上のマウスボタンを押した場所の位置をドラッグします
+(これを使って、曲線を変形することができます)。
 
+<!--
 If you hold the shift key down when you drag then the motion will be
 constrained to be either horizontal, vertical, or at a 45° angle. (When
 moving control points the combination of shift and [meta
 (alt)](#alt-meta-capslock) will mean that the control point
 is constrained to be the same angle from the base point as it was before
 you started moving it).
+-->
+Shift キーを押しながらドラッグすると、
+マウスの動きは水平・垂直か 45° 方向に制限されます
+(制御点を移動するときに、
+Shift + [Meta (Alt)](#alt-meta-capslock)
+と組み合わせてドラッグすると、
+制御点の基点から見た角度は移動を開始する前と同じ方向に制限されます)。
 
+<!--
 If your font has an ItalicAngle set, and the ItalicConstrain preference
 item is set, then motion that would normally be constrained to the
 vertical is constrained to be along the ItalicAngle.
+-->
+フォントに ItalicAngle が設定されていて、
+環境設定の項目 ItalicConstrain がオンになっている場合、
+移動は一般に垂直方向と角度 ItalicAngle に沿った方向に制限されます。
 
+<!--
 If you move the mouse to the bounding box of a selected image or
 reference glyph and drag it then you will scale that object.
+-->
+選択された画像や参照グリフのバウンディングボックスにマウスを持って行ってドラッグ操作を行うと、
+オブジェクトが拡大・縮小されます。
 
+<!--
 If you move the mouse to the advance width line, then dragging it will
 change the width of the current glyph. If there are any bitmaps of this
 glyph then their widths will also be updated. If there are any other
@@ -420,6 +507,17 @@ widths will also be updated (so if you change the width of A, then the
 width of À, Á, Â, Ã, Ä and Å might also be changed). If you are
 displaying vertical metrics (in a font that has them), then you can use
 the same technique to modify the vertical advance.
+--->
+マウスをグリフの幅を表す線にマウスを移動してドラッグすると、
+現在のグリフの幅が変更されます。
+このグリフにビットマップが存在する場合、
+それらの幅も同時に更新されます。
+このグリフに依存する (例えば、このグリフを参照として含んでいる) グリフが存在して、
+そのグリフの幅が現在のグリフと同じである場合、
+それらの幅も更新されます
+(例えば、A の幅を変更すると、À, Á, Â, Ã, Ä および Å も同時に更新されることになるでしょう)。
+縦書き用メトリックを (それを含むフォントで) 表示しているときは、
+同じ方法で縦書き時の送り幅も変更できます。
 
 If you are in an accented glyph then you may not be able to change the
 width, as its width is bound to that of the base glyph (By setting the
@@ -427,6 +525,7 @@ width, as its width is bound to that of the base glyph (By setting the
 will be displayed as a lock icon at the top of the window near the width
 line.
 
+<!--
 It is also possible to use the arrow keys to move selected items around.
 Each arrow will move the selection one em-unit (this can be changed in
 preferences to be any number of em-units) in the obvious direction. The
@@ -437,10 +536,25 @@ up and down arrows will move parallel to the italic angle (be careful of
 this: this leads to non-integral values). If you hold down the [meta
 (alt)](#alt-meta-capslock) key, then the motion will be 10
 times the normal amount.
+-->
+選択された物を移動するために、矢印キーを使うこともできます。
+矢印キーを 1 回押すたびに選択範囲は 1 em ユニットだけその方向に移動します
+(これは、環境設定において、em ユニット単位で任意の値を指定することができます)。
+最後に選択したのが制御点である場合、
+その点が移動します。
+Shift キーと同時に上下の矢印キーを押すとイタリックの傾きと平行な角度に移動します
+(要注意です: これによって座標値は非整数になります)。
+[Meta (Alt)](#alt-meta-capslock) キーを押すと、
+移動量は通常時の 10 倍になります。
 
+<!--
 If you hold down the control key while working with the arrows then the
 view will be scrolled rather than moving the selection.
+-->
+矢印キーと同時に Control キーを押している場合、
+選択範囲を移動せずにビューをスクロールします。
 
+<!--
 If the glyph is a ligature (and has a ligature entry in Glyph Info) then
 it has the potential of having "ligature caret locations". Essentially
 this means that between each ligature component it is possible to place
@@ -451,76 +565,165 @@ locations. By default these lines will be placed at the origin, but you
 may move one by placing the mouse pointer on it, depressing the button
 and dragging the line around. See the description on [building a
 ligature](editexample4.html#ligature) for a more complete description.
+-->
+グリフが合字である (そして
+グリフ情報
+で合字を登録している場合)
+"合字キャレット位置" を設定することが可能です。
+これは本質的に、
+合字の各構成要素の間にキャレットが止まる位置を設定可能であるということです
+(これにより、ワープロは合字の各構成要素の間にキャレットを置くことが可能になります)。
+合字ウィンドウ内では画面を横切る一連の垂直線がキャレット位置を示しています。
+デフォルトではこれらの線は原点に置かれていますが、
+マウスポインタをそこに合わせ、ボタンを押してドラッグすればそれらを移動することができます。
+合字を作る方法の完全な説明については、
+[合字の作成方法](editexample4.html#ligature) を参照してください。
 
 
+<!--
 #### The magnifying tool
+-->
+#### 拡大ツール
 ![](/assets/img/windows-cvmagicon.png)
 
+<!--
 Clicking with the magnifying tool will magnify the view and center it
 around the point you clicked on. Holding down the
 [Alt/Meta/CapsLock](#alt-meta-capslock) key and clicking
 will minify the view, again centered around the point at which you
 clicked. Again some window managers will steal meta-clicks, so you may
 have to use the View menu to minify (It's called Zoom Out
+-->
+拡大ツールをクリックすると表示を拡大し、クリックした位置を中心に移します。
+[Alt/Meta/CapsLock](#alt-meta-capslock) キーを押しながらクリックすると表示を縮小し、
+クリックした位置を中心に移します。
+先にも述べたとおり、
+ウィンドウマネージャの中には Meta クリックを奪い取るものがあるので、
+そのばあい縮小には
+表示
+メニューの
+縮小
+を使う必要があるでしょう。
 
+<!--
 If you drag out a rectangle with this tool then when you release,
 FontForge will shift and scale the view so that your rectangle just fits
 into the window.
+-->
+このツールを使って長方形を描くと、
+マウスを離した時に
+FontForge はその長方形がウィンドウにちょうど収まるようにビューの拡大・縮小と移動を行います。
 
+<!--
 If your mouse has a scroll wheel then holding down the control key with
 the scroll wheel causes it to magnify or minify the window.
+-->
+スクロールホイールつきのマウスで Control キーを押しながらホイールを回すと、
+ウィンドウを拡大・縮小することができます。
 
-
+<!--
 #### The scroll tool
+-->
+#### スクロールツール
 ![](/assets/img/windows-cvhandicon.png)
 
+<!--
 You can use this tool to scroll the window without using the scroll
 bars.
+-->
+このツールを使えば、スクロールバーを使わずにウィンドウをスクロールすることができます。
 
-
+<!--
 #### The freehand tool
+-->
+#### フリーハンドツール
 ![](/assets/img/windows-cvfreehandicon.png)
 
 ![](/assets/img/windows-freehandctl.png)
 
+<!--
 You can use this tool to draw a random curve which FontForge will then
 attempt to convert into a set of splines. If you hold down the
 [Alt/Meta/CapsLock](#alt-meta-capslock) key then FontForge
 will close the curve when you release the mouse.
+-->
+このツールを使うと自由曲線を描くことができ、
+FontForge はそれをスプラインの集合に変換しようと試みます。
+[Alt/Meta/CapsLock](#alt-meta-capslock) キーを押して線を描くと、
+FontForge はマウスを離した時に曲線を閉じます。
 
+<!--
 If you double click on the icon in the tool palette you get a dialog
 similar to the [Element-\>Expand Stroke](../elementmenu/#Expand+Stroke...) which
 will give you slightly more control over the results, as you can have it
 not expand the stroke you draw (ie. leave a single trace.)
+-->
+ツールパレットのアイコンをダブルクリックすると、
+[エレメント->輪郭を太らせる](../elementmenu/#Expand+Stroke...)
+とよく似たダイアログが表示され、
+描画するストロークを太らせないようにすることができます
+(つまり、 単一トレースです)。
 
 
 #### Tools for adding curved, corner and tangent points.
 ![](/assets/img/windows-cvcurveicon.png) ![](/assets/img/windows-cvhvcurveicon.png) ![](/assets/img/windows-cvcornericon.png) ![](/assets/img/windows-cvtangenticon.png)
 
+<!--
 These four tools behave similarly, differing only in what kind of point
 is added to the view.
+-->
+これらの 4 種類のツールは、
+ビューに追加される点の種類が異なる点を除いては全く同じように振舞います。
 
+<!--
 If a single point is selected, and if that point is at the end of a path
 then depressing the mouse button will create a new point where the mouse
 was depressed and draw a spline from the selected point to new point. If
 this new location happens to be the end of a path then the two paths
 will be joined (or if it is the end of the current path then the path
 will be closed).
+-->
+点が 1 個だけ選択されていて、
+その選択点がパスの端にある時に、マウスボタンを押すと、
+ボタンを押した位置に新しい点が作成され、
+選択点から新しい点に向けてスプラインが作成されます。
+この新しい位置がパスの終端ならば、2 本のパスは併合されます
+(または、この位置が現在のパスの端点である場合、パスは閉じられます)。
 
+<!--
 Otherwise if the mouse is depressed while being on a spline then a point
 will be added to that spline.
+-->
+それ以外の状態で、スプラインの上でマウスボタンを押すと、スプラインの上に点が追加されます。
 
+<!--
 Otherwise a new point is created not on any path at the location of the
 press.
+-->
+それ以外の場所では、どのパスにも所属しない新しい点が、マウスをクリックした場所に 1 個作成されます。
 
+<!--
 Once the point has been created then it becomes selected and all others
 are deselected. You may drag the point around, and if the point is on an
 open path and you drag it to the end point of another open path then the
 two paths will be joined.
+-->
+点がひとたび作成されると、それは選択された状態になり、
+それまでの全ての選択は解除されます。
+この点はドラッグして移動することができます。
+この点が開いたパスの端点で、
+もう 1 つの開いたパスの端点の上にドラッグすると、
+2 本のパスは併合します。
 
+<!--
 If you double click then a point will be added as above and a [Point
 Info](../getinfo/) dlg will appear to give you fine control over the
 location of the point and its control points.
+-->
+ダブルクリックすると、
+上記の方法で点が追加されてから
+[点の情報](../getinfo/) ダイアログが表示され、
+これを使用するとこの点とそれに隣接する制御点の位置を精密に調整できます。
 
 The four different point types are
 
@@ -534,26 +737,47 @@ The four different point types are
     spline is curved then the curved spline is constrained to start with
     the same slope as the line).
 
-
+<!--
 #### The pen tool
+-->
+#### ペンツール
 ![](/assets/img/windows-cvpenicon.png)
 
+<!--
 This tool behaves differently in cubic and quadratic editing. In many
 ways it is similar to the tools above as it adds a point to the current
 spline.
+-->
+このツールは 3 次曲線と 2 次曲線の編集で異なったふるまいをします。
+これは多くの面で前述の諸ツールに類似しており、現在のスプラインに点を付け加えます。
 
+<!--
 In a cubic font the points created are curved points, and they are
 initially created with the control points on the point and as you drag
 you drag out the control points rather than moving the point itself
 around.
+-->
+3 次フォントで画面上をクリックすると、
+曲線上の点が作成されます。
+クリック時の初期状態では、制御点はその点と同位置に置かれ、
+その後ドラッグすると点そのものではなく制御点をドラッグした位置に移動します。
 
+<!--
 In a quadratic font a point will be created half-way between the last
 control point and the current location (which becomes the next control
 point).
+-->
+2 次フォントでは、最後の制御点と現在位置
+(これが次の制御点となります)
+の中間点に端点が作成されます。
 
+<!--
 If you hold down the Alt (Meta, etc) key you change the behavior so that
 cubic editing looks like quadratic and vice versa.
-
+-->
+Alt キー (または Meta キーその他) を押すとこのふるまいが変わるので、
+3 次フォントを編集中に 2 次フォントと同様の編集操作ができますし、
+その逆も可能です。
 
 #### Tools for adding spiro control points
 ![](/assets/img/windows-cvspiroG4icon.png) ![](/assets/img/windows-cvspiroG2icon.png) ![](/assets/img/windows-cvspirocornericon.png) ![](/assets/img/windows-cvspirolefticon.png) ![](/assets/img/windows-cvspirorighticon.png)
