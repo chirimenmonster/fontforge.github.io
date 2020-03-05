@@ -278,17 +278,32 @@ actually make up the glyph that will be placed into the font.
 最後が前面レイヤで、
 ここにはグリフを実際に構成し、フォントに出力されるスプラインが含まれます。
 
+<!--
 One can actually have multiple foreground and background layers. They
 can be created and deleted with "+" and "-" buttons. FontForge, won't
 delete last layer of its type, though. And care must be taken when
 generating a font to have the right foreground layer selected, if
 multiple are present.
+-->
+実際には、複数の前景レイヤーと背景レイヤーを持つことができます。
+レイヤーは "+" および "-" ボタンで作成および削除できます。
+ただし、FontForgeは、最後の一つになるレイヤーは削除しません。
+また、複数のレイヤーが存在する場合、
+フォントを生成するときに適切な前景レイヤーが選択されるように注意が必要です。
 
+<!--
 Layer curve type and visibility can be toggled freely with left mouse
 button. Making the layer cubic or quadratic is a little trickier, as
 it's done with right mouse button: a pop-up menu will appear, allowing
 for some additional operations, like moving contents between layers.
-
+-->
+レイヤーのカーブタイプと可視性は、
+マウスの左ボタンで自由に切り替えることができます。
+3 次のレイヤーまたは 2 次のレイヤーを作成することは、
+少し複雑で、
+マウスの右ボタンを使って次のように実行します:
+追加操作を行うポップアップメニューを表示し、
+レイヤー間でコンテンツを移動するときのようにします。
 
 <!--
 ### Tools
@@ -417,6 +432,7 @@ Meta-クリック を奪い取ってしまいます。
 
 ![](/assets/img/windows-cpinfo.png)
 
+<!--
 When you move a control point you have the option
 (`View->Show Control Point   Info`) of getting a popup box showing
 information about the control point (and its opposite number on the
@@ -426,10 +442,11 @@ offset from the on-curve point, the slope expressed as a ratio, and as
 an angle, and the curvature on this side of the base point. At the very
 bottom is the difference between the two curvatures. Try to make this
 number approach 0 for curved points.
-
+-->
 制御点を移動したときには、
-(表示-\>制御点の情報を表示 で)
-制御点 (およびオンカーブ点の反対側の数値) に関する情報を表示するポップアップボックスを表示することができます。
+(`表示->制御点の情報を表示` で)
+制御点 (およびオンカーブ点の反対側の数値)
+に関する情報を表示するポップアップボックスを表示することができます。
 表示されるのは、制御点が後側か前側か、
 比率で表した傾き、
 角度および、
@@ -519,11 +536,18 @@ the same technique to modify the vertical advance.
 縦書き用メトリックを (それを含むフォントで) 表示しているときは、
 同じ方法で縦書き時の送り幅も変更できます。
 
+<!--
 If you are in an accented glyph then you may not be able to change the
 width, as its width is bound to that of the base glyph (By setting the
 "Use My Metrics" bit in the reference containing the base glyph). This
 will be displayed as a lock icon at the top of the window near the width
 line.
+-->
+アクセント付きグリフを使用している場合、
+幅がベースグリフの幅にバインドされているため、
+幅を変更できない場合があります
+(ベースグリフを含む参照で "Use My Metrics" ビットが設定されているため)。
+これは、ウィンドウの上部の幅線の近くにロックアイコンとして表示されます。
 
 <!--
 It is also possible to use the arrow keys to move selected items around.
@@ -665,7 +689,10 @@ not expand the stroke you draw (ie. leave a single trace.)
 (つまり、 単一トレースです)。
 
 
+<!--
 #### Tools for adding curved, corner and tangent points.
+-->
+#### カーブ、コーナー、接点の追加するためのツール
 ![](/assets/img/windows-cvcurveicon.png) ![](/assets/img/windows-cvhvcurveicon.png) ![](/assets/img/windows-cvcornericon.png) ![](/assets/img/windows-cvtangenticon.png)
 
 <!--
@@ -725,8 +752,12 @@ location of the point and its control points.
 [点の情報](../getinfo/) ダイアログが表示され、
 これを使用するとこの点とそれに隣接する制御点の位置を精密に調整できます。
 
+<!--
 The four different point types are
+-->
+4 つの異なるポイントタイプは
 
+<!--
 -   curved points (where the incoming and outgoing splines have the same
     slope)
 -   horizontal/vertical curved points (similar to the above except the
@@ -736,6 +767,13 @@ The four different point types are
 -   tangent points (where one spline is a line segment and the other
     spline is curved then the curved spline is constrained to start with
     the same slope as the line).
+-->
+-   曲線ポイント (入力スプラインと出力スプラインが同じ勾配を持っているときです)
+-   水平/垂直曲線ポイント (傾斜が水平または垂直のいずれかに制限されることを除いて、上記と同様です)
+-   コーナーポイント (入力スプラインと出力スプラインの勾配が異なるようなときです)
+-   接点
+    (一方のスプラインが線分で、もう一方のスプラインが曲線である場合、
+    曲線のスプラインは線と同じ勾配で始まるように拘束されます)
 
 <!--
 #### The pen tool
@@ -779,15 +817,27 @@ Alt キー (または Meta キーその他) を押すとこのふるまいが変
 3 次フォントを編集中に 2 次フォントと同様の編集操作ができますし、
 その逆も可能です。
 
+
+<!--
 #### Tools for adding spiro control points
+-->
+#### スピロ制御点を追加するためのツール
 ![](/assets/img/windows-cvspiroG4icon.png) ![](/assets/img/windows-cvspiroG2icon.png) ![](/assets/img/windows-cvspirocornericon.png) ![](/assets/img/windows-cvspirolefticon.png) ![](/assets/img/windows-cvspirorighticon.png)
 
+<!--
 These tools add spiro control points to the current contour, these are
 only available in spiro mode, but the basic adding process is similar to
 the above.
+-->
+これらのツールは、現在の輪郭にスピロコントロールポイントを追加します。
+これらはスピロモードでのみ使用できますが、基本的な追加プロセスは上記と同様です。
 
+<!--
 The different point types are:
+-->
+異なるポイントタイプは次のとおりです:
 
+<!--
 -   G4 (continuous up to the fourth derivative)
 -   G2 (continuous up to the second derivative)
      Basically, if you have a sharp curve you should probably use a G2
@@ -803,17 +853,46 @@ The different point types are:
      This type of point should be used where the contour changes from a
     straight line to a curve (where the curve is on the next side of the
     constraint point)
+-->
+-   G4 (4 次導関数まで連続)
+-   G2 (2 次導関数まで連続)
+     基本的に、急なカーブがある場合は、G2 ポイントを使用し、
+    より緩やかなカーブは G4 を使用する必要があります。
+-   コーナー
+-   prev 拘束点
+    –- 少し接線と似ています (Raph はこれを「左」点と呼びます)。
+     このタイプの点は、
+    輪郭が曲線から直線に変わる場所
+    (曲線が拘束点の手前側にある場所)
+    で使用する必要があります。
+-   next 拘束点
+    –- 少し接線と似ています (Raph はこれを「右」点と呼びます)。
+     このタイプの点は、
+    輪郭が直線から曲線に変化する場所
+    (曲線が拘束点の奥側にある場所)
+    に使用します。
 
+<!--
 This is based on [Raph Levien's work](http://www.levien.com/spiro/) with
 clothoid splines which provide constant curvature across points.
+-->
+これは、ポイント間で一定の曲率を提供するクロソイドスプラインを使用した
+[Raph Levien の研究](http://www.levien.com/spiro/)
+に基づいています。
 
 
+<!--
 #### Spiro mode
+-->
+#### スピロモード
 ![](/assets/img/windows-cvspiromodeicon.png)
 
+<!--
 This button toggles between editing contours using Bézier control
 points, or between using spiro (clothoid) control points.
-
+-->
+このボタンは、ベジェ制御点を使用した輪郭の編集、
+またはスピロ (クロソイド) 制御点の使用を切り替えます。
 
 <!--
 #### The knife tool
@@ -856,6 +935,7 @@ curvature on each side of the point.
 マウスがアウトラインに近い位置にある時、そこでの傾きと曲率を表示します。
 マウスがアウトライン上にある点の近くにある時、点の両側での傾きと曲率を表示します。
 
+<!--
 If you depress the button and drag, the first line of the tool's pop-up shows
 the distance, angle and (x-y) offsets from the first point where you depressed
 the mouse to the last point, the mouse's current location. The next lines in
@@ -863,13 +943,32 @@ the pop-up show information about points along the line that intersect splines,
 including the start and end points of the line itself. If there are more than
 two intersections then the x, y, and total distance between the first and last
 intersections are shown before the point list.
+-->
+ボタンを押してドラッグすると、
+ツールのポップアップの最初の行に、
+マウスを押した最初のポイントから最後のポイントであるマウスの現在位置までの距離、
+角度、および (x-y) オフセットが表示されます。
+ポップアップの次の行には、
+スプラインと交差するラインに沿ったポイントに関する情報が表示されます。
+これには、ライン自体の開始ポイントと終了ポイントが含まれます。
+3 つ以上の交差点がある場合、
+最初の交差点と最後の交差点の間の
+x、y、および合計距離がポイントリストの前に表示されます。
 
+<!--
 \[0\] indicates the starting point of the measure line, and the (x-y)
 co-ordinates of that point. Initially \[1\] is the end point; when it
 intersects with one spline then \[1\] becomes the first intersection point and
 \[2\] becomes the end point, and so on. The co-ordinates are followed by the x
 and y distances and then the final number is the length of the section ending
 at that point; which is also shown directly on the canvas.
+-->
+\[0\] は、測定線の開始点、およびその点の (x-y) 座標を示します。
+最初は \[1\] が終点です。
+1 つのスプラインと交差すると、\[1\] が最初の交点になり、\[2\] が終点になります。
+座標の後に x と y の距離が続き、
+最後の数字はそのポイントで終わるセクションの長さです。
+また、キャンバスに直接表示されます。
 
 <!--
 If you hold down the [Meta/Alt/CapsLock](#alt-meta-capslock) key then 
@@ -907,56 +1006,113 @@ Double clicking on this will bring up the transform dialog with the
 オプションを選択した状態で変形ダイアログを起動します。
 
 
+<!--
 #### The flip tool
+-->
+#### 反転ツール
 ![](/assets/img/windows-cvflipicon.png)
 
+<!--
 This tool allows you to flip the selection either horizontally or
 vertically. Again the point at which you press the mouse is the origin
 of the transformation.
+-->
+このツールを使うと、選択範囲を水平または垂直に裏返すことができます。
+この場合も、マウスをクリックした場所が変形の中心となります。
 
+<!--
 Double clicking on this will bring up the transform dialog with the
 "Flip..." option selected.
+-->
+このツールでダブルクリックすると、
+"反転..."
+オプションを選択した状態で変形ダイアログを起動します。
 
+<!--
 **Note: After flipping an outline you will almost certainly want to
 apply [Element-\>Correct Direction](../elementmenu/#Correct+Direction).**
+-->
+**注意: アウトラインを裏返した後で、ほぼ確実に
+[エレメント->アウトラインの向きを修正](../elementmenu/#Correct+Direction)
+を適用する必要があるでしょう。
 
 
+<!--
 #### The rotate tool
+-->
+#### 回転ツール
 ![](/assets/img/windows-cvrotateicon.png)
 
+<!--
 This tools allows you to rotate the selection freely.
+-->
+このツールを使うと、選択範囲を自由に回転することができます。
 
+<!--
 Double clicking on this will bring up the transform dialog with the
 "Rotate..." option selected.
+-->
+このツールでダブルクリックすると
+"回転..."
+オプションを選択した状態で変形ダイアログを起動します。
 
 
+<!--
 #### The skew tool
+-->
+#### 傾きツール
 ![](/assets/img/windows-cvskewicon.png)
 
+<!--
 This tool allows you to skew the selection.
+-->
+このツールを使うと、選択範囲に傾きを加えることができます。
 
+<!--
 Double clicking on this will bring up the transform dialog with the
 "Skew..." option selected.
+-->
+このツールでダブルクリックすると、
+"傾き..."
+オプションを選択した状態で変形ダイアログを起動します。
 
-
+<!--
 #### The rotate 3D tool
+-->
+#### 3 次元回転ツール
 ![](/assets/img/windows-cvrotate3dicon.png)
 
+<!--
 This tool allows you to rotate the selection in the third dimension and
 project the result back onto the x-y plane. An imaginary line is drawn
 from the point where you pressed to the current point, this line
 determines the axis of rotation. The distance you move from the initial
 press determines the amount of rotation.
+-->
+このツールを使うと、選択範囲を 3 次元空間の中で回転して、
+その結果を x-y 平面に投影した結果を得ることができます。
+マウスを押した位置から現在の位置に向けて想像上の線が引かれます。
+この線が回転軸を定めます。
+最初にマウスボタンを押した時からの移動量が回転量を決定します。
 
+<!--
 Double clicking on this will bring up the transform dialog with the
 "Rotate 3D..." option selected.
+-->
+このツールでダブルクリックすると、
+"3次元の回転..."
+オプションを選択した状態で変形ダイアログを起動します。
 
 
+<!--
 #### The perspective tool
+-->
+#### 透視変換ツール
 ![](/assets/img/windows-cvperspectiveicon.png)
 
 ![](/assets/img/windows-Eperspective.png)
 
+<!--
 This tool allows you to apply a perspective transformation to the
 selection (this is a non-linear transformation). This tool uses three
 points: The glyph origin, the press point, and the current location of
@@ -967,43 +1123,87 @@ is treated as the point at infinity. The line between the origin and the
 press point defines one axis of the transformation. Distances
 perpendicular to this line are retained, distances parallel to it are
 scaled as:
+-->
+このツールを使うと、選択範囲に透視変換 (これは非線形変換の一種です) を適用することができます。
+このツールは 3 個の点を使用します: グリフの原点、マウスを押した位置、そしてカーソルの現在位置です。
+右の図では、グリフの送り幅付近のベースライン上でマウスを押し始め、
+それからマウスを図の上中央へ移動してから離しています。
+それにより離した点があたかも無限遠にあるかのように変換されます。
+原点とマウスを押した点との間の直線が、1 本の変換軸を定めます。
+この線に直行する方向の距離は保たれ、この線に平行な距離は以下のように変換されます。
 
     *x' = release_x + (release_y - y)/release_y * ( x - release_x )* *y' = y*
 
 
+<!--
 #### The rectangle/ellipse tools
+-->
+#### 長方形/楕円ツール
 ![](/assets/img/windows-cvrecticon.png) ![](/assets/img/windows-cvellipseicon.png)
 
+<!--
 By default this produces a rectangle, single-clicking on the tool
 palette will toggle between rectangle and ellipse, and double clicking
 in the tools palette gives you a dialog which allows you to control
 whether your rectangles are drawn with round corners, and how both
 rectangles and ellipses are specified.
+-->
+このツールは初期状態では長方形を作成しますが、
+ツールパレットをシングルクリックすると長方形ツールと楕円ツールの切り替えを行い、
+ツールパレットでダブルクリックすると、
+描画する長方形の角を丸めて描画するかどうか、
+また、どのようにして長方形と楕円を指定するかを設定できるダイアログが現れます。
 
+<!--
 You can choose whether the rectangle (or ellipse) will be drawn between
 the point where you depressed the mouse on the view and the point where
 you released it (bounding box), or whether the point where you depress
 the mouse becomes the center of the rectangle and the point where you
 release it provides an end-point (center out).
+-->
+長方形 (または楕円) がマウスを押した位置と離した位置の内側に描かれるか (外接長方形を指定)、
+マウスを押した点を長方形の中心に、
+離した点を頂点の 1 つにして描かれるか (中心と四隅を指定) のどちらかを選ぶことができます。
 
+<!--
 If you want even more control, you can double click in the glyph view
 and get another dialog which allows you to define numerically where the
 rectangle/ellipse should be placed, how big it should be, and whether it
 should be rotated.
+-->
+より詳細な制御が必要な場合、
+グリフビューでダブルクリックし、
+長方形/楕円を置く位置、
+その大きさおよびそれを回転するかを数値的に定義することができるダイアログを表示します。
 
 
+<!--
 #### The polygon/star tools
+-->
+#### 多角形/星形ツール
 ![](/assets/img/windows-cvpolyicon.png) ![](/assets/img/windows-cvstaricon.png)
 
+<!--
 By default this draws a regular polygon, but by double clicking on the
 button in the tools palette you can make it draw a star, or select the
 number of verteces in your polygon.
+-->
+このツールは初期状態では通常の多角形を描画しますが、
+ツールパレット上のボタンをダブルクリックすると、
+星形を描くことができ、
+また、多角形の変の数を選択できます。
 
+<!--
 The polygon is drawn as though it were inscribed in the circle whose
 center is the point where you depressed the mouse and whose radius is
 the distance between the press point and the release point. One of the
 polygon's verteces will be at the release point.
+-->
+多角形は、マウスを押した点を中心にして、
+中心からマウスを離した位置までの距離を半径とする円に内接する正多角形として描かれます。
+多角形の頂点の 1 つはマウスを離した点に置かれます。
 
+<!--
 A star is drawn similarly. It will be a star generated from a regular
 polygon. As the number of verteces of the polygon gets larger the star
 will look more and more like a circle, for this reason the dialog box
@@ -1011,39 +1211,80 @@ that allows you to pick the number of verteces will also allow you to
 pick how far the star's points should extend beyond the circle in which
 the polygon is inscribed (this will make a non-regular star, but it
 might look nicer).
+-->
+星形も同様にして描くことができます。
+描かれるのは、通常の多角形から導出される星形です。
+多角形の頂点の数が近付くにつれ、星型は円に近づいてきます。
+この理由により、ダイアログボックスでは頂点の数を選べるだけではなく、
+星の頂点が多角形に外接する基準円からどれだけ突き出るかを選ぶことができます
+(これにより正規化されていない星が出来上がりますが、この方がそれらしく見えるでしょう)。
 
 
+<!--
 ### Vertical View
+-->
+### 縦書きビュー
 
 ![](/assets/img/windows-charview-vert.png)
 
+<!--
 In this view the vertical metrics of the glyph are shown. You can change
 the vertical advance just as you changed the glyph's width (by selecting
 the pointer tool and dragging the vertical advance line up or down).
+-->
+このビューでは、グリフの縦書きメトリックが表示されます。
+縦書き時の送り幅を、グリフの横幅を変更するのと同様の手順で
+(ポインタツールを選択し、縦書き時の送り幅を表す線を上下に移動することによって)
+変更することができます。
 
 
+<!--
 ### Grid Fit View
+-->
+### グリッド合わせビュー
 
 ![](/assets/img/windows-GridFit.png)
 
+<!--
 If you have the freetype library, then you can see the
 results of rasterizing your glyph. If you have freetype's bytecode
 interpreter enabled you can also see how the truetype instructions in
 the glyph have moved the points around (if you don't have the bytecode
 interpreter enabled you will see what freetype's autohinter does to
 points). This mode can be invoked with `View->Show Grid Fit`...
+-->
+FreeType ライブラリがインストールされているならば、
+作成中のグリフをラスタライズした結果を見ることができます。
+FreeType のバイトコードインタプリタが使用可能になっているなら、
+グリフ内の TrueType 命令が点を移動するのを見ることができます
+(バイトコードインタプリタが利用できない場合、
+FreeType の自動ヒントづけルーチンが点を移動します)。
+このモードは
+`表示->グリッド合わせを表示...`
+で起動することができます。
 
+<!--
 The Show Grid Fit command will ask you for some basic information first.
 It needs to know the pointsize and resolution for which you want the
 action performed (the example at right is 12pt on a 72dpi screen).
+-->
+グリッド合わせを表示
+コマンドは、最初に基本的な情報を質問します。
+望み通りの動作を行うためには、
+ポイントサイズと解像度を知らなければなりません
+(右の例では 72dpi の画面で 12pt 表示します)。
 
 ![](/assets/img/windows-ShowGridFit.png)
 
 
+<!--
 ### The Debugging View
+-->
+### デバッグビュー
 
 ![](/assets/img/windows-cvdebug.png)
 
+<!--
 > "I told you butter wouldn't suit the works!" he added, looking angrily
 > at the March Hare.
 >
@@ -1051,53 +1292,121 @@ action performed (the example at right is 12pt on a 72dpi screen).
 >
 > Alice's Adventures in Wonderland
 >  Lewis Carroll
+-->
+> そして、怒って三月うさぎをにらみつけました。「だからバターじゃダメだって言ったじゃねぇか！」
+>
+> 「最高のバターだったんだぜ」と三月うさぎは力なくこたえました。
+>
+> 不思議の国のアリス
+>  ルイス・キャロル
 
+<!--
 FontForge has a truetype debugger -- provided you have a version of
 freetype on your machine with the bytecode interpreter enabled **(Note:
 you need a license from Apple to enable this. It is protected by several
 patents)**.
+-->
+FontForge は TrueType デバッガを内蔵しています
+—— バイトコードインタプリタを利用可能なバージョンの
+FreeType がインストールされている場合に限ります
+**(注意: これを利用可能にするには、Apple からライセンスを得る必要があります。
+これは幾つかの特許で保護されています)**。
 
+<!--
 The image to the right shows an example of this mode. You invoke it with
 `Hints->Debug`, and as with the grid-fit view above you must establish a
 pointsize and and resolution. The view divides into two panes, the left
 of which is similar to the grid fit view above (except that it changes
 as you step through the instructions), the right pane provides a list of
 the instructions to be executed.
+-->
+右の図はこのモードの例を示しています。
+`ヒント->デバッグ`
+でこれを起動し、
+グリッド合わせビューと同様にポイントサイズと解像度を確定する必要があります。
+このビューは 2 個のペーンに分かれています。
+左は上のグリッド合わせビューに似ています
+(ただし、命令をステップ実行すると表示が変わる点が異なります)。
+右のペーンは実行される命令をリスト表示します。
 
+<!--
 In addition to showing you all the points in your glyph there are either
 2 or 4 additional points. These are the so-called "phantom" points and
 represent the horizontal and vertical metrics of the glyph (old versions
 of freetype will only display 2 points -- left side bearing and advance
 width, while newer versions will display top side bearing and advance
 height as well).
+-->
+グリフ上の全ての点が表示されている他に、
+2 個か 4 個の追加の点があります。
+これらは "ファントムポイント" と呼ばれるもので、
+グリフの水平および垂直メトリックを表します
+(古いバージョンの FreeType は 2 個の点しか表示しません
+—— 左サイドベアリングと送り幅です。
+最近のバージョンは上サイドベアリングと縦書きの送り幅も表示します)。
 
+<!--
 As you step through a glyph occasionally points will light up. This is
 FontForge's attempt to show you what points will be affected (usually
 moved) by the current instruction. Other points will have a circle drawn
 around them. These are used as reference points by the instruction.
+-->
+グリフをステップスルーすると、時々ポイントが点灯します。
+これは、現在の命令によって影響を受ける (通常は移動する) ポイントを示すための
+FontForge の試みです。
+他のポイントには、それらの周りに円が描かれます。
+これらは、命令によって参照ポイントとして使用されます。
 
+<!--
 There are a series of buttons at the top of the instruction view. The
 first will single step the truetype program (step into), the second will
 step over procedure calls, the third will set a break point at the
 return point for the current function and continue until that is hit,
 and the fourth will continue until:
+-->
+命令ビューの上部にはボタンが並んでいます。
+最初のボタンは TrueType プログラムを 1 ステップ実行します (step into)。
+2 番目のボタンは関数呼び出しを一度に実行します。
+3 番目はブレークポイントを現在の関数の脱出箇所に設定し、そこに行きあたるまで実行を続けます。
+そして、4 番目は以下の条件を満たすまで実行を続けます:
 
+<!--
 -   It hits a break point
 -   It hits a watch point
 -   It reaches the end of the glyph program
 -   An error occurs
+-->
+-   ブレークポイントに行き当った
+-   ウォッチポイントに行き当った
+-   グリフプログラムの最後に到達した
+-   エラーが発生した
 
+<!--
 The red "STOPPED" arrow shows the current location of the instruction
 pointer (and what instruction will be executed next).
+-->
+"STOPPED" と描かれた赤い矢印は命令ポインタの現在の位置を示します
+(そこにある命令が次に実行されます)。
 
+<!--
 The fifth button allows you to set a watch point. You select a point (or
 several points) in the left hand pane, and press this button.
 Thereafter, whenever one of those points is moved FontForge will stop
 the glyph program. (You may also set watch points through the points
 window).
+-->
+5 番目のボタンを使うとウォッチポイントを設定することができます。
+1 個の点 (またはいくつかの点) を左側のペーンで選択してから、
+このボタンを押してください。
+その後、この点が移動したときはいつでも FontForge はグリフプログラムを停止します。
+(ポイントウィンドウを使ってウォッチポイントを設定することもできます)。
 
+<!--
 When you are in this mode there are a few special "hot keys"
+-->
+このモードでは、いくつかの特別な "ホットキー" があります
 
+<!--
     r   run/restart
     k   kill/quit debugger
     q   kill/quit debugger
@@ -1105,92 +1414,203 @@ When you are in this mode there are a few special "hot keys"
     s   step (into)
     n   next (step over)
     f   finish function (continue until we return from the function)
+-->
+    r   実行/再実行
+    k   デバッガの強制終了/終了
+    q   デバッガの強制終了/終了
+    c   実行継続
+    s   ステップ実行 (into)
+    n   次へ (1単位実行)
+    f   関数を末尾まで実行 (関数から戻るまで継続)
 
+<!--
 Similarly you may watch storage and cvt locations by clicking on the
 appropriate spot in the storage and cvt windows.
+-->
+同様に、ストレージと cvt ウィンドウの適切な場所をクリックして、
+ストレージと cvt の場所を見ることができます。
 
+<!--
 You can set a more conventional break point by clicking on an
 instruction. A little red stop sign will appear on top of the address
 area, and the program will halt when the instruction pointer reaches
 that instruction. Clicking on the instruction again will remove the
 breakpoint.
+-->
+命令語の上でクリックすることにより、
+通常のブレークポイントを設定することができます。
+小さな赤い STOP 標識がアドレスエリアの上に出現し、
+命令ポインタがこの命令に到達したときはいつでも、プログラムは停止します。
+命令語の上で再度クリックすると、
+ブレークポイントは削除されます。
 
+<!--
 Flaw: Currently there is no way to set breakpoints outside of the
 current function (or glyph).
+-->
+制限: 現在のところ現在の関数 (またはグリフ) の外側の位置にブレークポイントを設定する方法はありません。
 
+<!--
 Flaw: Currently there is no way to examine the call stack.
+-->
+制限: 現在のところ呼び出しスタックを検査する方法はありません。
 
+<!--
 The sixth button brings up a menu with which you can control which of
 various debugging palettes are visible. The ones available so far are:
 Registers, Stack, Points, Storage, Cvt, Raster and Gloss.
+-->
+6 番目のボタンは各種のデバッグパレットのどれを表示するかを制御できるメニューを表示します。
+使用可能なメニューの一覧は以下のとおりです:
+レジスタ、スタック、点、ストレージ、cvt、ラスタおよび注記です。
 
 ![](/assets/img/windows-TTRegisters.png)
 
+<!--
 Shows the truetype graphics state.
+-->
+TrueType のグラフィック状態を表示する
 
 ![](/assets/img/windows-TTStack.png)
 
+<!--
 Shows the truetype stack. The value in parentheses is a 26.6 number.
+-->
+TrueType のスタックを表示する。
+括弧内の値は整数部 26 ビット、小数部 6 ビットの固定小数点数です。
 
 ![](/assets/img/windows-TTPoints.png)
 
+<!--
 Shows the points. You may choose to view the twilight points, or the
 points displayed in the glyph pane (the normal points). You may view the
 current location or the original location. You may view them in the
 units of the current grid, or in em-units.
+-->
+点を表示する。
+トワイライトポイントを表示するか、
+グリフペーンで表示される点 (通常の点) を表示するかを選択可能です。
+現在の位置または元の位置を表示することができます。
+単位は、現在のグリッドのユニット数か em ユニットを選択可能です。
 
+<!--
 When debugging a composite glyph the Transformed check box indicates
 whether the points of the current component have been transformed (to
 show where they fit in the composite) or not (showing where they are in
 the base component -- this is what the instructions are working on).
+-->
+複合グリフをデバッグ中、
+現在の点または部品に
+(複合グリフ内のどこに置けばよいかを見るために)
+変形を適用しているか、
+(部品が元のグリフでどう見えるかを確かめるために)
+変形を適用していないか
+(命令が実行途中の場合はこちらになります)
+は
+変形を適用
+チェックボックスに表示されます。
 
+<!--
 The points may have some flags associated with them: 'P' means the point
 is an on curve point, 'C' means the point is an off curve point (a
 control point), 'I' means the point is an on-curve point interpolated
 between two control points, 'F' means a phantom point, 'T' means a
 twilight point, 'X' means the horizontal touch flag has been set, 'Y'
 means the vertical touch flag has been set.
+-->
+点には幾つかのフラグを付随させることができます。
+'P' は点が曲線上の点であることを表す印であり、
+'C' は点が曲線外の点 (制御点) であることを、
+'I' は点が 2 個の制御点の内挿により配置されたカーブ上の点であることを、
+'F' はファントムポイントを、
+'T' はトワイライトポイントを、
+'X' は水平タッチフラグが設定されていることを、
+'Y' は垂直タッチフラグが設定されていることをそれぞれ表します。
 
+<!--
 A small stop sign indicates the point is being watched (that is
 execution will stop if the point moves). You may change whether a point
 is watched by clicking on it.
+-->
+小さな停止記号は、ポイントが監視されていることを示します
+(つまり、ポイントが移動すると実行が停止します)。
+ポイントをクリックすることで、ポイントを見るかどうかを変更できます。
 
+<!--
 Contours are separated by horizontal lines
+-->
+輪郭同士は水平線で区切られています。
 
 ![](/assets/img/windows-TTStorage.png)
 
+<!--
 Shows the truetype storage locations.
+-->
+TrueType 記憶領域の各位置を表示します。
 
+<!--
 A small stop sign indicates the storage location is being watched (that
 is execution will stop if the location changes). You may change whether
 a location is watched by clicking on it.
+-->
+小さな停止標識は、保管場所が監視されていることを示します
+(つまり、場所が変更されると実行が停止します)。
+場所をクリックすることで、視聴するかどうかを変更できます。
 
 ![](/assets/img/windows-TTCvt.png)
 
+<!--
 Shows the current values in the cvt array.
+-->
+cvt 配列の現在の値を表示します。
 
+<!--
 A small stop sign indicates the cvt location is being watched (that is
 execution will stop if the value changes). You may change whether a
 location is watched by clicking on it.
+-->
+小さな停止記号は、
+cvt の場所が監視されていることを示します
+(つまり、値が変更されると実行が停止します)。
+場所をクリックすることで、視聴するかどうかを変更できます。
 
 ![](/assets/img/windows-TTRaster.png)
 
+<!--
 Shows the current raster with no magnificaton
+-->
+現在のラスタライズ結果を実寸で表示します。
 
 ![](/assets/img/windows-TTgloss.png)
 
+<!--
 This window tries to provide a gloss for the current instruction. It
 gives a brief description of the instruction in the top few lines, then
 explains what registers it uses, and shows their values, it shows what
 use is made of the stack and attempts to interpret the data on the
 stack. Finally it explains what registers will be set, and what will be
 pushed onto the stack.
+-->
+このウィンドウは、現在の命令に対する注記を提供しようと試みます。
+差異上部の 2, 3 行に命令の簡単な説明を表示し、
+その下に、どのレジスタを使用するかとそれらの値を表示します。
+スタックをどのように使用するかを表示し、
+スタック上のデータの解析を試みます。
+最後に、どのレジスタに値が代入されるか、
+また、スタック上にどのようなデータが置かれるかを説明します。
 
+<!--
 The final button will exit the debugger.
+-->
+最後のボタンはデバッガを終了します。
 
+<!--
 The debugger also responds to some single character commands common to
 many debuggers:
+-->
+デバッガは、多くのデバッグに共通した以下の 1 文字コマンドに反応します:
 
+<!--
     s   step into
     n   step over (next)
     c   continue
@@ -1198,25 +1618,56 @@ many debuggers:
     f   step out (finish routine)
     k   kill the debugger
     q   kill the debugger
+-->
+    s   ステップ実行
+    n   1 単位実行 (次へ)
+    c   実行継続
+    r   (同じグリッドで) 再実行
+    f   末尾まで実行 (ルーチンを抜ける)
+    k   デバッガを強制終了
+    q   デバッガを強制終了
 
+<!--
 The Hints-\>Debug menu command can also be used to exit the debugger (by
 turning off the debug check box), or to restart the debugger with
 different values for the point size and resolution. This dlg can also
 control whether the fpgm and prep tables are debugged. Usually debugging
 will start when execution reaches the instructions associated with this
 glyph.
+-->
+ヒント-\>デバッグ
+メニューコマンドは、
+デバッガの終了
+(「デバッグ」チェックボックスをオフにします)
+またはポイントサイズと解像度を変更してのデバッガの再実行にも使用できます。
+このダイアログは fpgm と prep テーブルもデバッグの対象にするかを設定できます。
+通常は、このグリフに付随する命令に実行が到達した時にデバッグが開始されます。
 
 
+<!--
 #### Debugging composite glyphs
+-->
+#### 複合グリフのデバッグ方法
 
+<!--
 FontForge is not as friendly when debugging composite glyphs as it
 should be -- this is influenced by the way truetype works. Suppose you
 want to debug the "Atilde" glyph.
+-->
+FontForge は、複合グリフのデバッグ時にはあまり十分に親切ではありません
+—— これは TrueType の動作方法の影響によるものです。
+例えば "Atilde" グリフをデバッグしたいとしましょう。
 
+<!--
 First FontForge will load and grid fit the "A" glyph, points from the
 "tilde" will not be displayed and behavior will be exactly the same as
 if you were debugging a stand alone "A".
+-->
+最初に FontForge が "A" グリフを読み込んでグリッド合わせを行う時点では、
+"tilde" の点は表示されず、
+"A" 単独をデバッグしているときと全く同じです。
 
+<!--
 Then FontForge will load and grid fit the "tilde" glyph, and now points
 from the "A" glyph will not be visible. The point numbers on the "tilde"
 will be the same as they are in a stand-alone "tilde" (whereas in a true
@@ -1226,39 +1677,89 @@ The "tilde" may appear oddly positioned, this is caused by rounding: the
 "tilde" will usually be translated, and this translation will usually be
 rounded to fit the pixel grid. The width line will show the width of the
 "tilde" and not of the "Atilde".
+-->
+次に FontForge は "tilde" グリフを読み込んでグリッド合わせを行い、
+この時点では "A" グリフの点は見えなくなります。
+"tilde" の点番号は単独の "tilde" のものと同じになるでしょう
+("Atilde" の本当の表現では、
+部品 "tilde" の点の番号づけは部品 "A" の点の個数ぶんだけずらされたものになります)。
+"tilde" は、丸めによって変な位置に現れることがあります:
+"tilde" はふつう平行移動を施され、
+この移動量はピクセルグリッドに合わせて丸められます。
+横幅の線は "tilde" の幅を表し、
+"Atilde" の幅ではありません。
 
+<!--
 Finally FontForge will execute any instructions in the composite itself,
 now all sub-components will be displayed, and all points will be
 numbered as they should be.
+-->
+最後に FontForge は複合グリフそのものに含まれる任意の命令を実行し、
+全ての構成部品が表示され、全ての点が正しく番号づけされます。
 
+<!--
 Several words of caution:
+-->
+いくつか警告しておきます:
 
+<!--
 -   If a component, or the composite as a whole, has no instructions
     then FontForge will not debug that piece (there will be nothing to
     debug).
 -   FontForge does not translate references which do point matching
     properly until the entire glyph has been loaded.
-
+-->
+-   ある部品または複合グリフ全体に命令が含まれていない場合、
+    FontForge はその部分をデバッグしません (デバッグするものが無いはずですから)。
+-   FontForge は点のマッチングを正しく行う参照を、
+    グリフ全体が読み込まれるまで平行移動しません。
 
 ![](/assets/img/windows-mmcharview.png)
 
+<!--
 Intermediate version of "A" with two other styles in the background
+-->
+"A" の中間バージョンと、背景に表示した他の 2 つのスタイル
 
 
+<!--
 ### Multiple Master View
+-->
+### マルチプルマスタービュー
 
 
+<!--
 In a multiple master font the [MM](../mmmenu/#outline-char) menu gives
 you control over which style of the font you are editing. It will also
 allow you to display any (or all) of the other styles in the background.
 Although the menu is called "MM" it applies equally to Apple's
 distortable fonts ("\*var" fonts, like Skia).
+-->
+マルチプルマスターフォントでは、
+[MM](../mmmenu/#outline-char)
+メニューによってフォントのどのスタイルを編集しているかを制御することができます。
+このメニューを使って、
+任意の (または全ての) 他のスタイルをバックグラウンドに表示することができます。
+メニューは "MM" という名前ではありますが、
+これは Apple の変形可能 (distortable) フォント
+(Skia などの "\*var" フォント)
+にも同様に適用されます。
 
 
+<!--
 ### Multiple Layer Editing
+-->
+### 複数レイヤ編集
 
 ![](/assets/img/windows-charview-multilayer.png)
 
+<!--
 If you wish to [edit type3 fonts](../multilayer/), FontForge can display a
 glyph broken down into a series of strokes and fills and allow you to edit each
 one.
+-->
+[Type3 フォントの編集](../multilayer/)
+を行いたい場合、
+FontForge が適切に設定されていれば、
+FontForge はストロークと塗りつぶしの列に分解されたグリフを表示し、
+それらを編集することができます。
