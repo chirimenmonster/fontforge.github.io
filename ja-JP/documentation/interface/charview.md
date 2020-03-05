@@ -815,9 +815,13 @@ This button toggles between editing contours using Bézier control
 points, or between using spiro (clothoid) control points.
 
 
+<!--
 #### The knife tool
+-->
+#### ナイフツール
 ![](/assets/img/windows-cvknifeicon.png)
 
+<!--
 This tool is used to cut splines. As you drag it across the view
 fontforge draws a line showing where the cut will happen. When you
 release, every spline you intersect will be cut-- that is at the
@@ -825,17 +829,32 @@ location where this line intersects the spline two new points will be
 created and the old spline will be split in two connecting to the two
 new end points. These endpoints are not joined, so the spline is now
 open (or if it were previously open, it is now cut in two).
+-->
+このツールはスプラインを切断するのに使用します。
+ビュー上でマウスをドラッグすると、FontForge はどこでパスを切断するかを示す直線を描きます。
+マウスを離すと、それに交差する全てのスプラインが切断されます
+— つまり、この線が交差する場所に、各スプラインは 2 個の点を追加し、
+古いスプラインはこれら 2 個の点をそれぞれ新しい端点とする連なり合ったスプラインに切断されます。
+これらの端点は連結していないので、現在の状態では開いたパスになっています
+(または、元から開いたパスだった場合、このパスは 2 個に分割されます)。
 
-
+<!--
 #### The ruler tool
+-->
+#### ものさしツール
 ![](/assets/img/windows-cvrulericon.png)
 
 ![](/assets/img/windows-ruler.png)
 
+<!--
 This tool tells you the current position of the mouse. If the
 mouse is near the outline it will give the slope and curvature there. If
 the mouse is near a point on the outline will give the slope and
 curvature on each side of the point.
+-->
+このツールはマウスの現在位置を表示します。
+マウスがアウトラインに近い位置にある時、そこでの傾きと曲率を表示します。
+マウスがアウトライン上にある点の近くにある時、点の両側での傾きと曲率を表示します。
 
 If you depress the button and drag, the first line of the tool's pop-up shows
 the distance, angle and (x-y) offsets from the first point where you depressed
@@ -852,22 +871,40 @@ intersects with one spline then \[1\] becomes the first intersection point and
 and y distances and then the final number is the length of the section ending
 at that point; which is also shown directly on the canvas.
 
+<!--
 If you hold down the [Meta/Alt/CapsLock](#alt-meta-capslock) key then 
 information will only be shown when the mouse is depressed.
+-->
+[Meta/Alt/CapsLock](#alt-meta-capslock) キーを押している場合、
+マウスボタンを押した時だけ情報を表示します。
 
-
+<!--
 #### The scale tool
+-->
+#### 拡大・縮小ツール
 ![](/assets/img/windows-cvscaleicon.png)
 
+<!--
 This tool allows you to scale the selection by eye rather than by a set
 amount (if there is no selection then everything in the current layer
 will be scaled). The location of the press will be the origin of the
 transformation, the further you move the point up and to the right the
 more it will be scaled in that dimension. If you want the scaling to be
 uniform or only in one dimension then hold down the shift key.
+-->
+このツールを使うと、選択範囲の拡大・縮小を数値入力を使わずに目で見て行うことができます
+(何も選択されていないときには、現在のレイヤ上の全ての物が拡大・縮小されます)。
+マウスを押した位置が変形の原点となり、右と上への移動はそれぞれの軸方向への拡大となります。
+拡大・縮小を一様にするか片方の軸方向のみに限定したい場合は、
+Shift キーを押しながら操作してください。
 
+<!--
 Double clicking on this will bring up the transform dialog with the
 "Scale..." option selected.
+-->
+このツールでダブルクリックすると、
+"拡大・縮小..."
+オプションを選択した状態で変形ダイアログを起動します。
 
 
 #### The flip tool
