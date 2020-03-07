@@ -2,4 +2,10 @@
 /* additinal style for ja-JP documents */
 span.command {
     background-color: #f0f0e0;
+    padding: 0 4px;
+}
+
+a:hover span.command {
+  color: white !important;
+  background: #ff772f !important;
 }

@@ -91,7 +91,10 @@ will be magenta).
 (曲線上の点の場合、制御点はちょうど反対方向になります)。
 (「次」の制御点が鈍いシアンで、前の制御点がマゼンタになります)。
 
+<!--
 ![A quadratic glyph](/assets/img/windows-charview-quadratic.png)
+-->
+![2次曲線のグリフ](/assets/img/windows-charview-quadratic.png)
 
 <!--
 In a TrueType font, an on-curve point can be implied between two control
@@ -108,7 +111,10 @@ will be a tiny arrow pointing in the direction of the contour.
 輪郭の最初の点は緑色で描かれ、
 そのそばに輪郭の進行方向を示す小さな矢印が表示されます。
 
+<!--
 ![Showing extrema](/assets/img/windows-extrema-poi.png)
+-->
+![極値を表示している様子](/assets/img/windows-extrema-poi.png)
 
 <!--
 Sometimes it is important to know which points are at the extrema of
@@ -120,8 +126,10 @@ internal extrema will also be marked.
 スプラインの (水平・垂直に) 極大な点がどこかを知ることが重要であることがときどきあります。
 (PostScript では全てのスプラインに、極大値となる場所に点が置かれていることが望ましいとしています)。
 これが必要な場合は、
-表示
-メニューで 極大点を表示 フラグをオンにしてください。
+<span class="command">表示(V)</span>
+メニューで
+<span class="command">極大点を表示(M)</span>
+フラグをオンにしてください。
 これを行うと、極値にあたる点が鈍い紫色で表示されます。
 また、中間にある極大値も同時に表示されます。
 
@@ -136,7 +144,7 @@ windows by unchecking View-\>Palettes-\>Dock Palettes.
 片方は [どのレイヤが表示されるか](#Layers) を制御することができるレイヤパレットで、
 もう片方は [編集ツールを選択することができる](#Tools) ツールパレットです。
 これらは通常はそれぞれ自由に動かすことができますが、
-表示-\>パレット->パレットを連結表示
+<span class="command">表示(V)-\>パレット(P)->パレットを連結表示(D)</span>
 によって、ウィンドウ内に埋め込まれるように変更できます。
 
 <!--
@@ -264,10 +272,10 @@ the gridfit outlines can be controlled by the background layer's
 visibility.
 -->
 TrueType のデバッグ
-( ヒント-\>デバッグ )
+(<span class="command">ヒント(H)-\>デバッグ(D)</span>)
 や、
 アウトラインのグリッド合わせ
-( [表示->グリッド合わせを表示](../viewmenu/#Show+Grid+Fit) )
+([<span class="command">表示->グリッド合わせを表示</span>](../viewmenu/#Show+Grid+Fit))
 を行っている時、
 グリッド合わせを行ったアウトラインの表示の有無はレイヤの表示の有無によって切り替えることができます。
 
@@ -427,7 +435,7 @@ Meta キー (Mac では caps lock キー) を押したまま、
 残念ながらいくつかのウィンドウマネージャ (gnome-sawtooth など) は
 Meta-クリック を奪い取ってしまいます。
 そうなる場合は、制御点を設定するには
-エレメント-\>情報を得る
+<span class="command">エレメント(L)-\>情報を得る(I)</span>
 を使う必要があります。
 
 ![](/assets/img/windows-cpinfo.png)
@@ -444,7 +452,7 @@ bottom is the difference between the two curvatures. Try to make this
 number approach 0 for curved points.
 -->
 制御点を移動したときには、
-(`表示->制御点の情報を表示` で)
+(<span class="command">表示(V)-\>制御点の情報を表示(C)</span> で)
 制御点 (およびオンカーブ点の反対側の数値)
 に関する情報を表示するポップアップボックスを表示することができます。
 表示されるのは、制御点が後側か前側か、
@@ -591,7 +599,7 @@ and dragging the line around. See the description on [building a
 ligature](editexample4.html#ligature) for a more complete description.
 -->
 グリフが合字である (そして
-グリフ情報
+<span class="command">グリフ情報</span>
 で合字を登録している場合)
 "合字キャレット位置" を設定することが可能です。
 これは本質的に、
@@ -624,9 +632,9 @@ have to use the View menu to minify (It's called Zoom Out
 先にも述べたとおり、
 ウィンドウマネージャの中には Meta クリックを奪い取るものがあるので、
 そのばあい縮小には
-表示
+<span class="command">表示(V)</span>
 メニューの
-縮小
+<span class="command">縮小(O)</span>
 を使う必要があるでしょう。
 
 <!--
@@ -855,18 +863,18 @@ The different point types are:
     constraint point)
 -->
 -   G4 (4 次導関数まで連続)
--   G2 (2 次導関数まで連続)
+-   G2 (2 次導関数まで連続)<br>
      基本的に、急なカーブがある場合は、G2 ポイントを使用し、
     より緩やかなカーブは G4 を使用する必要があります。
 -   コーナー
 -   prev 拘束点
-    –- 少し接線と似ています (Raph はこれを「左」点と呼びます)。
+    –- 少し接線と似ています (Raph はこれを「左」点と呼びます)。<br>
      このタイプの点は、
     輪郭が曲線から直線に変わる場所
     (曲線が拘束点の手前側にある場所)
     で使用する必要があります。
 -   next 拘束点
-    –- 少し接線と似ています (Raph はこれを「右」点と呼びます)。
+    –- 少し接線と似ています (Raph はこれを「右」点と呼びます)。<br>
      このタイプの点は、
     輪郭が直線から曲線に変化する場所
     (曲線が拘束点の奥側にある場所)
@@ -1002,7 +1010,7 @@ Double clicking on this will bring up the transform dialog with the
 "Scale..." option selected.
 -->
 このツールでダブルクリックすると、
-"拡大・縮小..."
+<span class="command">拡大・縮小...</span>
 オプションを選択した状態で変形ダイアログを起動します。
 
 
@@ -1025,7 +1033,7 @@ Double clicking on this will bring up the transform dialog with the
 "Flip..." option selected.
 -->
 このツールでダブルクリックすると、
-"反転..."
+<span class="command">反転...</span>
 オプションを選択した状態で変形ダイアログを起動します。
 
 <!--
@@ -1033,7 +1041,7 @@ Double clicking on this will bring up the transform dialog with the
 apply [Element-\>Correct Direction](../elementmenu/#Correct+Direction).**
 -->
 **注意: アウトラインを裏返した後で、ほぼ確実に
-[エレメント->アウトラインの向きを修正](../elementmenu/#Correct+Direction)
+[<span class="command">エレメント->アウトラインの向きを修正</span>](../elementmenu/#Correct+Direction)
 を適用する必要があるでしょう。
 
 
@@ -1053,7 +1061,7 @@ Double clicking on this will bring up the transform dialog with the
 "Rotate..." option selected.
 -->
 このツールでダブルクリックすると
-"回転..."
+<span class="command">回転...</span>
 オプションを選択した状態で変形ダイアログを起動します。
 
 
@@ -1073,7 +1081,7 @@ Double clicking on this will bring up the transform dialog with the
 "Skew..." option selected.
 -->
 このツールでダブルクリックすると、
-"傾き..."
+<span class="command">傾き...</span>
 オプションを選択した状態で変形ダイアログを起動します。
 
 <!--
@@ -1100,7 +1108,7 @@ Double clicking on this will bring up the transform dialog with the
 "Rotate 3D..." option selected.
 -->
 このツールでダブルクリックすると、
-"3次元の回転..."
+<span class="command">3次元の回転...</span>
 オプションを選択した状態で変形ダイアログを起動します。
 
 
@@ -1260,7 +1268,7 @@ FreeType のバイトコードインタプリタが使用可能になってい�
 (バイトコードインタプリタが利用できない場合、
 FreeType の自動ヒントづけルーチンが点を移動します)。
 このモードは
-`表示->グリッド合わせを表示...`
+<span class="command">表示(V)-\>グリッド合わせを表示(W)</span>
 で起動することができます。
 
 <!--
@@ -1268,7 +1276,7 @@ The Show Grid Fit command will ask you for some basic information first.
 It needs to know the pointsize and resolution for which you want the
 action performed (the example at right is 12pt on a 72dpi screen).
 -->
-グリッド合わせを表示
+<span class="command">グリッド合わせを表示</span>
 コマンドは、最初に基本的な情報を質問します。
 望み通りの動作を行うためには、
 ポイントサイズと解像度を知らなければなりません
@@ -1310,7 +1318,7 @@ FontForge は TrueType デバッガを内蔵しています
 —— バイトコードインタプリタを利用可能なバージョンの
 FreeType がインストールされている場合に限ります
 **(注意: これを利用可能にするには、Apple からライセンスを得る必要があります。
-これは幾つかの特許で保護されています)**。
+これは複数の特許で保護されています)**。
 
 <!--
 The image to the right shows an example of this mode. You invoke it with
@@ -1321,7 +1329,7 @@ as you step through the instructions), the right pane provides a list of
 the instructions to be executed.
 -->
 右の図はこのモードの例を示しています。
-`ヒント->デバッグ`
+<span class="command">ヒント(I)-\>デバッグ(D)</span>
 でこれを起動し、
 グリッド合わせビューと同様にポイントサイズと解像度を確定する必要があります。
 このビューは 2 個のペーンに分かれています。
@@ -1507,7 +1515,7 @@ the base component -- this is what the instructions are working on).
 変形を適用していないか
 (命令が実行途中の場合はこちらになります)
 は
-変形を適用
+<span class="command">変形を適用</span>
 チェックボックスに表示されます。
 
 <!--
@@ -1635,10 +1643,10 @@ control whether the fpgm and prep tables are debugged. Usually debugging
 will start when execution reaches the instructions associated with this
 glyph.
 -->
-ヒント-\>デバッグ
+<span class="command">ヒント(I)-\>デバッグ(D)</span>
 メニューコマンドは、
 デバッガの終了
-(「デバッグ」チェックボックスをオフにします)
+(デバッグチェックボックスをオフにします)
 またはポイントサイズと解像度を変更してのデバッガの再実行にも使用できます。
 このダイアログは fpgm と prep テーブルもデバッグの対象にするかを設定できます。
 通常は、このグリフに付随する命令に実行が到達した時にデバッグが開始されます。
@@ -1736,7 +1744,7 @@ Although the menu is called "MM" it applies equally to Apple's
 distortable fonts ("\*var" fonts, like Skia).
 -->
 マルチプルマスターフォントでは、
-[MM](../mmmenu/#outline-char)
+[<span class="command">MM</span>](../mmmenu/#outline-char)
 メニューによってフォントのどのスタイルを編集しているかを制御することができます。
 このメニューを使って、
 任意の (または全ての) 他のスタイルをバックグラウンドに表示することができます。

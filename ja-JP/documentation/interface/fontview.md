@@ -93,14 +93,16 @@ may change it to display any layer (other than the background layer)
 with `View->Layers->?`
 -->
 通常、ビューはフォントの前景レイヤーを表示しますが、
-`View->Layers->?` で（背景レイヤー以外の）任意のレイヤーを表示するように変更できます。
+<span class="command">表示(V)-\>レイヤ-\>?</span>
+で（背景レイヤー以外の）任意のレイヤーを表示するように変更できます。
 
 <!--
 You may also display any of the bitmap fonts you have generated from the
 outline glyphs. Simply go to the View menu and select the one you want.
 -->
 また、グリフアウトラインから生成した全てのビットマップフォントを表示することができます。
-View メニューから見たいサイズのビットマップを選んでください。
+<span class="command">表示(V)</span>
+メニューから見たいサイズのビットマップを選んでください。
 
 <!--
 If you look at a bitmap version of the font, and it does not contain a
@@ -150,7 +152,7 @@ viewing the font at a large pixel size, otherwise the window looks too
 confusing.
 -->
 フォントビューで、メトリックの補助線 (ベースライン, 原点と送り幅) を表示することができます
-(View -\> Shoe H Metrics)。
+(<span class="command">View(V)-\>横書きメトリックの表示方法(H)...</span>)。
 これを行うときには、フォントを大きなピクセルサイズで表示することをお勧めします。
 さもないとウィンドウはごてごてして見にくくなります。
 
@@ -245,7 +247,7 @@ You may drag and drop selected glyphs into
 
     Where they will appear as a substitution or ligature.
 -->
-* Glyph Info の substitutions/ligature ダイアログ
+* グリフ情報ウィンドウの <span class="command">置換/合字</span> ダイアログ
 
     この場合、それらの文字は置換または合字として表示されます。
 
@@ -292,11 +294,15 @@ be copied.
 -->
 もちろん、それに加えて、カット&amp;ペーストを行うことができます。
 通常、あるグリフをコピーするとそのグリフおよび付随するビットマップを全てコピーしますが、
-Edit-\>Copy From の項目選択で、
+<span class="command">編集(E)-\>コピー元の指定(F)</span>
+の項目選択で、
 現在表示されているフォントだけをコピーするように変更することができます。
 それにより、例えば 12 ピクセルフォントが表示されているときは、
 そのモードでは 12 ピクセルのビットマップフォントだけがコピーされます。
-Cut and Clear は、コピーの対象となるデータを取り除きます。
+<span class="command">切り取り(T)</span>
+と
+<span class="command">クリア(L)</span>
+は、コピーの対象となるデータを取り除きます。
 
 <!--
 Paste is a little more complicated. In general it will paste whatever is
@@ -307,7 +313,8 @@ one exception to this. If the clipboard contains a 12 pixel bitmap and
 the font view is currently display a 17pixel bitmap then the paste will
 go into the displayed bitmap.
 -->
-貼り付けはやや複雑です。
+<span class="command">貼り付け(P)</span>
+はやや複雑です。
 一般的に、クリップボードにある物はコピーモードに関係なくすべて貼り付けられます。
 そのため、クリップボードに 12 ピクセルのビットマップが含まれている場合、
 フォントビューがアウトラインを表示していたとしても、
@@ -385,9 +392,12 @@ only one character set at a time would be encoded).
 -->
 FontForge 内の全てのフォントは、文字集合とエンコーディングの両方を備えています。
 ここで文字集合は、単純にフォントの含む文字の集合のことです。
-エンコーディングは、それらの文字が並んでいる順番です (時には、最初の 256 文字が並んでいる順番のことを指すこともあります)。
-フォント情報ダイアログにより、フォントのエンコーディング (および文字集合) を選択することができます。
-1 個のフォントの中には、エンコーディングによって指定された文字集合に当てはまらない若干の追加グリフが含まれることがしばしばあります。
+エンコーディングは、それらの文字が並んでいる順番です
+(時には、最初の 256 文字が並んでいる順番のことを指すこともあります)。
+<span class="command">フォント情報</span>
+ダイアログにより、フォントのエンコーディング (および文字集合) を選択することができます。
+1 個のフォントの中には、
+エンコーディングによって指定された文字集合に当てはまらない若干の追加グリフが含まれることがしばしばあります。
 それらのグリフはフォントの最後に配置され、フォントが出力される時 (例えば PostScript が生成される時やビットマップフォントが作成される時)、
 それらのグリフはフォント内に含まれますが符号化されません。(これは役に立つことがあります。
 特に、PostScript では実行時にフォントのエンコーディングを切り替えることができるので、
@@ -436,7 +446,8 @@ encoding.
 カスタムエンコーディングを作成することもできます。
 一般的に、フォントのエンコーディングベクタの一部分として含まれるのは、
 カスタムエンコーディングのうちの先頭 256 項目だけです)。
-Element-\>Char Info コマンドを使用して、フォント内の任意のグリフの名前を変更することができます。
+<span class="command">エレメント(L)-\>グリフ情報(I)...</span>
+コマンドを使用して、フォント内の任意のグリフの名前を変更することができます。
 これを行うと、フォントは強制的にカスタムエンコーディングに変換されます。
 
 <!--
@@ -468,7 +479,7 @@ Microsoft differs from the Unicode one (usually just be substituting
 synonyms, Omega for Ohm sign for instance).
 -->
 あるベンダによる特定のエンコーディングの定義が他のベンダによるものと微妙に異なることがあり得ます。
-それらのエンコーディングについては、Unicode Consortium が指定する定義に従ったつもりです。
+それらのエンコーディングについては、Unicode コンソーシアムが指定する定義に従ったつもりです。
 Microsoft が使用する Symbol エンコーディングは Unicode の定義と異なることが判明しています
 (通常は、例えばオメガがオーム記号になっているような単に同義の文字に置き換わっているだけです)。
 
@@ -684,7 +695,7 @@ not always able to protect itself against running out of memory,
 sometimes the OS just sends it a SIGKILL signal.
 -->
 メモリが不足しそうなときには、
-[アンドゥ履歴のクリア](../editmenu/#remove-undoes)
+[<span class="command">アンドゥ履歴のクリア(V)</span>](../editmenu/#remove-undoes)
 コマンドを使えばメモリを開放することができます。
 FontForge はメモリを使い果たしてしまう危険から常に守られているわけではなく、
 場合によっては OS からいきなり SIGKILL シグナルを送られてしまうことがあります。
@@ -733,8 +744,12 @@ vertical origin for the font and it will give every glyph a default
 vertical advance of the emsize of the font (ascent+descent).
 -->
 あるフォントで縦書きのメトリックを使用可能にするためには、
-`Element->Font Info` から `General` タブを選択し、
-`[*] 縦書きメトリックが存在` チェックボックスにチェックを入れます。
+<span class="command">エレメント(U)-\>フォント情報(F)...</span>
+から
+<span class="command">一般情報</span>
+タブを選択し、
+<span class="command">[*] 縦書きメトリックが存在</span>
+チェックボックスにチェックを入れます。
 これを使うと、そのフォントの縦書きの原点を設定し、
 各グリフに縦書きの字送りのデフォルト値 (高さ+深さ) を EM サイズ単位でセットします。
 
@@ -755,5 +770,5 @@ You can view the vertical metrics in the font view just as you can the
 horizontal metrics with View-\>Show V Metrics.
 -->
 フォントビューで縦書きのメトリックを表示させるには、横書きメトリックと同様に、
-View-\>Show V Metrics
+<span class="command">表示(V)-\>縦書きメトリックの表示法(V)...</span>
 を使用します。

@@ -3,6 +3,11 @@ published: true
 layout: default.ja
 title: メトリックビュー
 ---
+<!--
+published: true
+layout: default
+title: The Metrics View
+-->
 
 
 [table_of_contents]
@@ -81,10 +86,10 @@ If you wish to enter characters you cannot type:
 1.  フォントビューで文字（またはグリフ）を選択し、
     適切な場所のメトリックスビューにドラッグ&ドロップします
 2.  ビューメニューを使用して、文字またはグリフを変更または挿入します
-    （表示->グリフを挿入）
+    (<span class="command">表示->グリフを挿入</span>)
 3.  メトリックビューを開く前に、フォントビューで文字を個別に順番に選択します。
     メトリックビューを開いたときに選択した順序で表示されます
-4.  FontForgeには独自の風変わりな
+4.  FontForge には独自の風変わりな
     [入力メソッド](#非-ascii-文字の入力)
     があります
 
@@ -104,7 +109,8 @@ The baseline is also drawn in grey.
 <!--
 A metrics view may be in one of three modes (Metrics->Window Type)
 -->
-メトリックビューは、3つのモードのいずれかになります（メトリック->ウィンドウタイプ）。
+メトリックビューは、3つのモードのいずれかになります
+(<span class="command">メトリック-\>ウィンドウタイプ</span>)。
 
 <!--
 -   Kerning only -- you may adjust the kerning between any pairs of
@@ -137,14 +143,17 @@ Closeup dialog](#Kern+Pair+Closeup))
 グリフをクリックして左から右に引っ張ることにより変更することができます。
 緑の線をドラッグして動かせば、
 このグリフと左にあるグリフの間のカーニングを設定することができます。
-(小さなピクセルサイズに対して [デバイステーブル](#デバイステーブル) を作成したい場合、
-[カーニングペアの詳細ダイアログ](#kern-pair-closeup) を使用する必要があります)
+(小さなピクセルサイズに対して
+[<span class="command">デバイステーブル</span>](#デバイステーブル)
+を作成したい場合、
+[<span class="command">カーニングペアの詳細</span>ダイアログ](#kern-pair-closeup)
+を使用する必要があります)
 
 
 <!--
 Kerning
 -->
-カーニング
+### カーニング
 
 ![](/assets/img/dialogs1-To-unkerned.png) ![](/assets/img/dialogs1-To-kerned.png)
 
@@ -216,10 +225,12 @@ View->Vertical. (This is only available if your font has vertical
 metrics enabled, Element->Font Info->General->Has Vertical Metrics).
 In this mode you can change vertical width, vertical kerning, etc.
 -->
-表示->縦書き を選ぶと、
+<span class="command">表示(V)->縦書き(V)</span>
+を選ぶと、
 ウィンドウに縦書きメトリックとカーニングを表示することができます
 (フォントに縦書きメトリックが存在する場合に限ります。
-エレメント->フォント情報...->一般情報->縦書きメトリックが存在 をチェックする必要があります)。
+<span class="command">エレメント(L)-\>フォント情報(F)...-\>一般情報-\>縦書きメトリックが存在</span>
+をチェックする必要があります)。
 このモードでは縦書きの字送り、カーニングなどを変更できます。
 
 <!--
@@ -290,7 +301,7 @@ something equivalent. The X software will map a sequence of keystrokes
 to one character in whatever the native encoding may be.
 -->
 この方法の他に、
-X Window System の多くのバージョンは「合成文字」キーか、
+X Window System の多くのバージョンは "Compose Character" キーか、
 何らかの等価な手段を提供しています。
 X Window System のソフトウェアは、
 ネイティブなエンコーディングが何であっても、
@@ -511,7 +522,9 @@ in how two different glyphs interact with other glyphs). A value of 1 is
 very picky and almost all classes will have one member. A value of 20
 (in a 1000em font) is fairly loose.
 -->
-後者を選択した場合、 FontForge は適切なクラスのセットを推測しようとします（選択されたグリフを見て、複数のクラスに分割します）。
+後者を選択した場合、
+FontForge は適切なクラスのセットを推測しようとします
+(選択されたグリフを見て、複数のクラスに分割します)。
 `Intra Class Distance` を使用すると、
 クラスに入るものについて、気難しい FontForge がどのようになるかをある程度制御できます。
 （これは em 単位、おおまかにいうと、
@@ -537,19 +550,21 @@ one another). The `[] Only kern glyphs closer `flag means that FontForge
 will only generate negative kerning offsets, that is, offsets which will
 move glyphs closer together.
 -->
-AutoKerning では、 `Default Separation` と `Min Kern` フィールドが使用されます。
+<span class="command">自動カーニング</span>
+では、 `Default Separation` と `Min Kern` フィールドが使用されます。
 すべてのグリフ間の視覚的な間隔を一定にするというカーニングの目標に対して、
 `Default Separation` フィールドはその望ましい値を指定します。
 `Min Kern` の値は、単にダイアログが無駄なゴミでいっぱいになるのを防ぐためのものです。
-AutoKerning が2つのグリフを 1 em 単位でカーニングすることを提案している場合、
+<span class="command">自動カーニング</span>
+が2つのグリフを 1 em 単位でカーニングすることを提案している場合、
 人間の目には違いがわからないので、それを含める意味はありません。
-そのため、 AutoKern によって提案されたカーニングの値（絶対値）が `Min Kern` より小さい場合、
+そのため、 自動カーニングによって提案されたカーニングの値（絶対値）が `Min Kern` より小さい場合、
 FontForge はその値を無視します。
 `[] Touching` を選択すると、
-AutoKerning の動作は少し異なり、
+自動カーニングの動作は少し異なり、
 視覚的距離を目標値にしようとするのではなく、
 最小間隔を目標値にしようとします
-（これはめったに役立ちませんが、たまに、文字どうしが実際に接触するようなテキストが望まれることがあります）。
+(これはめったに役立ちませんが、たまに、文字どうしが実際に接触するようなテキストが望まれることがあります)。
 `[] Only kern glyphs closer`　のフラグは、
 FontForge が負のカーニングオフセットのみを、
 つまりグリフを互いに近づけるようなオフセットのみを生成することを意味します。
@@ -590,8 +605,8 @@ delete a class by selecting it (clicking in it) and pressing the
 [Delete] button.
 -->
 クラスの編集は、クラスをタイプするだけです
-（クラスリストの一番下に \<New\> というエントリがあり、
-ここをクリックすると、新しいクラスが作成されます）。
+(クラスリストの一番下に \<New\> というエントリがあり、
+ここをクリックすると、新しいクラスが作成されます)。
 クラスの右側にある小さな長方形を押すと、クラスをフォントビューウィジェットの選択項目として定義できます。
 クラスを削除するには、クラスを選択（クリック）して [削除] ボタンを押します。
 
@@ -724,7 +739,10 @@ big).
 (同じサイズでラスタライズされますが、各ピクセルが 2 倍に拡大されます)。
 
 
+<!--
 ### Kern Pair Closeup
+-->
+### カーニングペアの詳細
 
 <!--
 [Device Tables](#Device+Table) may also be created in a
@@ -736,7 +754,7 @@ Class dialog above.
 [デバイステーブル](#デバイステーブル) は他の多数の場合にも作成することができます。
 上の例はカーニングクラスに対するものでした。
 カーニングペアにも、上のカーニングクラスダイアログとよく似た
-メトリック->カーニングペアの詳細
+<span class="command">メトリック->カーニングペアの詳細</span>
 ダイアログが用意されています。
 
 ![](/assets/img/dialogs1-kernpairclose.png)

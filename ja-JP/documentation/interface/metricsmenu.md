@@ -3,13 +3,22 @@ published: true
 layout: default.ja
 title: メトリックメニュー
 ---
+<!--
+published: true
+layout: default
+title: The Metrics Menu
+-->
 
 <!--
 This menu is not present in the Bitmap View, and the Metrics View only
 contains "Center in Width" and "Thirds in Width".
 -->
 このメニューはビットマップビューには表示されません。
-また、メトリックビューの表示では "幅の中央に" と "両幅の空きを1:2" だけを含みます。
+また、メトリックビューの表示では
+<span class="command">幅の中央に</span>
+と
+<span class="command">両幅の空きを1:2に</span>
+だけを含みます。
 
 
 [table_of_contents]
@@ -50,7 +59,9 @@ prefer having a bit more white space after my glyphs than before them.
 So this command makes the rbearing twice the lbearing (instead of making
 them be the same).
 -->
-これは上の "幅の中央に" と非常によく似ています…
+これは上の
+<span class="command">幅の中央に</span>
+と非常によく似ています…
 私の好みではグリフの後ろのスペースを前のスペースより少し多めに取りたがることを除いては。
 そのため、このコマンドは右サイドベアリングを左サイドベアリングの 2 倍に (均等ではなく) 設定します。
 
@@ -61,7 +72,10 @@ will be adjusted with the rest of the glyph.
 この値を設定すると、すべてのレイヤーが調整されることになります。
 その結果、背景などにあるガイドがグリフの残りで調整されます。
 
+<!--
 #### Window Type
+-->
+#### ウィンドウタイプ
 
 <!--
 In the Metrics View, the window may behave in different ways.
@@ -70,31 +84,40 @@ In the Metrics View, the window may behave in different ways.
 ウィンドウの挙動が異なる場合があります。
 
 
+<!--
 ##### Kerning Only
+-->
+##### カーニングのみ
 
 <!--
 This metrics view may only be used to adjust kerning
 -->
-メトリックビューでは、
+このメトリックビューでは、
 カーニングの調整のみが使用できます。
 
 
+<!--
 ##### Advance Width Only
+-->
+##### 送り幅のみ
 
 <!--
 This metrics view may only be used to adjust the advance widths of
 glyphs
 -->
-メトリックビューでは、
-グリフの拡張幅の調整のみが使用できます。
+このメトリックビューでは、
+グリフの送り幅の調整のみが使用できます。
 
+<!--
 ##### Both
+-->
+##### 両方
 
 <!--
 This metrics view will adjust either the advance width or kerning
 -->
-メトリックビューでは、
-拡張幅かカーニングのどちらか一方が使用できます。
+このメトリックビューでは、
+送り幅かカーニングのどちらか一方の調整が使用できます。
 
 
 <!--
@@ -113,7 +136,8 @@ Normally the width will be expressed in em-units, but in a bitmap only
 font the width will be expressed as pixels in the current displayed
 font.
 -->
-"幅を設定" コマンドを使うと、
+<span class="command">幅を設定</span>
+コマンドを使うと、
 (アウトラインビュー内では) 現在のグリフの幅を、
 または (フォントビューでは) 選択中のすべてのグリフの幅を変更することができます。
 幅の絶対値を指定することもできますし、
@@ -133,8 +157,12 @@ The Set LBearing command is similar to the Set Width command above, the
 dialog is pretty much the same except that it applies to the left side
 bearing rather than to the width.
 -->
-"左サイドベアリングを設定" コマンドは、上の "幅を設定" コマンドに似ています。
-ダイアログは非常に良く似ていて、適用されるのが幅ではなくて左サイドベアリングである点だけが違います。
+<span class="command">左サイドベアリングを設定</span>
+コマンドは、上の
+<span class="command">幅を設定</span>
+コマンドに似ています。
+ダイアログは非常に良く似ていて、
+適用されるのが幅ではなくて左サイドベアリングである点だけが違います。
 
 <!--
 Setting this value will adjust all layers so that guides in the background etc.
@@ -153,8 +181,12 @@ The Set RBearing command is similar to the Set Width command above, the
 dialog is pretty much the same except that it applies to the right side
 bearing rather than to the width.
 -->
-"右サイドベアリングを設定" コマンドは、上の "幅を設定" コマンドに似ています。
-ダイアログは非常に良く似ていて、適用されるのが幅ではなくて右サイドベアリングである点だけが違います。
+<span class="command">右サイドベアリングを設定</span>
+コマンドは、上の
+<span class="command">幅を設定</span>
+コマンドに似ています。
+ダイアログは非常に良く似ていて、
+適用されるのが幅ではなくて右サイドベアリングである点だけが違います。
 
 
 <!--
@@ -223,9 +255,11 @@ two glyphs at different point-sizes and to build a "[Device
 Table](../metricsview/#DeviceTable)" (which allows small corrections
 from the standard behavior at specified point sizes)
 -->
-(解りにくい名前ですみません。 "詳細" (Closeup) よりいい名前が思いつかなかったのです)。
+(解りにくい名前ですみません。 
+「詳細」(Closeup) よりいい名前が思いつかなかったのです)。
 異なるポイントサイズにおける 2 つのグリフ間のカーニングを [見ることができ](../metricsview/#kern-pair-closeup) 、
-"[デバイステーブル](../metricsview/#デバイステーブル)" を構築することができます
+[<span class="command">デバイステーブル</span>](../metricsview/#デバイステーブル)
+を構築することができます
 (このテーブルを用いると、指定されたポイントサイズにおいて標準とは少し異なるふるまいを指定することが可能です)
 
 <!--
@@ -316,5 +350,7 @@ font and outline glyph view.
 It behaves exactly like Set Width... except it works on the vertical
 advance rather than the horizontal advance (width).
 -->
-これは "幅を設定..." と同じですが、
+これは
+<span class="command">幅を設定...</span>
+と同じですが、
 横書き用の送り幅 (グリフの幅) ではなく縦書き用の送り幅を設定する点が異なります。

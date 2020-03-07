@@ -27,7 +27,7 @@ Element->Font Info->Layers, then setting the splines option to **All layers
 cubic** and the font type option to **Type3 Multi Layered Font**.
 -->
 新しいフォントは、
-要素->フォント情報->レイヤ
+<span class="command">エレメント(L)->フォント情報(F)...->レイヤ</span>
 に移動し、
 スプラインオプションを **すべてのレイヤーを 3 次** に、
 フォントタイプオプションを **Type3 マルチレイヤーフォント** に設定することにより、
@@ -103,21 +103,21 @@ Clicking with the right button brings up the layer menu which contains:
 <!--
 #### Layer Info...
 -->
-#### レイヤー情報...
+#### レイヤ情報...
 
 <!--
 Brings up the [Layer Info](#Layer) dialog on the current
 layer (same as double clicking)
 -->
 現在のレイヤに関する
-[レイヤ情報](#レイヤ情報ダイアログ)
+[<span class="command">レイヤ情報</span>](#レイヤ情報ダイアログ)
 ダイアログを起動します (ダブルクリックと同じです)。
 
 
 <!--
 #### New Layer...
 -->
-#### 新しいレイヤー...
+#### 新しいレイヤ...
 
 <!--
 Creates a new layer and brings up the [Layer
@@ -125,7 +125,7 @@ Info](#Layer) dialog to describe it. (the new layer will
 appear at the bottom of the layer list and will be drawn last)
 -->
 新しいレイヤを作成し、それの情報を含む
-[レイヤ情報](#レイヤ情報ダイアログ)
+[<span class="command">レイヤ情報</span>](#レイヤ情報ダイアログ)
 ダイアログを起動します。
 (新しいレイヤはレイヤリストのいちばん下に現れ、最後に描画されます)。
 
@@ -133,7 +133,7 @@ appear at the bottom of the layer list and will be drawn last)
 <!--
 #### Del Layer
 -->
-#### レイヤーを削除
+#### レイヤを削除
 
 <!--
 Deletes the current layer (you may not delete the last layer in a glyph)
@@ -205,7 +205,7 @@ PostScript (the bitmap will be drawn with the fill color), otherwise
 the image (Transparent images are not supported here).
 -->
 Type3 フォントでは画像を使用できます (SVG フォントではできません)。
-[ファイル->取り込み](../filemenu/#Import)
+[<span class="command">ファイル->取り込み</span>](../filemenu/#Import)
 コマンドで画像を好きな前面レイヤに読み込むことができます。
 画像がビットマップ画像であり、それが置かれたレイヤで塗りつぶしモードの描画を行う場合、
 その画像は imagemask コマンドによって出力され
@@ -253,7 +253,7 @@ You can change the clipping path with the `Points->Make Clip Path`
 command. The clipping path will be set to any selected contour(s) in the
 image. If no contour is selected then there will be no clipping path.
 -->
-`ポイント->クリップパスの作成`
+<span class="command">ポイント-\>クリップパスの作成</span>
 コマンドを使用して、クリッピングパスを変更できます。
 クリッピングパスは、画像内の選択した輪郭に設定されます。
 輪郭が選択されていない場合、クリッピングパスはありません。
@@ -440,7 +440,7 @@ described in the dialog.
 -->
 パターンは、同じフォントの別のグリフで定義されています。
 デフォルトでは、そのグリフの境界ボックスを使用してパターンの範囲を記述します
-([要素->グリフ情報->タイルサイズ](../charinfo/#Tile+Size) で変更できます）。
+([<span class="command">エレメント要素->グリフ情報->タイルサイズ</span>](../charinfo/#Tile+Size) で変更できます）。
 次に、幅フィールドと高さフィールドを指定して、スケーリングできます。
 ダイアログで説明されている他の変換を適用できます。
 
