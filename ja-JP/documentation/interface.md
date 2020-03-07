@@ -82,7 +82,7 @@ title: FontForge Interface
 - [メニュー](filemenu)
     - [ファイル](filemenu)
     - [編集](editmenu)
-    - [Point](pointmenu)
+    - [点](pointmenu)
     - [Element](elementmenu)
     - [Tools](toolsmenu)
     - [Hints](hintsmenu)
