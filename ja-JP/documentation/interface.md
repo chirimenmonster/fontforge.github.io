@@ -79,9 +79,8 @@ title: FontForge Interface
     - [Rename Glyphs dialog](elementmenu#Mass+Glyph+Rename...)
     - [Compare Fonts dialog](elementmenu#Compare+Fonts...)
 -->
-
-- [Menus](filemenu)
-    - [File](filemenu)
+- [メニュー](filemenu)
+    - [ファイル](filemenu)
     - [Edit](editmenu)
     - [Point](pointmenu)
     - [Element](elementmenu)
@@ -95,7 +94,7 @@ title: FontForge Interface
     - [Window](windowmenu)
     - [Help](helpmenu)
     - [Hot Keys](hotkeys)
-- [Windows](fontview)
+- [ウィンドウ](fontview)
     - [フォントビュー](fontview)
     - [アウトライングリフ](charview)
     - [デバッグビュー](charview#デバッグビュー)
