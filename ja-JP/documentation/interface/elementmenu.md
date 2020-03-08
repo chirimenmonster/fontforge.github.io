@@ -949,92 +949,195 @@ misoriented the wrong contour may be removed).*
 [どのようにしますか?](pfaeditmath.html#Stroke)
 
 
+<!--
 #### Tile Path
+-->
+#### パスのタイル敷き(P) (Tile Path)
 
+<!--
 This command is not available in the default build, you must reconfigure
 `$ configure --with-tilepath` and then rebuild FontForge. Not available
 in quadratic (truetype) fonts. This command brings up a
 [dialog](../tilepath/) which allows you to specify a tile to be applied
 to any selected contours.
+-->
+このコマンドはデフォルトのビルドでは利用できません。
+`$ configure --with-tilepath` で再構成してから
+FontForge を再ビルドする必要があります。
+2 次曲線 (TrueType) フォントでは使用できません。
+このコマンドは、選択した輪郭に適用するタイルを指定するための
+[ダイアログ](../tilepath/)
+を表示します。
 
-
+<!--
 #### Tile Pattern...
+-->
+#### タイルパターン... (Tile Pattern...)
 
+<!--
 Also not available in the default build, also controled by
 `$ configure --with-tilepath`. [This command](../tilepath/#Pattern)
 allows you to design a pattern which will be layed down on the current
 layer m\*n times (where m is the number of horizontal repeats and n the
 number of vertical repeats.
+-->
+これも、デフォルトのビルドでは利用できません。
+`$ configure --with-tilepath`
+で制御されます。
+[このコマンド](../tilepath/#Pattern)
+を使用すると、
+現在のレイヤーに m\*n 回配置されるパターンを設計できます
+(m は水平方向の繰り返し数、
+n は垂直方向の繰り返し数です)。
 
 
+<!--
 #### Overlap
+-->
+#### 重なり合う図形 (Overlap)
 
+<!--
 None of these is available in the bitmap view.
+-->
+これらのコマンドはビットマップビューでは使用できません。
 
-
+<!--
 ##### Remove Overlap
+-->
+##### 重なり合う図形を結合(R) (Remove Overlap)
 
+<!--
 Not in the bitmap view, *not available when the font has quadratic
 splines*^[1](#overlap-footnote)^. If two closed paths intersect then
 there will be overlap. This will get rid of it, leaving one closed path
 behind.
+-->
+ビットマップビューには存在しません。
+*フォントが 2 次スプラインのときは使用できません*^[1](#overlap-footnote)^。
+2 本の閉じたパスが交差するとき、
+それらを重なり合っていると言います。
+このコマンドは、重なり合いを取り除いて 1 本のパスに変換します。
 
+<!--
 Make sure paths have the correct orientation. Consider the letter "O"
 with two contours. If both contours run in the same direction then the
 inner path will be removed (because the outer path overlaps it
 everywhere), but if the contours run in opposite orientations then the
 inner path will be retained. Things get very strange if you have
 intersecting paths with different orientations.
+-->
+パスの向きが正しいことを確かめておいてください。
+2 本の輪郭をもつ文字 "O" を考えましょう。
+2 本の輪郭が同じ方向を向いている場合、内側のものが削除されます
+(外側のパスが全体に重なり合っているからです)
+が、
+輪郭同士が逆向きになっている場合、
+内側のパスは保持されます。
+交差するパスが逆向きになっているときは非常に奇妙なことが起こります。
 
 ![](/assets/img/filemenu-expandedlines.png)
 ![](/assets/img/filemenu-overlappedlines.png)
 
+<!--
 This command is probably the buggiest in FontForge. So before FontForge
 invokes the command it will save the state to the error recovery file.
+-->
+このコマンドは FontForge の中でおそらく最もバグが多いはずです。
+ですから、FontForge はコマンドを起動する前にエラー回復ファイルに現状を保存します。
 
+<!--
 **Warning: Splines which are tangent (or nearly so) cause problems.
 Points which are close together can cause problems.**
+-->
+**警告: 平行な (またはほとんどそれに近い) スプラインは問題を起こします。
+あまりに近い点も問題を起こす可能性があります。**
 
 
+<!--
 ##### Intersect
+-->
+##### 重複部分を抽出(I) (Intersect)
 
 ![](/assets/img/filemenu-exclude-pre.png)
 ![](/assets/img/filemenu-intersect-post.png)
 
+<!--
 This will remove everything not in the intersection of two regions.
+-->
+これは 2 つの領域の交差部分以外のすべてを削除します。
 
+
+<!--
 ##### Exclude
+-->
+##### 重複部分を除去(E) (Exclude)
 
 ![](/assets/img/filemenu-exclude-pre.png)
 ![](/assets/img/filemenu-exclude-post.png)
 
+<!--
 This will remove the selected contours from the unselected ones. Only
 available in the outline glyph view.
+-->
+これは選択された輪郭内の領域を選択されていない輪郭から除去します。
+アウトライングリフビューでのみ使用可能です。
 
 
+<!--
 ##### Find Intersections
+-->
+##### 交点を見つける(F) (Find Intersections)
 
+<!--
 This finds the places where overlapping contours intersect and inserts
 points at those locations.
+-->
+これは重なり合う輪郭同士の交点を見つけ、
+そこを通るパスそれぞれに点を追加します。
 
-
+<!--
 ##### Simplify
+-->
+##### 単純化(S) (Simplify)
 
+<!--
 Not in the bitmap view. If you have lots of points on a path, some of
 which do not materially add to the path's shape, then this command will
 remove the extraneous points. (It will not remove points where the slope
 at the point is horizontal or vertical as postscript likes to have these
 points present).
+-->
+ビットマップビューでは使用できません。
+パス上にたくさんの点があって、
+そのうちのいくつかは実質的にはパスの形を指定する役割を果たしていない場合、
+このコマンドは無駄な点を取り除きます
+(このコマンドは線の傾きが水平または垂直になっている箇所にある点は取り除きません。
+PostScript インタプリタではそれがあると都合がいいからです)。
 
+<!--
 [How is this done?](pfaeditmath.html#Approximating)
+-->
+[どうやって処理しているのか?](pfaeditmath.html#Approximating)
 
 
+<!--
 ##### Simplify More
+-->
+##### さらに単純化 (Simplify More)
 
+<!--
 This is a variant of the simplify command. It brings up a dialog which
 gives you control over what sorts of errors this simplification is
 allowed to induce. You can control:
+-->
+これは
+<span class="command">単純化(S)</span>
+コマンドの変種で、
+Shift キーを押しながらメニューを呼び出すと使用できます。
+単純化処理によってどういう種類の誤差が生じてもよいかを指定することができるメニューが起動します。
+以下の項目が設定可能です:
 
+<!--
 - How far the simplified contour is allowed to stray from the original
 - Whether to allow removal of extreme points
 - Whether to allow the slope to change at points.
@@ -1042,44 +1145,93 @@ allowed to induce. You can control:
   control points)
 - Whether to flatten small bumps off of lines
 - Whether to try to simplify straight lines at all
+-->
+- 単純化の結果の輪郭が、オリジナルからどれだけ離れてもいいか
+- 極値にある点を取り除いてもいいか
+- 端点の所で傾きが変化してもいいか
+- (制御点を調節することにより) 角の点を曲線上の点に転換してもいいか 
+- 線から飛び出た小さなコブを平滑化するか
+- 直線を完全に単純化することを試みるか
 
+<!--
 Finally, you may specify whether this set of values should become the
 default value for future Simplify commands
+-->
+最後に、今回使用する値の組を、それ以降に実行する
+<span class="command">単純化(S)</span>
+コマンド群のデフォルト値とするかどうかを指定することができます。
 
 
+<!--
 ##### Cleanup Glyph
+-->
+##### 不要な曲線を除去(N) (Cleanup Glyph)
 
+<!--
 This is a special case of the simplify command. In this case if there is
 a spline which actually traces out a line but none the less has control
 points, then this command will remove the control points. It will also
 cleanup zero length splines.
+-->
+これは
+<span class="command">単純化(S)</span>
+コマンドの特殊な場合です。
+この場合、実際には直線を描いているのに不要な制御点がある場合、
+このコマンドがそれらの制御点を取り除きます。
+また、長さ 0 のスプラインを取り除きます。
 
 
+<!--
 ##### Canonical Start Points
+-->
+##### 開始点を正規化(P) (Canonical Start Points
 
+<!--
 This will change the start point of the contour (or of all selected
 contours) to be the leftmost point on the contour. If there are several
 points with the same horizontal coordinate it will pick the one closest
 to the baseline. There are two reasons for doing this:
+-->
+このコマンドは、輪郭の開始点 (または選択された輪郭) を輪郭上の左端の点をに置き換えます。
+水平座標が同じ点がいくつかある場合、ベースラインに最も近い点を選択します。
+これを行うのには 2 つの理由があります:
 
+<!--
 - In a PostScript Type1 or Type2 font it will (usually) reduce the
   size of the code expressing the glyph slightly. (I don't think it
   can increase the code, but there are certainly cases where the
   optimization will have no effect).
 - It will enable FontForge to find more reusable bits of code which it
   can put in subroutines
+-->
+- PostScript Type1 および Type2 フォントでは
+  (通常) グリフを表現するコードのサイズを僅かに縮減します。
+  (この処理がコードサイズを増やすような場合は無いと思いますが、
+  最適化が意味をもたない場合があるのは確かです)。
+- FontForge が、再利用可能でサブルーチンに移動できるコード片をより多く発見することができます。
 
-
+<!--
 ##### Canonical Contour Order
+-->
+##### 輪郭の順序を正規化(C) (Canonical Contour Order)
 
+<!--
 Order the contours so that the contour with the leftmost point comes
 first, then the contour whose leftmost point is a little further right
 and so forth. Again, this should decrease the code size slightly in a
 Type1 font.
+-->
+輪郭の順序を並べ替え、最初に左端の点が最初にある輪郭が、
+次に左端の点がその次に左側にある輪郭がという具合に並ぶようにします。
+これも Type1 フォントのサイズを僅かに縮小するはずです。
 
 
+<!--
 #### Add Extrema
+-->
+#### 極大点の追加(X) (Add Extrema)
 
+<!--
 Not in the bitmap view. Both TrueType and Type1 say that there should be
 points on the contour where it reaches its extreme horizontal and
 vertical values. In the outline view, if any points are selected, this
@@ -1090,22 +1242,58 @@ the em-size/32, or 2) the entire contour (rather than just the current
 spline) attains its maximum/minimum value at this point. If the added
 extrema is extremely close to an already existing point, fontforge may
 remove that point to avoid creating tiny splines.
+-->
+ビットマップビューでは使用できません。
+TrueType と Type1 のどちらでも、
+水平および垂直方向の極値にあたる位置に点が存在することを推奨しています。
+アウトラインビューでは、
+何らかの点が選択されていれば、選択された点の間に存在するすべての極値に点を追加します。
+フォントビューおよびメトリックビュー
+(または、アウトラインビューで何も選択されていなければ)
+以下の 2 条件のいずれかが満たされている極値に点を追加します。
+1) スプラインの長さが em / 32 よりも大きい、
+2) その点が文字の輪郭全体 (現在のスプラインだけでなく) の極大/極小値に該当する。
+もし、追加した点のごく近くに既存の点が位置する場合、
+FontForge は微小なスプラインが発生するのを避けるためにその点を削除します。
 
 
+<!--
 #### AutoTrace
+-->
+#### 自動トレース(R) (AutoTrace)
 
+<!--
 This command is only available if you have downloaded Martin Weber's
 [autotrace program](http://sourceforge.net/projects/autotrace/), or
 Peter Selinger's [potrace](http://potrace.sf.net/). If you have a
 background image in a glyph then autotrace will automagically trace the
 outlines of that image. See [the section on autotracing](../autotrace/)
 for more information.
+-->
+このコマンドは、
+Martin Weber の
+[autotrace](http://sourceforge.net/projects/autotrace/) か
+Peter Selinger の
+[potrace](http://potrace.sf.net/)
+のどちらかのプログラムをダウンロードしていないと使用できません。
+グリフに背景画像が含まれていると、
+自動トレースプログラムが勝手にその画像のアウトラインをトレースしてくれます。
+より詳しい情報は、
+[自動トレースのセクション](../autotrace/)
+を参照してください。
 
 
+<!--
 #### Align menu
+-->
+#### 点を揃える(L) メニュー (Align menu)
 
+<!--
 This submenu is only present in the outline view, it allows you to align
 points or to space them out along an axis.
+-->
+このサブメニューはアウトラインビューだけに存在し、
+これを使うと点を座標軸にぴったり沿うように揃えることができます。
 
 
 ##### Average Points
