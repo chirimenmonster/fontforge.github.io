@@ -19,9 +19,9 @@ There are two menu entries [Tile Path](##Tile.Path) and
 build but which may be configured by modifying `configure-fontforge.h`
 before compiling FontForge.
 -->
-[パスのタイル敷き(P)](##Tile.Path)
+[パスのタイル敷き(P)](#パスのタイル敷きp-tile-path)
 と
-[非線形の変形(<U>N</U>)...](##Non-Linear.Transform...)
+[非線形の変形(<U>N</U>)...](#非線形の変形n-non-linear-transform)
 という2つのメニューエントリがあります。
 これらはデフォルトビルドの一部ではありませんが、
 FontForge をコンパイルする前に `configure-fontforge.h` を変更することで設定できます。
@@ -287,8 +287,8 @@ page](../validation/) for more info.
 明確なエラーに対してはより小さなものについても動作し、
 フォントのグリフすべてでで見つかった問題の概要を提供します。
 詳細については、
-[検証ページ](../validation/)
-を参照してください。
+[検証](../validation/)
+ページを参照してください。
 
 <!--
 #### Bitmap Strikes Available...
@@ -523,7 +523,7 @@ LCG (ラテン、キリル、ギリシャ) グリフの場合、
 グリフが少しでも予期しないものである場合は失敗します。<br>
  他の書記システムのために、FontForge は何かを行いますが、
 現在は上記の 2 つのケースのいずれかに該当する場合は失敗します。<br>
- [ウェイト変更ダイアログ](../Styles/#Embolden)
+ [ウェイト変更ダイアログ](../Styles/#the-change-weight-dialog)
 を参照してください。
 
 
@@ -546,7 +546,7 @@ condense the font and slant things. See the
 セリフが変更され、
 フォントが凝縮され、
 文字が斜めになります。
-[イタリック体ダイアログ](../Styles/#Italic)
+[イタリック体ダイアログ](../Styles/#italic-dialog)
 を参照してください。
 
 
@@ -580,7 +580,7 @@ problems with diagonal stems. See the
 グリフの輪郭とサイドベアリングの幅を変更できます。
 このアルゴリズムは、単純なラテングリフでのみ機能し、
 斜めのステムでは問題があります。
-[長体/拡張 ダイアログ](../Styles/#Condense)
+[長体/拡張 ダイアログ](../Styles/#condenseextend-dialog)
 を参照してください。
 
 <!--
@@ -588,7 +588,9 @@ problems with diagonal stems. See the
 -->
 ##### x ハイトの変更 (Change X-Height)
 
+<!--
 Allows you to change the x-height of a font
+-->
 フォントの x ハイトを変更できます。
 
 
@@ -631,7 +633,7 @@ case letters in the latin, greek and cyrillic scripts.
 もう1つは小文字をスモールキャップにマップする　'smcp' にバインドされたものです。
 新しいグリフ位置に適切なスモールキャップグリフを作成します。
 この機能は、ラテン文字、ギリシャ文字、キリル文字の大文字と小文字にのみ適用されます。
-[スモールキャップスダイアログ](../Styles/#Smallcaps)
+[スモールキャップスダイアログ](../Styles/#small-capitals-dialog)
 を参照してください。
 
 
@@ -654,7 +656,7 @@ glyph to the newly created one under control of the appropriate feature.
 垂直方向に移動されます。
 次に、適切な機能の制御下で、
 元のグリフを新しく作成されたグリフにマッピングする新しいルックアップテーブルが作成されます。
-[下付き文字/上付き文字ダイアログ](../Styles/#SubSuper)
+[下付き文字/上付き文字ダイアログ](../Styles/#subsciptsuperscript-dialog)
 を参照してください。
 
 <!--
@@ -742,7 +744,9 @@ dialog](../transform/). This provides the standard linear
 transformations you expect to have available (rotation, scaling,
 translation, skewing).
 -->
-[フォントビューとアウトラインビューではこのコマンドは変形ダイアログを表示します](../transform/)。
+フォントビューとアウトラインビューではこのコマンドは
+[変形ダイアログ](../transform/)
+を表示します。
 このコマンドは普通に考えて利用できそうな標準的な線形変換
 (回転、拡大・縮小、平行移動、傾き)
 を提供します。
@@ -757,7 +761,7 @@ translation, skewing).
 [This dialog](../transform/#PoV)allows you to perform a perspective
 transformation on your glyphs. (This is a non-linear transformation)
 -->
-[このダイアログ](../transform/#PoV)
+[このダイアログ](../transform/#point-of-view-projection)
 を使うと、グリフに対して透視変換を施すことができます
 (これは非線形変換の一種です)。
 
@@ -772,7 +776,7 @@ transformation on your glyphs. (This is a non-linear transformation)
 transformation (which could be linear or which can be non-linear).
 Essentially you provide two equations for how x and y should be mapped.
 -->
-[このダイアログ](../transform/#Non-Linear)
+[このダイアログ](../transform/#non-linear-transformations)
 を使うと、一般的な変換を施すことができます
 (線形変換も非線形変換も可能です)。
 本質的には、x と y がどのように写像されるかを 2 個の等式で指定します。
@@ -938,14 +942,14 @@ contour which is inside the original, or that which is outside
 misoriented the wrong contour may be removed).*
 -->
 *注： 輪郭を削除する前に、
-[<span class="command">編集->方向の修正</span>](#Correct)
+[<span class="command">編集->アウトラインの向きを修正（C)</span>](#アウトラインの向きを修正c-correct-direction)
 でグリフの向きが正しいことを確認してください
 (向きが間違っていると、間違った輪郭が削除される場合があります)。*
 
 <!--
 [How is this done?](pfaeditmath.html#Stroke)
 -->
-[どのようにしますか?](pfaeditmath.html#Stroke)
+[どうやって処理しているのか?](../../developers/pfaeditmath/#calculating-the-outline-of-a-stroked-path)
 
 
 <!--
@@ -983,7 +987,7 @@ number of vertical repeats.
 これも、デフォルトのビルドでは利用できません。
 `$ configure --with-tilepath`
 で制御されます。
-[このコマンド](../tilepath/#Pattern)
+[このコマンド](../tilepath/#tile-pattern)
 を使用すると、
 現在のレイヤーに m\*n 回配置されるパターンを設計できます
 (m は水平方向の繰り返し数、
@@ -1116,7 +1120,7 @@ PostScript インタプリタではそれがあると都合がいいからです
 <!--
 [How is this done?](pfaeditmath.html#Approximating)
 -->
-[どうやって処理しているのか?](pfaeditmath.html#Approximating)
+[どうやって処理しているのか?](../../developers/pfaeditmath/#approximating-a-spline)
 
 
 <!--
