@@ -1,93 +1,207 @@
 ---
 published: true
+layout: default.ja
+title: エレメントメニュー
+---
+<!--
+published: true
 layout: default
 title: The Element Menu
----
+-->
 
 
 [table_of_contents]
 
 
+<!--
 There are two menu entries [Tile Path](##Tile.Path) and
 [Non Linear Transform...](##Non-Linear.Transform...) which are not part of the default
 build but which may be configured by modifying `configure-fontforge.h`
 before compiling FontForge.
+-->
+[パスのタイル敷き(P)](##Tile.Path)
+と
+[非線形の変形(<U>N</U>)...](##Non-Linear.Transform...)
+という2つのメニューエントリがあります。
+これらはデフォルトビルドの一部ではありませんが、
+FontForge をコンパイルする前に configure-fontforge.h を変更することで設定できます。
 
-
+<!--
 #### Font Info
+-->
+#### フォント情報(F) (Font Info)
 
+<!--
 In all views this brings up the [Font Info dialog](../fontinfo/).
+-->
+どのビューから実行した場合でも、
+[フォント情報ダイアログ](../fontinfo/)
+を起動します。
 
+<!--
 CID keyed fonts can set information on the CID font as a whole (rather
 than just the current sub-font, which is what this command does) from
 [CID-\>CID Font Info](../cidmenu/#FontInfo).
+-->
+CID フォントでは、CID フォント全体の情報
+([<span class="command">CID->CIDフォント情報(I)</span>](../cidmenu/#FontInfo)
+で設定できます)
+ではなく、
+現在のサブフォントに関する情報の設定ができます。
 
 
+<!--
 #### Glyph Info
+-->
+#### グリフ情報(I) (Glyph Info)
 
+<!--
 In the all views this brings up the [Glyph Info
 dialog](../charinfo/#Character).
+-->
+どのビューから実行しても、
+[グリフ情報](../charinfo/#Character)
+ダイアログを起動します。
 
 
+<!--
 #### MATH Info...
+-->
+#### 数学情報... (MATH Info...)
 
+<!--
 Brings up the [MATH Info dialog](../../reference/math/).
+-->
+[数学情報](../../reference/math/)
+ダイアログを起動します。
 
-
+<!--
 ##### BDF Info
+-->
+##### BDF 情報 (BDF Info)
 
+<!--
 If you have bitmaps in your font, then in the font view or bitmap view
 this command will bring up the [BDF Info dialog.](../bdfinfo/)
+-->
+ビットマップを含むフォントを編集している場合、
+フォントビューまたはビットマップビューでこのコマンドを呼び出すと
+[BDF 情報](../bdfinfo/)
+ダイアログが起動します。
 
-
+<!--
 ##### Horizontal Baselines...
+-->
+##### 水平方向のベースライン... (Horizontal Baselines...)
 
+<!--
 This [dialog](../baseline/) gives you control over the OpenType 'BASE'
 table which allows you to specify different baselines for different
 scripts, and how to align those baselines with each other. It also
 provides fine control over the inter-baseline spacing (the line height).
+-->
+この
+[ダイアログ](../baseline/)
+では、
+OpenType の 'BASE' テーブルを制御できます。
+これにより、さまざまなスクリプトにさまざまなベースラインを指定し、
+それらのベースラインを相互に調整する方法を指定できます。
+また、ベースライン間の間隔 (行の高さ) を細かく制御できます。
 
 
+<!--
 ##### Vertical Baselines...
+-->
+##### 垂直方向のベースライン... (Vertical Baselines...)
 
+<!--
 This [dialog](../baseline/) gives you control over the OpenType 'BASE'
 table which allows you to specify different baselines for different
 scripts, and how to align those baselines with each other. It also
 provides fine control over the inter-baseline spacing (the column
 width).
+-->
+この
+[ダイアログ](../baseline/)
+では、
+OpenType の 'BASE' テーブルを制御できます。
+これにより、さまざまなスクリプトにさまざまなベースラインを指定し、
+それらのベースラインを相互に調整する方法を指定できます。 
+また、ベースライン間の間隔 （列幅) を細かく制御できます。
 
 
+<!--
 ##### Justification Information...
+-->
+##### 位置合わせ情報... (Justification Information...)
 
+<!--
 This [dialog](../justify/) allows you to examine and provide the
 information needed for the OpenType JSTF table -- information which
 helps layout engines do text justification.
+-->
+この
+[ダイアログ](../justify/)
+では、OpenType JSTF テーブルに必要な情報
+-- レイアウトエンジンがテキストの位置合わせを行うのに役立つ情報 --
+を調べて提供できます。
 
-
+<!--
 ##### Show Dependencies
+-->
+##### 依存関係の表示 (Show Dependencies)
 
+<!--
 ###### References...
+-->
+###### 参照一覧(R) (References...)
 
+<!--
 This dialog is not available in the bitmap view. It shows you what
 glyphs contain a reference to the current glyph. You can open a window
 looking at any of the dependent glyphs by selecting that glyph and
 pressing the [Show] button.
+-->
+このダイアログはビットマップビューでは使用できません。
+どのグリフが現在のグリフへの参照を含んでいるかを表示します。
+これを実行すると、現在のグリフに依存するすべてのグリフを一覧表示するウィンドウが現れます。
+そこでグリフを選択して
+<span class="command">[表示]</span>
+ボタンを押せば、そのグリフを開くことができます。
 
+
+<!--
 ###### Substitutions...
+-->
+###### 置換一覧(S)... (Substitutions...)
 
+<!--
 Show any glyphs that have substitutions (ligatures, multiple subs, etc.)
 which depend on the current glyph. So if you select "i", you might see
 that "fi" depended on it as a ligature, and if you select "A.swash" you
 might see that "A" depended on it as a 'swsh' alternate subs.
+-->
+現在のグリフに依存する置換 (合字、複数文字への置換など) をすべて表示します。
+例えば "i" を選択した場合、"fi" が合字として依存しているのが表示されるでしょうし、
+"A.swash" を選択している時は
+"A" が 'swsh' 選択型置換として表示されているのが表示されるでしょう。
 
 
+<!--
 ##### Mass Glyph Rename...
+-->
+##### グリフ集団の名前変更... (Mass Glyph Rename...)
 
 ![](/assets/img/filemenu-massrename.png)
 
+<!--
 This allows you to rename a bunch of selected glyphs. It can be used
 in two ways, either:
+-->
+これにより、選択したグリフの名前を変更できます。
+次の2つの方法で使用できます:
 
+<!--
 - You want to rename all the selected glyphs by adding a suffix to
   their names (this might be useful if you are working with a small
   caps Type1 font that you wanted to convert to an otf font, where the
@@ -102,17 +216,43 @@ in two ways, either:
   would get substituted by the appropriate renamed glyphs when that
   subtable was activated (this can't be done in the previous case,
   because there are no longer any base glyphs)
+-->
+- 名前に接尾辞を追加して、選択したすべてのグリフの名前を変更します
+  (これは、
+  スモールキャップの Type1 フォントを OTF フォントに変換する作業をしている場合に便利です。
+  元の Type1 の規則では "a.sc", "b.sc" などではなく
+  "a", "b" のような名前が付けられています)。
+- または、グリフのブロックを選択し、
+  エンコードのどこかに別のグリフを指定すると、
+  選択されたグリフは、ダイアログで識別されたものから始まる一連のグリフに接尾辞を追加することで名前が付けられます。
+  (これは、既存のフォントに小さな大文字のコレクションを追加する場合に便利です)。
+  この場合、ルックアップサブテーブルを指定して、
+  そのサブテーブルがアクティブになったときに,
+  ベースグリフが適切な名前変更されたグリフに置き換えられるようにすることもできます
+  (ベースグリフがなくなったため、前のケースではできません)
 
 
+<!--
 #### Get Info
+-->
+#### 情報を得る(I) (Get Info)
 
+<!--
 In the outline view this brings up [one of four different
 dialogs](../getinfo/) (Point Info, Image Info, Reference Info, Anchor
 Point Info) depending on what is selected.
+-->
+アウトラインビューでは選択した物によって異なる
+[4 種類の異なるダイアログ](../getinfo/)
+(点の情報、画像情報、参照情報、アンカーポイント情報) のどれかを起動します。
 
 
+<!--
 #### Find Problems...
+-->
+#### 問題点を発見(O)... (Find Problems...)
 
+<!--
 This command is not present in the bitmap view. It will search for
 several common problems. In the glyph view it will select anything that
 needs to be fixed, in the font view it will check all selected glyphs
@@ -120,27 +260,62 @@ and if any have problems will open them and select the problems. It will
 post a message telling you of each problem found. It brings up the [Find
 Problem](../problems/) dialog to let you choose what problems to look
 for.
+-->
+このコマンドはビットマップビューには存在しません。
+このコマンドはいくつかのよくある問題点を探します。
+グリフビューでは修正の必要のあるすべての問題点を表示します。
+フォントビューでは選択中の文字をすべてチェックし、
+どれかの文字に問題があればそれを開き、
+問題点を表示します。
+それとともに、発見された各問題点を通知するメッセージを送ります。
+[問題点を発見](../problems/)
+ダイアログが開かれます。
 
 
+<!--
 #### Validate...
+-->
+#### 検証... (Validate...)
 
+<!--
 Rather similar to Find Problems, but works with a much smaller set of
 things which are definitely errors, and provides an overview of the
 problems found in all glyphs of the font. See the [validation
 page](../validation/) for more info.
+-->
+<span class="command">問題点を発見(O)</span>
+に似ていますが、
+明確なエラーに対してはより小さなものについても動作し、
+フォントのグリフすべてでで見つかった問題の概要を提供します。
+詳細については、
+[検証ページ](../validation/)
+を参照してください。
 
-
+<!--
 #### Bitmap Strikes Available...
+-->
+#### 使用するビットマップ(A)... (Bitmap Strikes Available...)
 
+<!--
 This brings up a list of pixel sizes for bitmap fonts.
+-->
+このコマンドはビットマップフォントのピクセルサイズ一覧を表示します。
 
 ![](/assets/img/filemenu-bitmapsavail.png)
 
+<!--
 If you have bitmap fonts this will show their pixel sizes. If you remove
 a size that is in the list then that font will be deleted from the sfd
 file. If you add a size then that size font will be created and stored
 in the sfd file.
+-->
+編集中のフォントにビットマップが含まれているときは、
+それらのピクセルサイズを一覧表示します。
+リストからサイズ表示を取り除くと、SFD ファイルからそのサイズのビットマップフォントが削除されます。
+サイズを追加すると、そのサイズのフォントが追加され、
+SFD ファイルに格納されます。
 
+<!--
 FontForge deals in pixel sizes, not point sizes. The conversion between
 pixels and points differs on different systems and indeed on different
 screens. A point is (approximately) 1/72 of an inch, a pixel is however
@@ -148,38 +323,88 @@ big a pixel happens to be on your screen. Usually pixels range from
 about 1/72 of an inch to about 1/144 of an inch. Different systems
 support different screen resolutions as "standard", and FontForge tries
 to know about these standards.
+-->
+FontForge が取り扱うのはピクセルサイズであってポイントサイズではありません。
+ピクセルとポイントの間の変換はシステムごとに異なり、
+実際には表示画面ごとに異なります。
+1 ポイントは (約) 1/72 インチですが、
+1 ポイントが何ピクセルに相当するかは画面の設定によって異なります。
+通常 1 ピクセルは 1/72 インチ 〜 1/144 インチです。
+システムが異なると "標準" としてサポートされるデフォルトの画面解像度は異なります。
+FontForge は、以下の標準について知ろうと努めています。
 
+<!--
 Some conversions between points and pixels
+-->
+ポイント数とピクセル数のいくつかの変換方法
 
+<!--
     Screen Resolution   72dpi   75dpi   96dpi   100dpi  120dpi
     Point Size          Mac     X       Win     X       Win
     10pt                10      10      13      14      17
     12pt                12      12~13   16      17      20
     18pt                18      19      24      25      30
     24pt                24      25      32      33      40
+-->
+    画面解像度          72dpi   75dpi   96dpi   100dpi  120dpi
+    ポイントサイズ      Mac     X       Win     X       Win
+    10pt                10      10      13      14      17
+    12pt                12      12~13   16      17      20
+    18pt                18      19      24      25      30
+    24pt                24      25      32      33      40
 
+<!--
 Sadly your screen will probably not match one of the standard screens
 precisely. On X the standard resolutions are 75 and 100dpi, on MS
 Windows 96 and 120dpi, and on the Mac 72dpi. This dialog provides the
 conversion between pixel size and point sizes at these resolutions.
+-->
+残念ながら、あなたの画面解像度はおそらく標準解像度とは一致しないでしょう。
+X では標準解像度は 75dpi と 100dpi で、
+MS Windows では 96 dpi と 120dpi、
+Mac では 72dpi です。
+このダイアログは、ピクセルサイズと、これらの解像度におけるポイントサイズとの間で変換を行います。
 
+<!--
 Normally the new glyphs are created by rasterizing the outline font. If
 your system has the freetype2 library installed (and you checked the
 "Use FreeType" box) then FontForge will use the FreeType rasterizer to
 generate bitmaps, otherwise it will use FontForge's built-in rasterizer
 (which isn't as good, but involves a little less overhead).
+-->
+通常は、新しいグリフはアウトラインフォントをラスタライズすることによって作成されます。
+システムに freetype2 ライブラリがインストールされている場合
+(そして "FreeType を使う" チェックボックスにチェックが入っている場合)
+FontForge はビットマップの生成に FreeType ラスタライザを使用します。
+それ以外の場合、
+FontForge は内蔵ラスタライザ
+(能力では劣りますが、オーバヘッドは少し削減されます)
+を使用します。
 
+<!--
 Finally, if you have no outline font then the new glyphs will be created
 by scaling the (bitmap) font displayed in the font view.
+-->
+最後に、もしアウトラインフォントが存在しない場合、
+新しいグリフはフォントビュー内に表示されている (ビットマップ) フォントを拡大・縮小して作成されます。
 
+<!--
 If you want to generate a blank strike (one containing no glyphs) then
 turn off the `[] Create Rasterized Strikes` checkbox.
+-->
+空白のストライク (グリフを含まないストライク) を生成する場合は、
+<span class="command">\[\] ラスタライズされたストライクを作成</span>
+チェックボックスをオフにします。
 
+<!--
 In CID keyed fonts there will not be a set of bitmaps for each sub font,
 instead the entire complex of sub-fonts share bitmaps.
+-->
+CID フォントでは、各サブセットにはビットマップは存在しません。その代りに、サブフォントの複合体全体がビットマップを共有します。
 
 ![](/assets/img/filemenu-greymapsavail.png)
 
+<!--
 FontForge also supports anti-aliased bitmap fonts,
 and you can use this dialog to generate them. If you want to generate a
 12 point anti-aliased font with 8 bits per pixel you would type 12@8
@@ -188,10 +413,22 @@ fonts (a 1 bit per pixel font is a standard bitmap, the others are
 greymaps).
  (New greymaps can not be created by scaling old greymaps, if you wish
 to generate a greymap font, you must have an outline font).
+-->
+FontForge はアンチエイリアス表示のビットマップフォントもサポートしており、
+このダイアログを使ってそれらを生成するように設定することもできます。
+12 ポイントのアンチエイリアスフォントを各ピクセル 8 ビットの階調で作成したいなら、
+上のダイアログに 12@8 と入力します。
+FontForge は各ピクセル 1, 2, 4, 8 ビットのフォントをサポートしています (各ピクセル 1 ビットのフォントは標準ビットマップで、その他はグレイマップです)。<br>
+ (新しいグレイマップは古いグレイマップを拡大・縮小して作成することはできません。
+グレイマップフォントを作成したい場合、アウトラインフォントを持っている必要があります)。
 
 
+<!--
 #### Regenerate Bitmap Glyphs...
+-->
+#### ビットマップの再生成(B)... (Regenerate Bitmap Glyphs...)
 
+<!--
 If you have changed the outline that a bitmap is based one then you
 should (at some point) look into changing the bitmap too. This command
 allows you to regenerate a subset of the glyphs in a given bitmap font.
@@ -201,32 +438,76 @@ pick what pixel sizes should be regenerated too (unlike the above
 command, removing a bitmap size from the regenerate list will not delete
 it). As before, if you wish to change a greymap you should refer to it by
 `pixel-size@bits-per-pixel`.
+-->
+アウトラインフォントに基づいたビットマップが作られている場合、
+そのアウトラインを変更したら (ある時点で) ビットマップもちょっと直したくなるでしょう。
+このコマンドを使用すると、
+既存のビットマップフォントに含まれるあるグリフのサブセットを再生成することができます。
+どのピクセルサイズを再生成するかを選択することもできます
+(上のコマンドと異なり、あるビットマップサイズを再生成のリストから削除しても、
+フォントからそのサイズが削除されることはありません)。<br>
+上と同じように、グレイマップを変更したい場合は
+`pixel-size@bits-per-pixel`
+で指定することができます。
 
 
+<!--
 #### Remove Bitmap Glyphs...
+-->
+#### ビットマップグリフの除去... (Remove Bitmap Glyphs...)
 
+<!--
 This command will remove one or several bitmap glyphs from a strike
 (while leaving the strike otherwise intact). The dialog is similar to
 the above two. Any indicated glyphs will be removed from the specified
 strikes.
+-->
+このコマンドは、1つまたは複数のビットマップグリフをストライクから削除します (ストライクはそのままにします)。
+ダイアログは上記の 2 つに似ています。
+指定されたグリフは、指定されたストライクから削除されます。
 
 
+<!--
 #### Styles
+-->
+#### スタイル (Styles)
 
+<!--
 There are many [standard variations](../Styles/) on Latin (Greek,
 Cyrillic) fonts. Some of them apply to other scripts -- making a font
 darker (bolder) is common to many scripts, though the actual mechanics
 differ from script to script) Others -- such as Italic -- are more
 specialized.
+-->
+ラテン文字 (ギリシャ文字、キリル文字) フォントには多くの
+[標準バリエーション](../Styles/)
+があります。
+それらのバリエーションの一部は、他の文字にも該当します
+-- フォントを濃くする (ボールドにする) ことは多くの文字に共通です
+(実際のメカニズムは文字ごとに異なります)
+が、他のバリエーション
+-- イタリックなど -- はより特殊なものになっています。
 
 
+<!--
 ##### Change Weight...
+-->
+##### ウェイトの変更... (Change Weight...)
 
+
+<!--
 This is a simplistic command to make the stems of glyphs darker or
 lighter. It sometimes works.
+-->
+これは、グリフのステムを暗くしたり明るくしたりする単純なコマンドです。
+時々機能します。
 
+<!--
 For CJK glyphs it simply expands the strokes of the font outward.
+-->
+CJK グリフの場合、フォントのストロークを外側に広げるだけです。
 
+<!--
 For LCG (Latin, Cyrillic, Greek) glyphs it expands the stroke outward
 and then moves everything below a certain point up, and everything above
 another point down. This is based on heuristics and will fail if a glyph
@@ -234,44 +515,101 @@ is even the slightest bit unexpected.
  For other writing systems FontForge will do something, currently it
 will fall into one of the two cases above.
  See the [Change Weight dialog](../Styles/#Embolden).
+-->
+LCG (ラテン、キリル、ギリシャ) グリフの場合、
+ストロークを外側に拡張し、
+特定のポイントより下のすべてを上に、
+別のポイントより上のすべてを下に移動します。
+これはヒューリスティックに基づいており、
+グリフが少しでも予期しないものである場合は失敗します。<br>
+ 他の書記システムのために、FontForge は何かを行いますが、
+現在は上記の 2 つのケースのいずれかに該当する場合は失敗します。<br>
+ [ウェイト変更ダイアログ](../Styles/#Embolden)
+を参照してください。
 
 
+<!--
 ##### Italic
+-->
+##### イタリック体 (Italic)
 
+<!--
 An italic font is different from and more complex than an oblique font.
 Traditionally fonts with serifs are made italic and fonts without serifs
 are made oblique. This will change some letterforms, change the serifs,
 condense the font and slant things. See the
 [Italic dialog](../Styles/#Italic).
+-->
+イタリック体フォントは、斜体フォントとは異なり、より複雑です。
+伝統的に、セリフ付きのフォントはイタリック体になり、
+セリフなしのフォントは斜体になります。
+この機能より、一部の文字形式が変更され、
+セリフが変更され、
+フォントが凝縮され、
+文字が斜めになります。
+[イタリック体ダイアログ](../Styles/#Italic)
+を参照してください。
 
 
+<!--
 ##### Oblique
+-->
+##### 斜体 (Oblique)
 
+<!--
 An oblique font is different from and simpler than an italic font.
 Traditionally fonts with serifs are made italic and fonts without serifs
 are made oblique. This will slant the letters.
+-->
+斜体フォントは、イタリック体フォントとは異なり、シンプルです。
+伝統的に、セリフ付きのフォントはイタリック体になり、
+セリフなしのフォントは斜体になります。
+この機能により、文字が斜めになります。
 
 
+<!--
 ##### Condense/Extend
+-->
+##### 長体/平体 (Condense/Extend)
 
+<!--
 Allows you to change the width of the counters and side bearings of a
 glyph. The algorithm only works on simple latin glyphs, and it has
 problems with diagonal stems. See the
 [Condense/Extend dialog](../Styles/#Condense).
+-->
+グリフの輪郭とサイドベアリングの幅を変更できます。
+このアルゴリズムは、単純なラテングリフでのみ機能し、
+斜めのステムでは問題があります。
+[長体/拡張 ダイアログ](../Styles/#Condense)
+を参照してください。
 
-
+<!--
 ##### Change X-Height
+-->
+##### x ハイトの変更 (Change X-Height)
 
 Allows you to change the x-height of a font
+フォントの x ハイトを変更できます。
 
 
+<!--
 ##### Change Glyph...
+-->
+##### グリフの変更... (Change Glyph...)
 
+<!--
 Allows you to make very general changes to a glyph's shape.
+-->
+グリフの形状に非常に一般的な変更を加えることができます。
 
 
+<!--
 ##### Add Small Caps
+-->
+##### スモールキャップスの追加 (Add Small Caps)
 
+<!--
 This is a little different from the previous menu items as it does not
 change the selected characters themselves. Instead it creates a new
 glyph (or reuses an old one) with the appropriate name. So if you
@@ -282,75 +620,165 @@ lower case letters to small caps. It will build the appropriate small
 caps glyphs in the new glyph slots. This only applies to upper and lower
 case letters in the latin, greek and cyrillic scripts.
 [See the Small Caps dialog](../Styles/#Smallcaps).
+-->
+これは、選択した文字自体を変更しないため、これまでのメニュー項目とは少し異なります。
+代わりに、適切な名前で新しいグリフを作成します
+(または古いグリフを再利用します)。
+したがって、
+"A", "B", "C" を選択した場合、
+グリフ "a.sc", "b.sc", "c.sc" が作成されます。
+2 つのルックアップテーブルが作成され、
+1つは大文字をスモールキャップスにマップする 'c2sc' にバインドされたもの、
+もう1つは小文字をスモールキャップにマップする　'smcp' にバインドされたものです。
+新しいグリフ位置に適切なスモールキャップグリフを作成します。
+この機能は、ラテン文字、ギリシャ文字、キリル文字の大文字と小文字にのみ適用されます。
+[スモールキャップスダイアログ](../Styles/#Smallcaps)
+を参照してください。
 
 
+<!--
 ##### Add Subscripts/Superscripts
+-->
+##### 下付き文字/上付き文字の追加 (Add Subscripts/Superscripts)
 
+<!--
 Like the previous command this creates new glyphs based on the selected
 ones. The outlines of the selected glyphs will be scaled (with stems
 potentially being scaled differently from the glyph as a whole), and
 moved vertically. Then a new lookup will be created mapping the original
 glyph to the newly created one under control of the appropriate feature.
 [See the Subscript/Superscript dialog](../Styles/#SubSuper).
+-->
+前のコマンドと同様に、これは選択されたものに基づいて新しいグリフを作成します。
+選択されたグリフのアウトラインはスケーリングされ
+(ステムはグリフ全体とは異なる方法でスケーリングされる可能性があります)、
+垂直方向に移動されます。
+次に、適切な機能の制御下で、
+元のグリフを新しく作成されたグリフにマッピングする新しいルックアップテーブルが作成されます。
+[下付き文字/上付き文字ダイアログ](../Styles/#SubSuper)
+を参照してください。
 
-
+<!--
 ##### Outline
+-->
+##### アウトライン(O) (Outline)
 
 ![](/assets/img/filemenu-outlineinline.png)
 
+<!--
 Changes the selected glyphs so that instead of being a solid block, only
 the outline of the glyph is visible. The glyphs' bounding boxes will not
 change.
+-->
+選択されたグリフを中身の詰まった塊ではなく、
+グリフの輪郭だけが見えるように変形します。
+グリフのバウンディングボックスは変更しません。
 
 
+<!--
 ##### Inline
+-->
+##### インライン(I) (Inline)
 
+<!--
 Changes the selected glyphs so that the glyph is surrounded by an
 outline. The glyphs' bounding boxes will not change.
+-->
+選択中のグリフを加工し、グリフがアウトラインで囲まれたようにします。
+グリフのバウンディングボックスは変更しません。
 
 
+<!--
 ##### Shadow
+-->
+##### 影つき(S) (Shadow)
 
+<!--
 Changes the selected glyphs to give them each a
 shadow.
+-->
+選択中の各文字に影をつけます。
 
 ![](/assets/img/filemenu-shadowwireframe.png)
 
+<!--
 The user has control over the shadow size and angle.
+-->
+ユーザは影の長さと角度を調節することができます。
 
 
+<!--
 ##### Wireframe
+-->
+##### 縁どり立体化(W) (Wireframe)
 
+<!--
 Changes the selected glyphs to give them a 3D wireframe look.
+-->
+選択されたグリフを縁取られた立体に見えるように加工します。
 
 
+<!--
 #### Transformations
+-->
+#### 変形 (Transformations)
 
+<!--
 This sub-menu has rather different choices in the bitmap view from the
 other views. (Because bitmaps are discrete and the continuous
 transformations of splines are not meaningful).
+-->
+このサブメニューは、ビットマップビューでは他のビューとかなり異なる選択肢が表示されます。
+(なぜならビットマップは離散的で、スプラインのような連続変形は無意味だからです)。
 
 
+<!--
 ##### Transform...
+-->
+##### 変形(T)... (Transform...)
 
+<!--
 [In the Font and Outline Views this brings up the transform
 dialog](../transform/). This provides the standard linear
 transformations you expect to have available (rotation, scaling,
 translation, skewing).
+-->
+[フォントビューとアウトラインビューではこのコマンドは変形ダイアログを表示します](../transform/)。
+このコマンドは普通に考えて利用できそうな標準的な線形変換
+(回転、拡大・縮小、平行移動、傾き)
+を提供します。
 
 
+<!--
 ##### Point of View Projection
+-->
+##### 透視変換(P) (Point of View Projection)
 
+<!--
 [This dialog](../transform/#PoV)allows you to perform a perspective
 transformation on your glyphs. (This is a non-linear transformation)
+-->
+[このダイアログ](../transform/#PoV)
+を使うと、グリフに対して透視変換を施すことができます
+(これは非線形変換の一種です)。
 
 
+<!--
 ##### Non-Linear Transform...
+-->
+##### 非線形の変形(N)... (Non-Linear Transform...)
 
+<!--
 [This dialog](../transform/#Non-Linear) allows you to perform a general
 transformation (which could be linear or which can be non-linear).
 Essentially you provide two equations for how x and y should be mapped.
+-->
+[このダイアログ](../transform/#Non-Linear)
+を使うと、一般的な変換を施すことができます
+(線形変換も非線形変換も可能です)。
+本質的には、x と y がどのように写像されるかを 2 個の等式で指定します。
 
+<!--
 This command is not available in the default build, you must modify the
 file `configure-fontforge.h` and then rebuild FontForge. This command
 allows the user to specify a non-linear transformation as a pair of
@@ -359,78 +787,166 @@ coordinate, the second for the y coordinate). These expressions may be
 fairly general functions of x and y. See the
 [scripting page](../../scripting/native/scripting-alpha/#NonLinearTransform)
 for a description of the syntax.
+-->
+このコマンドはデフォルトのビルドでは使用できません。
+ファイル `configure-fontforge.h` を変更してから FontForge を再構築する必要があります。
+このコマンドを使用すると、ユーザーは非線形変換を式のペアとして指定できます
+(最初は x 座標の変換を指定し、2番目は y 座標の変換を指定します)。
+これらの式は、 x および y のかなり一般的な関数です。
+構文の説明については、
+[スクリプトのページ](../../scripting/native/scripting-alpha/#NonLinearTransform)
+を参照してください。
 
-
+<!--
 ##### Flip Horizontally
+-->
+##### 水平方向に反転(H) (Flip Horizontally)
 
+<!--
 Flips the bitmap horizontally. (Only in bitmap view)
+-->
+ビットマップを水平方向に反転します (ビットマップビューのみ)。
 
 
+<!--
 ##### Flip Vertically
+-->
+##### 垂直方向に反転(V) (Flip Vertically)
 
+<!--
 Flips the bitmap vertically. (Only in bitmap view)
+-->
+ビットマップを垂直方向に反転します (ビットマップビューのみ)。
 
 
+<!--
 ##### Rotate 90° CW
+-->
+##### 時計回りに90°回転(R) (Rotate 90° CW)
 
+<!--
 Rotates the bitmap 90° clockwise. (Only in bitmap view)
+-->
+ビットマップを時計回りに90°回転します (ビットマップビューのみ)。
 
 
+<!--
 ##### Rotate 90° CCW
+-->
+##### 反時計回りに90°回転 (Rotate 90° CCW)
 
+<!--
 Rotates the bitmap 90° counter-clockwise. (Only in bitmap view)
+-->
+ビットマップを反時計回りに90°回転します (ビットマップビューのみ)。
 
 
+<!--
 ##### Rotate 180°
+-->
+##### 180°回転 (Rotate 180°)
 
+<!--
 Rotates the bitmap 180° (Only in bitmap view)
+-->
+ビットマップを 180°回転します (ビットマップビューのみ)。
 
-
+<!--
 ##### Skew
+-->
+##### 傾き(S) (Skew)
 
+<!--
 Allows you to specify a ratio by which to skew the bitmap 1:3 means for
 every 3 pixel rise in y, skew the bitmap one pixel horizontally. (Only
 in bitmap view)
+-->
+ビットマップを傾ける割合を指定します。
+1:3 の時は、y 方向に 3 ピクセル上にいくごとに 1 ピクセル横に傾くことを意味します
+(ビットマップビューのみ)。
 
 
+<!--
 #### Expand Stroke...
+-->
+#### 輪郭を太らせる(E)... (Expand Stroke...)
 
+<!--
 Not in the bitmap view. In the font view it applies to all foreground
 splines in all selected glyphs. In the outline view it applies to all
 paths that have at least one point selected (or if no points are
 selected then it applies to all paths).
+-->
+ビットマップビューからは呼び出せません。
+フォントビューでは選択されたすべてのグリフの前面にあるすべてのスプラインに対して太め処理を適用します。
+アウトラインビューでは、最低 1 個の点が選択されているすべてのパスに適用します
+(点が選択されていないときには、すべてのパスに適用します)。
 
 ![](/assets/img/filemenu-twolines.png)
 ![](/assets/img/filemenu-expandedlines.png)
 
+<!--
 Above is a simple example of what expand stroke can do. It takes the
 two open paths above left and turns them into the two closed paths
 right.
+-->
+上図は、ストロークの太め処理が何を行うかの簡単な例です。
+左上にある 2 本の開いたパスを元に、それらを右の 2 本の閉じたパスに変換します。
 
 ![](/assets/img/filemenu-expandstroke.png)
 
+<!--
 The Expand Stroke dialog gives you control over various aspects of the
 expansion process. First you can specify three types of pen nibs:
+-->
+<span class="command">輪郭を太らせる(E)</span>
+ダイアログは、パスを太くする処理のさまざまな様相を制御することができるダイアログを起動します。
+最初に、3種類のペン先を指定できます:
 
+<!--
 - A round pen, which is circular by default but may be transformed
   into an ellipse
 - A rectangular pen, which is square by default but may be transformed
   into more traditional caligraphic nib shapes
 - A polygonal pen -- you can draw almost any convex polygon.
+-->
+- 丸ペン。デフォルトでは円形ですが、楕円に変換される場合があります
+- 長方形のペン。デフォルトでは正方形ですが、より伝統的な口径のペン先の形に変換できます
+- 多角形のペン -- ほとんどすべての凸多角形を描くことができます。
 
+<!--
 For circular and caligraphic pens you can chose a stroke width, how the
 ends of an open path should be drawn, and how the path should look when
 two splines (or lines) join which do not have the same slope (ie. at a
 corner point).
+-->
+円形ペンとカリグラフィックペンの場合、
+ストローク幅、開いたパスの端を描画する方法、
+2つのスプライン (またはライン) が同じ角度を持たないで結合 (つまりコーナーの点) するときのパスの外観
+を選択できます。
 
+<!--
 For closed contours you may also choose to remove either the generated
 contour which is inside the original, or that which is outside
+-->
+閉じた輪郭の場合、
+元の内側にある生成された輪郭、
+または外側にある生成された輪郭のいずれかを削除することもできます。
 
+<!--
 *Note: Make sure your glyph is oriented correctly with
 [Edit-\>Correct Direction](#Correct) before removing a contour (if
 misoriented the wrong contour may be removed).*
+-->
+*注： 輪郭を削除する前に、
+[<span class="command">編集->方向の修正</span>](#Correct)
+でグリフの向きが正しいことを確認してください
+(向きが間違っていると、間違った輪郭が削除される場合があります)。*
 
+<!--
 [How is this done?](pfaeditmath.html#Stroke)
+-->
+[どのようにしますか?](pfaeditmath.html#Stroke)
 
 
 #### Tile Path
