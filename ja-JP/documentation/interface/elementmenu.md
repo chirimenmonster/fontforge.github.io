@@ -24,7 +24,7 @@ before compiling FontForge.
 [非線形の変形(<U>N</U>)...](##Non-Linear.Transform...)
 という2つのメニューエントリがあります。
 これらはデフォルトビルドの一部ではありませんが、
-FontForge をコンパイルする前に configure-fontforge.h を変更することで設定できます。
+FontForge をコンパイルする前に `configure-fontforge.h` を変更することで設定できます。
 
 <!--
 #### Font Info
@@ -43,11 +43,10 @@ CID keyed fonts can set information on the CID font as a whole (rather
 than just the current sub-font, which is what this command does) from
 [CID-\>CID Font Info](../cidmenu/#FontInfo).
 -->
-CID フォントでは、CID フォント全体の情報
-([<span class="command">CID->CIDフォント情報(I)</span>](../cidmenu/#FontInfo)
-で設定できます)
-ではなく、
-現在のサブフォントに関する情報の設定ができます。
+CID フォントでは、
+(このコマンドで現在のサブフォントを対象とするのではなく)
+[<span class="command">CID->CIDフォント情報(I)</span>](../cidmenu/#FontInfo)
+で CID フォント全体の情報の設定ができます。
 
 
 <!--
@@ -104,7 +103,7 @@ provides fine control over the inter-baseline spacing (the line height).
 [ダイアログ](../baseline/)
 では、
 OpenType の 'BASE' テーブルを制御できます。
-これにより、さまざまなスクリプトにさまざまなベースラインを指定し、
+これにより、さまざまな文字にさまざまなベースラインを指定し、
 それらのベースラインを相互に調整する方法を指定できます。
 また、ベースライン間の間隔 (行の高さ) を細かく制御できます。
 
@@ -125,7 +124,7 @@ width).
 [ダイアログ](../baseline/)
 では、
 OpenType の 'BASE' テーブルを制御できます。
-これにより、さまざまなスクリプトにさまざまなベースラインを指定し、
+これにより、さまざまな文字にさまざまなベースラインを指定し、
 それらのベースラインを相互に調整する方法を指定できます。 
 また、ベースライン間の間隔 （列幅) を細かく制御できます。
 
@@ -225,7 +224,7 @@ in two ways, either:
 - または、グリフのブロックを選択し、
   エンコードのどこかに別のグリフを指定すると、
   選択されたグリフは、ダイアログで識別されたものから始まる一連のグリフに接尾辞を追加することで名前が付けられます。
-  (これは、既存のフォントに小さな大文字のコレクションを追加する場合に便利です)。
+  (これは、既存のフォントにスモールキャップスの集合を追加する場合に便利です)。
   この場合、ルックアップサブテーブルを指定して、
   そのサブテーブルがアクティブになったときに,
   ベースグリフが適切な名前変更されたグリフに置き換えられるようにすることもできます
@@ -1296,47 +1295,88 @@ points or to space them out along an axis.
 これを使うと点を座標軸にぴったり沿うように揃えることができます。
 
 
+<!--
 ##### Average Points
+-->
+##### 座標の平均値(A) (Average Points)
 
+<!--
 This will look at all the selected points and find the coordinate with
 the least change. Then it will average find the median point on that
 axis and set all the selected points to have that value for the
 appropriate coordinate.
+-->
+このコマンドは選択中のすべての点を調べ、
+値のばらつきが少ない方の座標軸を選択します。
+次に、その軸上での平均値を取って中間点を求め、
+選択中のすべての点をその平均値に揃えます。
 
+<!--
 So if you have a line which is almost horizontal, and select its
 endpoints and apply this command it will be horizontal.
+-->
+ですから、ほとんど水平に並んでいる線がある場合、
+その端点を選択してこのコマンドを適用するとその線は水平になります。
 
 ![](/assets/img/filemenu-constrain2_1.png)
 ![](/assets/img/filemenu-constrain2_2.png)
 
+<!--
 (if you select exactly two points, and they lie close to a 45 diagonal,
 then they will be forced to the diagonal rather than to horizontal/vertical)
+-->
+(選択した点がちょうど 2 個で、
+それらが 45°に近い斜めの関係にある場合は、
+水平・垂直ではなく斜め方向に揃えられます)。
 
 
+<!--
 ##### Space Points
+-->
+##### 点の間隔を均等に(S) (Space Points)
 
+<!--
 If you have three or more points selected then FontForge will figure out
 the coordinate that has the greatest change and will space the points
 out regularly along that axis.
+-->
+3 個以上の点を選択している場合、
+FontForge は差が大きいほうの座標軸を選び、
+その軸に沿って等間隔に点を分散させます。
 
+<!--
 If you select one point (and that point is in the middle of a path)
 then (internally) the point's location will be expressed in a coordinate
 system which is rotated so that one axis is parallel to the line between
 the two points that surround the selected point. The selected point will
 be moved mid-way between the two on this axis, while its other
 coordinate remains fixed.
+-->
+点を 1 個だけ選択している場合 (しかもその点がパスの中間にある場合)、
+点の位置は (内部的に) 選択した点の両隣の点を結ぶ直線が座標軸に平行になるように回転した座標軸で表現されます。
+選択中の点はその軸に沿って 2 点の中間となる位置に移動します。
+この時、それに直行する軸方向の位置は固定しています。
 
+<!--
 That's an extremely complicated way of saying: If the selected point is
 connected to two points which are on a horizontal line, then the
 selected point's x coordinate will be midway between the two, while its
 y coordinate remains unchanged.
+-->
+これは非常に複雑な説明方法です:
+水平な線上に置かれた 2 個の点の両方に接続した 1 個の点を選択した場合、
+選択した点の x 座標は 2 個の点の中間になり、それに対して y 座標は変更されません。
 
 ![](/assets/img/filemenu-constrain1_1.png)
 ![](/assets/img/filemenu-constrain1_2.png)
 
 
+<!--
 ##### Space Regions
+-->
+##### グループ間を均等に(R) (Space Regions)
 
+<!--
 This is similar to the above command except that it allows you to make a
 rather simple definition of a collection of points which should be moved
 together. Each of these regions will be regularly spaced along the
@@ -1346,118 +1386,263 @@ region. The purpose of this is to allow you to space out the stems of
 the letter "m" so that they regularly spaced horizontally. Sadly it
 won't work in many cases because in a serifed font the serifs will often
 be closer to each other than to their respective stems.
+-->
+これは上のコマンドと似ていますが、
+相対位置を保ちつつ移動したい点のグループをとても簡単に定義することができる点が異なります。
+このコマンドは、それらのグループごとの間隔を、選択した座標軸に沿って均等に配置します。
+1 個のグループは、その中の点同士がすべてグループ内の他の 1 個以上の点と、
+所定の最大距離以内にある点の集まりとして定義されます。
+このコマンドの目的は、文字 "m" のステム同士を横方向に均等に配置するような操作を可能にすることです。
+残念ながら、これが役に立たない場合は非常に多くあります
+(セリフつき書体では、しばしばあるセリフと他のセリフとの間隔のほうがセリフの属するステムとの間よりも狭くなります)。
 
 ![](/assets/img/filemenu-spacem_1.png)
 ![](/assets/img/filemenu-spacem_2.png)
 
 
+<!--
 ##### Make Parallel
+-->
+##### 平行に(<U>P</U>) (Make Parallel)
 
+<!--
 If four points are selected, and there are two lines between them, then
 FontForge will make those lines parallel. If there are four lines
 between them (ie. they form a quadrilateral, then FontForge will turn it
 into a parallelogram. (note, this only works on lines, not on curved
 splines)
+-->
+4 個の点を選択中で、それらの間に 2 本の直線が通っている場合、
+FontForge はそれらの線が平行になるように点を移動します。
+4 本の直線が通っている場合 (つまり、四角形を構成している場合)、
+FontForge はそれらを平行四辺形に変形します
+(これは直線だけに作用し、曲線のスプラインには作用しないことにご注意ください)。
 
+<!--
 The last point selected will be the one moved (sometimes FontForge
 doesn't remember which point was selected last, then it will just pick
 one randomly. If you don't want that to happen, select your points and
 then single click on the one you want moved).
+-->
+移動するのは最後に選択した線です (FontForge は、どの点が最後に選択されたか覚えていないことがしばしばあります。その時は 1 個をランダムに選びます。これを避けたい場合は、点を選択した後で移動したい点をシングルクリックしてください)。
 
 
+<!--
 #### Round
+-->
+#### 座標を丸める(D) (Round)
 
 
+<!--
 ##### Round to Int
+-->
+##### 整数値に(I) 丸める (Round to Int)
 
+<!--
 Not in the bitmap view. FontForge stores point locations as real numbers
 (ie. it retains fractional values). TrueType only supports integral
 values (And much of the time you want integral values in Type1 and Type2
 fonts also -- using real numbers makes font files bigger), so when
 generating the font points are rounded to integral values. This command
 will round all selected locations to the closest integer.
+-->
+ビットマップビューでは使用できません。
+FontForge は点の位置を実数として格納しています
+(つまり、それらの値には端数が含まれます)。
+TrueType は整数値のみをサポートしています
+(また、Type1, Type2 の両形式のフォントでもほとんどの場合は整数値が望ましいでしょう
+-- 実数値を使用するとフォントファイルが大きくなります)
+ので、フォントを出力する時には座標は整数値に丸められます。
+このコマンドは、選択した対象の座標値をすべて一番近い整数に丸めます。
 
-
+<!--
 ##### Round to Hundredths
+-->
+##### 1/100単位(H) に丸める (Round to Hundredths)
 
+<!--
 Not in bitmap or metrics views. FontForge's Type1 output is limited to
 hundredths of an em-unit, even when rounding is turned off in the
 Generate [Options] dialog.
+-->
+ビットマップビューとメトリックビューでは使用できません。
+FontForge の Type1 出力の精度は、
+出力ダイアログの
+<span class="command">オプション</span>
+で、
+整数への丸めを off にした場合でも、
+em 単位の 1/100 に限られています。
 
-
+<!--
 ##### Round to Cluster
+-->
+##### 近い値をまとめる(C) (Round to Cluster)
 
+<!--
 Occasionally you want to make sure that coordinates which are close
 together have the same value. This command will do that.
+-->
+ときどき、非常に近い座標値を確実に同じ値にしたいことがあります。
+このコマンドはそれを行います。
 
-
+<!--
 #### Order
+-->
+#### 順序 (Order)
 
+<!--
 This changes the order in which contours, references and images are
 drawn. It is almost useless because this order of contours and
 references does not affect the final appearance of the glyph. The only
 relevance it has is when interpolating fonts and in multiple master
 fonts. Here similar contours must appear in the same order.
+-->
+このコマンドはどの順番で輪郭・参照と画像を描画するかを変更します。
+この輪郭と参照の順序はグリフの形に影響しないので、
+ほとんどの場合は意味がありません。
+関係がある唯一の場合は、
+フォントを補間する場合とマルチプルマスターフォントの場合です。
+そのときは、同等の輪郭が出現する順番は同じでなければなりません。
 
+<!--
 If you have a glyph which contains both contours and references,
 FontForge does not specify whether references or contours are drawn
 first (or whether the two are intermixed). If this matters to you,
 unlink your references.
+-->
+輪郭と参照の両方を含むグリフがある場合、
+FontForge が参照と輪郭のどちらを先に描くか
+(それとも 2 つを混ぜこぜに描画するか)
+を指定することはできません。
+これが問題になる場合は、参照のリンクを解除してください。
 
-
+<!--
 #### Clockwise
+-->
+#### 時計回り(O) (Clockwise)
 
+<!--
 Only in the outline view. If all selected paths have a clockwise
 direction then this will be checked. Selecting it will make all paths be
 clockwise.
+-->
+アウトラインビューでのみ使用可能です。
+選択中のパスが時計回りの方向をもつ場合、
+ここにチェックがつきます。
+このメニューを選ぶと、それらすべてのパスが時計回りに変更されます。
 
+<!--
 If not paths are selected, or if all selected paths are open this will
 be greyed out. I a selected path intersects itself results are
 indeterminate.
+-->
+選択中のパスがない場合、
+または選択中のパスがすべて開いたパスである場合、
+このメニューは灰色表示で選択できません。
+選択中のパスに自己交差しているものがある場合、
+結果がどうなるかは不定です。
 
-
+<!--
 #### Counter-Clockwise
+-->
+#### 反時計回り(N) (Counter-Clockwise)
 
+<!--
 Only in the outline view. If all selected paths have a counter-clockwise
 direction then this will be checked. Selecting it will make all paths be
 counter-clockwise.
+-->
+アウトラインビューでのみ使用可能です。
+選択中のパスが反時計回りの方向をもつ場合、
+ここにチェックがつきます。
+このメニューを選ぶと、それらすべてのパスが反時計回りに変更されます。
 
+<!--
 If not paths are selected, or if all selected paths are open this will
 be greyed out. I a selected path intersects itself results are
 indeterminate.
+-->
+選択中のパスがない場合、
+または選択中のパスがすべて開いたパスである場合、
+このメニューは灰色表示で選択できません。
+選択中のパスに自己交差しているものがある場合、
+結果がどうなるかは不定です。
 
-
+<!--
 #### Correct Direction
+-->
+#### アウトラインの向きを修正(C) (Correct Direction)
 
+<!--
 Not in the bitmap view. Sets the direction of outermost paths to be
 clockwise. The next path crossed will be made counter-clockwise, the
 next clockwise, etc.
+-->
+ビットマップビューでは使用できません。
+一番外側のパスの向きを時計回りに設定します。
+次に交差するパスを反時計回りに、
+次を時計回りに、のように設定します。
 
+<!--
 This command may produce unexpected results if two splines cross.
+-->
+このコマンドは、2 本のスプラインが交差している場合、
+予想外の結果を生じることがあります。
 
+<!--
 If a glyph contains a flipped reference, this command will be unable to
 correct the contours inside of the reference directly, instead it will
 offer to unlink the reference after which it can treat its (former)
 contours like any others.
+-->
+グリフに反転した参照が含まれている場合は、
+このコマンドでは参照に含まれる輪郭を直接修正することはできません。
+その代りに、参照のリンクを解除するかどうかを尋ねるので、
+解除した後はその (以前の) 輪郭を他の輪郭と同様に扱うことができるようになります。
 
 
+<!--
 #### Insert Text Outlines...
+-->
+#### テキストの挿入 (Insert Text Outlines...)
 
+<!--
 Upon occasion it is useful to be able to insert text into a glyph. The
 [Insert Text Dialog](../InsertTextDlg/) lets you do this.
+-->
+場合によっては、
+グリフにテキストを挿入できると便利です。
+[<span class="command">テキストの挿入</span> ダイアログ](../InsertTextDlg/)
+でこれを行うことができます。
 
 
+<!--
 #### Build
+-->
+#### 構築 (Build)
 
 
+<!--
 ##### Build Accented/Composite Glyph
+-->
+##### アクセントつきグリフ(B)/複合グリフを構築(C) (Build Accented/Composite Glyph)
 
+<!--
 Not in the bitmap view.
+-->
+ビットマップビューでは使用できません。
 
+<!--
 The first menu item will only build accented letters, the second will
 build general composite glyphs (fractions, ligatures, digits inside
 parens, roman numerals, etc.) as well.
+-->
+前者のメニュー項目はアクセントつき文字を組み立てるだけです。
+後者では、一般的な複合グリフ
+(分数、合字、括弧つき数字、ローマ数字など)
+を組み立てることもできます。
 
+<!--
 If the current glyph is an accented glyph (and all the base glyphs and
 accents have already been created) then this command will delete
 anything that is currently in the foreground and put a reference to the
@@ -1465,43 +1650,104 @@ base glyph and another reference to the accent glyph into the
 foreground. So if the current glyph were "À" then a reference to "A"
 would be added to it, and a reference to "\`" would be centered above
 the "A".
+-->
+現在のグリフがアクセントつきグリフであれば
+(なおかつ基底グリフとアクセントが既に作成してあれば)、
+このコマンドはグリフの前面に含まれている内容をすべて削除し、
+基底グリフに対する参照と、
+アクセントのグリフに対するもう一つの参照を前面に配置します。
+例えば、現在のグリフが "À" であれば、
+"A" への参照がそのグリフに追加され、
+"\`" への参照が "A" と中心を合わせて配置されるでしょう。
 
+<!--
 If the current glyph is something like "agrave.sc" then it will be
 built using the rules of "agrave" but with ".sc" variants. So
 "agrave.sc" would contain "a.sc". For accents it will use "grave.sc" if
 it exists and "grave" if it does not.
+-->
+現在のグリフが "agrave.sc" のようなものである場合、
+"agrave" のルールを使用して構築されますが、".sc" バリアントが用いられます。
+したがって、
+"agrave.sc" には "a.sc" が含まれます。
+アクセントについては、存在する場合は "grave.sc" を使用し、
+存在しない場合は "grave" を使用します。
 
+<!--
 If [Copy From](../editmenu/#Copy.From) is set to All Fonts then any bitmaps
 will have a similar process done -- that is bitmap references will be
 created (even in the outline glyph view).
+-->
+もし
+[<span class="command">コピー元の指定(F)</span>](../editmenu/#Copy.From)
+が「すべてのフォント」に設定されていると、
+すべてのサイズのビットマップに対して同じ処理を行います
+(アウトラインビューで実行した場合も行います)。
 
+<!--
 A more complete description is given in the section on
 [accented glyphs](../accented/).
+-->
+より完全な説明は、
+[アクセントつきグリフ](../accented/)
+に関するセクションにあります。
 
-
+<!--
 ##### Build Duplicate
+-->
+##### 複製グリフを作成(D) (Build Duplicate)
 
+<!--
 Only in the font view.
+-->
+フォントビューでのみ使用可能です。
 
+<!--
 Consider the letters "Alpha" and "A". Often these may be represented by
 the same glyph. This command which change the encoding slightly so that
 the encoding for U+0391 will refer to the glyph named "A". Note that
 this is subtly different from refering to a glyph named "Alpha" which
 refers to another glyph named "A".
+-->
+文字 "Alpha" と "A" を考えてみましょう。
+これらはしばしば同一のグリフで表現されます。
+このコマンドはエンコーディングを微調整して、
+U+0391 の文字コードが "A" という名前のグリフを指し示すようにします。
+これは、"Alpha" というグリフが "A" という別のグリフを参照するのとは微妙に異なることに注意してください。
 
+<!--
 Adobe suggests that you use a reference rather than giving to unicode
 code points to one glyph, but it is part of the font format.
+-->
+Adobe は、1 個のグリフに複数の符号位置を割り当てるのではなく、
+参照を使用するべきであると示唆していますが、
+この方法はフォントフォーマットに違反しているわけではありません。
 
 
+<!--
 #### Merge Fonts...
+-->
+#### フォントの統合(M)... (Merge Fonts...)
 
+<!--
 Only in the font view. If you are building a unicode font you will often
 want to merge in other fonts. You can, of course, cut and paste from one
 to the other, but that can be tedious, while this command will do it all
 in one fell swoop.
+-->
+フォントビューでのみ使用可能です。
+Unicode フォントを作成している時には、
+他のフォントに併合したくなることがよくあるでしょう。
+もちろん、他のフォントからカット&ペーストをすれば可能ですが、
+たいへん手間がかかるでしょう。
+それにひきかえ、このコマンドはすべてを一撃で片付けてしまいます。
 
+<!--
 FontForge does the following when merging CID-keyed fonts:
+-->
+FontForge は、CID フォントを統合する時には以下の処理を行います。
 
+<!--
 -   If the font in the window (the mergee) is a normal font and the
     other font (the merger) is a CID keyed font, then the merger font is
     effectively flattened and the result merged into the mergee.
@@ -1520,11 +1766,27 @@ FontForge does the following when merging CID-keyed fonts:
 
     This strikes me as somewhat problematic, but I can't think of a
     better solution.
+-->
+-   ウィンドウ内のフォント (統合する先) が通常フォントで、
+　　　　もう片方のフォント (統合対象) が CID フォントの場合、
+    統合対象のフォントは事実上単一化され、
+    その結果が統合先に送られて統合されます。
+-   統合先が CID フォントで統合対象が通常フォントの場合、
+    統合先フォントのサブフォントのうち、
+    現在アクティブになっているものに統合対象フォントが送られます。
+-   両方が CID フォントの場合、
+    以下の条件を満たしていなければなりません:
+    -   CID レジストリとグリフ集合が同じである
+    -   統合先の補遺番号が最低でも統合対象の番号と等しい
+    -   統合先のサブフォントの個数が最低でも統合対象のサブフォントの個数と等しい
 
-
+<!--
 FontForge will also copy advanced typographic features, kerning,
 ligatures, etc.
+-->
+FontForge は高度タイポグラフィ機能、カーニング、合字などもコピーします。
 
+<!--
 If one of the two glyphs of a kerning pair is in the mergee and the
 other in the merger then you will be given the option of either ignoring
 this kerning pair or adding it to the resultant font. This happens if
@@ -1532,10 +1794,23 @@ both the mergee and the merger contain a glyph, and the kerning pair is
 in the merger font -- if that glyph is the same in both fonts then you
 would want to include the kerning pair, but if it differs then you
 probably don't.
+-->
+カーニングペアの 2 つのグリフの一方が統合先にあり、
+他方が統合元にある場合、
+このカーニングペアを無視するか、
+結果のフォントに追加するかの選択肢が与えられます。
+これは、統合先と統合元の両方にグリフが含まれ、
+カーニングペアが統合元フォントにある場合に発生します
+-- そのグリフが両方のフォントで同じである場合、
+カーニングペアを含めますが、異なる場合はおそらく含めません。
 
 
+<!--
 #### Interpolate Fonts...
+-->
+#### フォントの補間(L)... (Interpolate Fonts...)
 
+<!--
 Only in the font view. If you have a bold font and a light font and
 would like to create a medium font, then you can interpolate a font
 between the two (or you can extrapolate a font that's even bolder or
@@ -1543,20 +1818,44 @@ lighter). Your two fonts must have the same sets of glyphs, and each
 glyph must have the same number of paths (ordered similarly) and each
 path must have the same number of points on it, and must have the same
 references.
+-->
+フォントビューでのみ使用可能です。
+ボールドとライトの 2 つのウェイトのフォントがあってそれらを元にミディアムフォントを作成したい場合、
+2 個の間の中間フォントを補間によって作成することができます
+(または、さらに太いフォントや細いフォントを補外して作ることもできます)。
+その 2 つのフォントは同じグリフのセットを含み、
+各フォントに同じ個数のパスを含み
+(同じ順序で並んでいて)
+各パスには同じ個数の点を含んでいなければならず、
+含んでいる参照も同じでなければなりません。
 
+<!--
 Examples: If you are interpolating from a light font to a bold one, then
 a medium font might be 50% between the two, an extra-bold font might be
 200% and a thin one -100%.
+-->
+例: ウェイトが light のフォントから bold のフォントへの補間を行った場合、
+medium のフォントは 2 つの中間の 50% にあたり、
+extra-bold のフォントは 200% に、
+thin は -100% になるでしょう。
 
 
+<!--
 #### Compare Fonts...
-
+-->
+#### フォントを比較... (Compare Fonts...)
 
 ![](/assets/img/filemenu-fontcompdlg.png)
 
+<!--
 Sometimes it is useful to compare two versions of a
 font and see what has changed. This command will allow you to check:
+-->
+時には、あるフォントの 2 つのバージョンを比較して、
+どこが変更されたかを確認できると便利なことがあります。
+このコマンドでは以下の変更をチェックすることができます:
 
+<!--
 - The addition or removal of glyphs
 - Changes to outline glyphs
 - Changes to bitmap glyphs
@@ -1564,31 +1863,67 @@ font and see what has changed. This command will allow you to check:
   postscript names)
 - Changes to the font's glyph substitutions (ligatures and whatnot)
 - Changes to the font's glyph positioning (kerning and whatnot)
+-->
+- グリフの追加または削除
+- アウトライングリフの変更
+- ビットマップグリフの変更
+- フォント名の変更 (TrueType の 'name' テーブルといくつかの PostScript 名)
+- フォントの含むグリフ置換 (合字だの何だの) の変更
+- フォントの含むグリフ位置指定 (カーニングだの何だの) の変更
 
+<!--
 You can also use it to compare truetype and postscript versions of the
 same font. Normally fontforge checks to make sure all the splines match
 exactly, but you can also have it test whether a contour in one font is
 always close to the similar contour in another font, or whether a
 contour in one font is inside a reference in another (these are common
 when comparing PostScript fonts where the format loses references).
+-->
+同じフォントの TrueType 版と PostScript 版の比較をすることもできます。
+通常は FontForge はすべてのスプラインが完全に一致するかどうかを確かめるための検査を行いますが、
+これを使って、片方のフォントが常にもう片方のフォントの同等な輪郭とどこでもほぼ一致するかどうか、
+または片方のフォントに含まれる輪郭がもう片方のフォント内の参照に含まれているか
+(これは、フォーマットが参照を含まない PostScript フォントを比較する時によく起こります)
+を検査することもできます。
 
+<!--
 Comparing PostScript hintmasks is another somewhat iffy topic. There are
 often many equivalent (I think) hint mask possibilities, but I don't
 have a good algorithm for saying that they are equivalent -- especially
 since Adobe uses hints in ways which I find unexpected.
+-->
+PostScript のヒントマスクの比較もまた、どこと無くあやふやな所のある問題です。
+(私の考えでは) 等価なヒントマスクを表現する多くの方法が可能であることがしばしばありますが、
+それらが等価であると示すいいアルゴリズムがありません
+-- 思いもよらないようなヒントの使い方を Adobe がしていることに気づいてからはなおのことです。
 
+<!--
 Finally you can have it place the outlines of each differing glyph from
 the second font into the background of the corresponding glyph in the
 first font. This can be helpful in correcting discrepancies.
+-->
+そして最後に、比較先のフォントと比較元のフォントで異なるグリフのそれぞれに対し、
+比較先のフォントの欠落したグリフを比較元のフォントの対応するグリフの背景に配置することができます。
+これは、矛盾点を修正するのに役立つでしょう。
 
 ![](/assets/img/filemenu-fontcompresults.png)
 
 
+<!--
 #### Compare Layer To Layer...
+-->
+#### レイヤとレイヤの比較 (Compare Layer To Layer...)
 
+<!--
 Only available in the Outline and Font Views. This command allows you to
 specify two layers within the current font and then checks that they are
 similar. In the outline view a message box pops up to say if the layers
 are the same or different. In the Font View, the view will scroll to the
 first glyph whch differs, all differing glyphs will be selected and a
 message box pops up.
+-->
+アウトラインビューとフォントビューでのみ使用できます。
+このコマンドを使用すると、現在のフォント内の 2 つのレイヤーを指定して、それらが類似していることを確認できます。
+アウトラインビューで、レイヤーが同じか異なるかを示すメッセージボックスが表示されます。
+フォントビューでは、ビューは最初の異なるグリフまでスクロールし、
+異なるグリフがすべて選択され、メッセージボックスがポップアップ表示されます。

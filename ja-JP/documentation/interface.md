@@ -83,7 +83,7 @@ title: FontForge Interface
     - [ファイル](filemenu)
     - [編集](editmenu)
     - [点](pointmenu)
-    - [Element](elementmenu)
+    - [エレメント](elementmenu)
     - [Tools](toolsmenu)
     - [Hints](hintsmenu)
     - [Encoding](encodingmenu)
