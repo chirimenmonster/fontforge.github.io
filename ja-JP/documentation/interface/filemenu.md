@@ -40,34 +40,33 @@ title: The File Menu
 * [X Resource Editor&hellip;](x-resource-editor) <br/>
 * [Quit](#quit)
 -->
-* [新規(N)](#new)
-* [開く(O)](#open)
-* [Browse Web](#browse-web)
-    * [Browse Open Font Library](#browse-open-font-library)
-* [最近開いたファイル(T)](#recent)
-* [閉じる」(C)](#close)
-* [Close Tab](#close)
-<p style="border: 1px solid black>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></p>
-* [保存(S)](#save)
-* [ファイル名を指定して保存(A)&hellip;](#save-as)
-* [すべて保存(L)](#save-all)
-* [フォントを出力(G)&hellip;](#generate-fonts)
-* [Macファミリーを出力&hellip;](#generate-mac-family)
-* [Generate TTC&hellip;](#generate-ttc)
-* [書き出し(T)&hellip;](#export) <br/>
-* [取り込み(I)&hellip;](#import)
-* [Merge Feature Info&hellip;](#merge-feature-info)
-* [ファイルを再読み込み(R)](#revert)
-* [バックアップを復元(B)](#revert-to-backup)
-* [グリフを戻す(Y)](#revert-glyph)
-* [Clear Special Data](#clear-special-data) <br/>
-* [Load Word List&hellip;](#load-word-list) <br/>
-* [印刷(P)&hellip;](#print) <br/>
-* [スクリプトを実行(X)&hellip;](#execute-script) <br/>
-* [環境設定&hellip;](#preferences)
-* [スクリプトメニュー(#script-menu)
-* [X Resource Editor&hellip;](x-resource-editor) <br/>
-* [終了](#quit)
+* [新規(N) (New)](#新規n-new)
+* [開く(O) (Open)](#開くo-open)
+* [ウェブを表示 (Browse Web)](#ウェブを表示-browse-web)
+    * [Open Font Library を表示 (Browse Open Font Library)](#open-font-library-を表示-browse-open-font-library)
+* [最近開いたファイル(T) (Recent)](#最近開いたファイルt-recent)
+* [閉じる(C) (Close)](#閉じるc-close)
+* [タブを閉じる (Close Tab)](#タブを閉じる-close-tab)
+* [保存(S) (Save)](#保存s-save)
+* [ファイル名を指定して保存(A)&hellip; (Save As&hellip;)](#ファイル名を指定して保存a-save-as)
+* [すべて保存(L) (Save All)](#すべて保存l-save-all)
+* [フォントを出力(G)&hellip; (Generate Fonts&hellip;)](#フォントを出力g-generate-fonts)
+* [Mac ファミリーを出力（F)&hellip; (Generate Mac Family&hellip;)](#mac-ファミリーを出力f-generate-mac-family)
+* [TTC を出力 (Generate TTC&hellip;)](#ttc-を出力-generate-ttc)
+* [書き出し(T)&hellip; (Export&hellip;)](#書き出しt-export)
+* [取り込み(I)&hellip; (Import&hellip;)](#取り込みi-import)
+* [機能情報を統合&hellip; (Merge Feature Info&hellip;)](#機能情報を統合-merge-feature-info)
+* [ファイルを再読み込み(R) (Revert File)](#ファイルを再読み込みr-revert)
+* [バックアップを復元(B) (Revert to Backup)](#バックアップを復元b-revert-to-backup)
+* [グリフを戻す(Y) (Revert Glyph)](#グリフを戻すy-revert-glyph)
+* [特殊データを消去 (Clear Special Data)](#特殊データを消去-clear-special-data)
+* [単語リストの読み込み (Load Word List&hellip;)](#単語リストの読み込み-load-word-list)
+* [印刷(P)&hellip; (Print&hellip;)](#印刷p-print)
+* [スクリプトを実行(X)&hellip; (Execute Script&hellip;)](#スクリプトを実行x-execute-script)
+* [環境設定(E)&hellip; (Preferences&hellip;)](#環境設定e-preferences)
+* [スクリプトメニュー (Script Menu)](#スクリプトメニュー-script-menu)
+* [X リソースエディタ (X Resource Editor&hellip;)](#x-リソースエディタ-x-resource-editor)
+* [終了(Q) (Quit)](#終了q-quit)
 
 
 * * * * *
@@ -76,7 +75,7 @@ title: The File Menu
 <!--
 #### New
 -->
-#### 新規(N)
+#### 新規(N) (New)
 
 <!--
 Creates a new font with (by default) ISO 8859-1 (Latin1) encoding. The
@@ -90,7 +89,7 @@ default encoding may be changed in the preference dialog.
 <!--
 #### Open
 -->
-#### 開く
+#### 開く(O) (Open)
 
 
 ![example of the dialog to open a font file](/assets/img/filemenu-openfont.png)
@@ -294,9 +293,15 @@ or so that there is a separate pane for directories.
 ****
 
 
+<!--
 #### Browse Web
+-->
+#### ウェブを表示 (Browse Web)
 
+<!--
 ##### Browse Open Font Library
+-->
+##### Open Font Library を表示 (Browse Open Font Library)
 
 <!--
 Brings up a [dialog](../../reference/oflib/) which will browse fonts on the Open
@@ -307,7 +312,7 @@ Open Font Library の Web サイトでフォントを参照するダイアログ
 <!--
 #### Recent
 -->
-#### 最近開いたファイル(T)
+#### 最近開いたファイル(T) (Recent)
 
 <!--
 A submenu showing recently opened font files (it does not show the
@@ -320,7 +325,7 @@ current font).
 <!--
 #### Close
 -->
-#### 閉じる(C)
+#### 閉じる(C) (Close)
 
 <!--
 Closes the current window.
@@ -341,7 +346,7 @@ bitmap glyph or metrics views associated with the font.
 <!--
 #### Save
 -->
-#### 保存(S)
+#### 保存(S) (Save)
 
 <!--
 Saves the current file. If it is associated with a spline font database
@@ -368,7 +373,7 @@ called "Ambrosia.sfd&tilde;".
 <!--
 #### Save As...
 -->
-#### ファイル名を指定して保存(A)
+#### ファイル名を指定して保存(A)... (Save As...)
 
 <!--
 Allows you to give a new name to the current spline font database. Pops
@@ -388,7 +393,7 @@ save it into a directory format where every glyph has its own file.
 <!--
 #### Save All
 -->
-#### すべて保存(L)
+#### すべて保存(L) (Save All)
 
 <!--
 Saves all changed fonts. If any have not been named, it will pop up a
@@ -403,7 +408,7 @@ Save As file picker for that font.
 <!--
 #### Generate Fonts...
 -->
-#### フォントを出力(G)
+#### フォントを出力(G) (Generate Fonts...)
 
 <!--
 [This generates font files](../generate/), both outline and bitmap. You
@@ -423,7 +428,7 @@ PostScript 出力のタイプを選択したり、
 <!--
 #### Generate Mac Family...
 -->
-#### Macファミリーを出力(F)...
+#### Mac ファミリーを出力(F)... (Generate Mac Family...)
 
 <!--
 This is only available if there are multiple fonts open in the same
@@ -446,7 +451,10 @@ members.
 ファミリーに含まれる可能性のある全フォントの一覧を含んでいる点が異なります。
 
 
+<!--
 #### Generate TTC...
+-->
+#### TTC を出力... (Generate TTC...)
 
 <!--
 This is only available if there are multiple fonts open (they need not
@@ -462,7 +470,7 @@ into the ttc file and how they should be stored.
 <!--
 #### Revert
 -->
-#### ファイルを再読込(R)
+#### ファイルを再読込(R) (Revert)
 
 <!--
 Rereads the font from the file on the disk. All changes are lost.
@@ -474,7 +482,7 @@ Rereads the font from the file on the disk. All changes are lost.
 <!--
 #### Revert To Backup
 -->
-#### バックアップを復元(B)
+#### バックアップを復元(B) (Revert To Backup)
 
 <!--
 Only available in the font view. When FontForge saves an sfd file (with
@@ -486,9 +494,9 @@ there is one).
 -->
 フォントビューでのみ使用可能です。
 FontForge が SFD ファイルを
-([<span class="command">ファイル名を指定して保存(A)</span>](#ファイル名を指定して保存a)
+([<span class="command">ファイル名を指定して保存(A)</span>](#ファイル名を指定して保存a-save-as)
 ではなく
-[<span class="command">保存(S)</span>](#保存s)
+[<span class="command">保存(S)</span>](#保存s-save)
 コマンドで)
 保存する時、
 古いデータを含むバックアップ版のファイルを作成します
@@ -499,7 +507,7 @@ FontForge が SFD ファイルを
 <!--
 #### Revert Glyph
 -->
-#### グリフを戻す(Y)
+#### グリフを戻す(Y) (Revert Glyph)
 
 <!--
 Only available in the font and outline views. Rereads the font from the
@@ -540,7 +548,10 @@ em-size) then the results may not be appropriate.
 結果は適切ではない可能性があります。
 
 
+<!--
 #### Clear Special Data
+-->
+#### 特殊データを消去 (Clear Special Data)
 
 <!--
 This function removes extra information in a font file that FontForge
@@ -554,7 +565,7 @@ FontForgeにとって役に立たないフォントファイルに情報を配�
 <!--
 #### Export...
 -->
-#### 書き出し(T)...
+#### 書き出し(T)... (Export...)
 
 <!--
 In the Outline view this allows you to export the splines that make up
@@ -593,7 +604,7 @@ This menu item is not available in the Font or Metrics Views.
 <!--
 #### Import...
 -->
-#### 取り込み(I)...
+#### 取り込み(I)... (Import...)
 
 <!--
 In the Font View this allows you to import one or several bitmap fonts
@@ -732,7 +743,11 @@ fonts will be imported into the sfd.
 複数のファイルを選択することができ、
 全ての選択されたフォントが SFD に取り込まれます。
 
+
+<!--
 #### Merge Feature Info...
+-->
+#### 機能情報を統合... (Merge Feature Info...)
 
 <!--
 Only available in the font view window. This command will allow you to
@@ -778,7 +793,10 @@ FontForge はフォントを読み込むときにこのファイルの推測を�
 あなた自身が指定を行う必要があります。
 
 
+<!--
 #### Load Word List...
+-->
+#### 単語リストの読み込み... (Load Word List...)
 
 <!--
 It can be helpful to create a set of words that demonstrate how specific
@@ -791,7 +809,7 @@ you to import a saved list of these words, instead of having to retype them.
 <!--
 #### Print...
 -->
-#### 印刷(P)...
+#### 印刷(P)... (Print...)
 
 <!--
 Not available in the bitmap view. Allows you to print out all the glyphs
@@ -811,7 +829,7 @@ See the section on [printing](../display/) for more information.
 <!--
 #### Execute Script...
 -->
-#### スクリプトを実行(X)...
+#### スクリプトを実行(X)... (Execute Script...)
 
 <!--
 Only in the font view. Brings up a dlg and allows you to enter a
@@ -836,7 +854,7 @@ can change that with the [Filter] button if you use something else.
 <!--
 #### Script Menu
 -->
-#### スクリプトメニュー
+#### スクリプトメニュー (Script Menu)
 
 <!--
 Only in the font view. You may define up to 10
@@ -860,7 +878,7 @@ the [preferences dialog](../prefs/#script-menu)
 <!--
 #### Preferences...
 -->
-#### 環境設定(E)...
+#### 環境設定(E)... (Preferences...)
 
 <!--
 This pops up a [dialog allowing you to configure various esoteric bits
@@ -880,7 +898,10 @@ Resources](../../customizing/xres/) below.
 を用いて設定します。
 
 
+<!--
 #### X Resource Editor...
+-->
+#### X リソースエディタ... (X Resource Editor...)
 
 <!--
 [This dialog](../resedit/) allows you to edit FontForge's X Resources,
@@ -895,7 +916,7 @@ FontForge の現在の設定を変更できます。
 <!--
 #### Quit
 -->
-#### 終了(Q)
+#### 終了(Q) (Quit)
 
 <!--
 Exits the program, prompting you whether to save any changed fonts.
