@@ -6,6 +6,21 @@ title: 翻訳
 
 ### 翻訳
 
+###### bluevalues
+
+For **BlueValues**, entries must be made in pairs, and FontForge can't tell
+until the second value is selected where the pair should be placed. So
+for **BlueValues** you must click on two histogram bars (click on the
+leftmost one first). Then if the second value is negative both will be
+added to OtherBlues, otherwise both will be added to **BlueValues**.<br>
+(histgram.md)
+
+**参考**
+組上がり濃度属性は，歴史的な理由及び互換性の理由から， **BLUEVALUES** と呼ぶ。
+もともと Blue という用語は，業界で書体をデジタル化する際の色分け方法の一部として用いてきた。
+この用語は，これらの属性をグループ化するのにも，
+フォントの組上がり濃度制御の概念にこの属性を結び付けることにも有効である。
+(JIS X 4163-1994 (ISO/IEC 9541-3: 1994) フォント情報交換第 3 部  グリフ形状表現)
 
 ###### condence
 
@@ -13,6 +28,15 @@ title: 翻訳
 
 Condense/Extend<br>
 (elementmenu.md)
+
+
+###### delta
+
+デルタ
+
+Brings up a [dialog](../SuggestDeltas/) which will help you search for
+places where truetype **delta** instructions might be useful.<br>
+(hintsmenu.md)
 
 
 ###### extend
