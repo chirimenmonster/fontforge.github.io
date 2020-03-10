@@ -87,7 +87,7 @@ title: FontForge Interface
     - [ツール](toolsmenu)
     - [ヒント](hintsmenu)
     - [エンコーディング](encodingmenu)
-    - [View](viewmenu)
+    - [ビュー](viewmenu)
     - [メトリック](metricsmenu)
     - [CID](cidmenu)
     - [Multi Master](mmmenu)
