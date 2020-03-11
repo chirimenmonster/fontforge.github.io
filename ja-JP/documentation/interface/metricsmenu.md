@@ -15,9 +15,9 @@ contains "Center in Width" and "Thirds in Width".
 -->
 このメニューはビットマップビューには表示されません。
 また、メトリックビューの表示では
-<span class="command">幅の中央に</span>
+<span class="command">幅の中央に (Center in Width)</span>
 と
-<span class="command">両幅の空きを1:2に</span>
+<span class="command">両幅の空きを1:2に (Thirds in Width)</span>
 だけを含みます。
 
 
@@ -27,7 +27,7 @@ contains "Center in Width" and "Thirds in Width".
 <!--
 #### Center in Width
 -->
-#### 幅の中央に
+#### 幅の中央に(C) (Center in Width)
 
 <!--
 In the Outline and Metrics Views this centers the current glyph (makes
@@ -51,7 +51,7 @@ will be adjusted with the rest of the glyph.
 <!--
 #### Thirds in Width
 -->
-#### 両幅の空きを1:2に
+#### 両幅の空きを1:2に(T) (Thirds in Width)
 
 <!--
 This is very like Center in Width above... except that I happen to
@@ -60,7 +60,7 @@ So this command makes the rbearing twice the lbearing (instead of making
 them be the same).
 -->
 これは上の
-<span class="command">幅の中央に</span>
+<span class="command">幅の中央に(C) (Center in Width)</span>
 と非常によく似ています…
 私の好みではグリフの後ろのスペースを前のスペースより少し多めに取りたがることを除いては。
 そのため、このコマンドは右サイドベアリングを左サイドベアリングの 2 倍に (均等ではなく) 設定します。
@@ -75,7 +75,7 @@ will be adjusted with the rest of the glyph.
 <!--
 #### Window Type
 -->
-#### ウィンドウタイプ
+#### ウィンドウタイプ (Window Type)
 
 <!--
 In the Metrics View, the window may behave in different ways.
@@ -87,7 +87,7 @@ In the Metrics View, the window may behave in different ways.
 <!--
 ##### Kerning Only
 -->
-##### カーニングのみ
+##### カーニングのみ (Kerning Only)
 
 <!--
 This metrics view may only be used to adjust kerning
@@ -99,7 +99,7 @@ This metrics view may only be used to adjust kerning
 <!--
 ##### Advance Width Only
 -->
-##### 送り幅のみ
+##### 送り幅のみ (Advance Width Only)
 
 <!--
 This metrics view may only be used to adjust the advance widths of
@@ -111,7 +111,7 @@ glyphs
 <!--
 ##### Both
 -->
-##### 両方
+##### 両方 (Both)
 
 <!--
 This metrics view will adjust either the advance width or kerning
@@ -123,7 +123,7 @@ This metrics view will adjust either the advance width or kerning
 <!--
 #### Set Width...
 -->
-#### 幅を設定...
+#### 幅を設定(W)... (Set Width...)
 
 ![](/assets/img/filemenu-setwidth.png)
 
@@ -136,7 +136,7 @@ Normally the width will be expressed in em-units, but in a bitmap only
 font the width will be expressed as pixels in the current displayed
 font.
 -->
-<span class="command">幅を設定</span>
+<span class="command">幅を設定(W) (Set Width)</span>
 コマンドを使うと、
 (アウトラインビュー内では) 現在のグリフの幅を、
 または (フォントビューでは) 選択中のすべてのグリフの幅を変更することができます。
@@ -150,16 +150,16 @@ font.
 <!--
 #### Set LBearing...
 -->
-#### 左サイドベアリングを設定...
+#### 左サイドベアリングを設定(L)... (Set LBearing...)
 
 <!--
 The Set LBearing command is similar to the Set Width command above, the
 dialog is pretty much the same except that it applies to the left side
 bearing rather than to the width.
 -->
-<span class="command">左サイドベアリングを設定</span>
+<span class="command">左サイドベアリングを設定(L) (Set LBearing)</span>
 コマンドは、上の
-<span class="command">幅を設定</span>
+<span class="command">幅を設定(W) (Set Width)</span>
 コマンドに似ています。
 ダイアログは非常に良く似ていて、
 適用されるのが幅ではなくて左サイドベアリングである点だけが違います。
@@ -174,16 +174,16 @@ will be adjusted with the rest of the glyph.
 <!--
 #### Set RBearing...
 -->
-#### 右サイドベアリングを設定...
+#### 右サイドベアリングを設定(R)... (Set RBearing...)
 
 <!--
 The Set RBearing command is similar to the Set Width command above, the
 dialog is pretty much the same except that it applies to the right side
 bearing rather than to the width.
 -->
-<span class="command">右サイドベアリングを設定</span>
+<span class="command">右サイドベアリングを設定(R) (Set RBearing)</span>
 コマンドは、上の
-<span class="command">幅を設定</span>
+<span class="command">幅を設定(W) (Set Width)</span>
 コマンドに似ています。
 ダイアログは非常に良く似ていて、
 適用されるのが幅ではなくて右サイドベアリングである点だけが違います。
@@ -192,7 +192,7 @@ bearing rather than to the width.
 <!--
 #### Auto Width...
 -->
-#### 幅の自動設定...
+#### 幅の自動設定(A)... (Auto Width...)
 
 <!--
 This command is only available in the font view. [It attempts to guess
@@ -208,7 +208,7 @@ accurately the left and right bearings) of the specified glyphs.
 <!--
 #### Kern By Classes...
 -->
-#### クラス毎のカーニング...
+#### クラス毎のカーニング(N)... (Kern By Classes...)
 
 <!--
 This command is only available from the font and metrics views. It
@@ -224,7 +224,7 @@ manipulate kerning classes.
 <!--
 #### Remove All Kern Pairs
 -->
-#### カーニングをすべて削除
+#### カーニングをすべて削除(P) (Remove All Kern Pairs)
 
 <!--
 In the font view removes all kern pairs (and kern classes) in the font.
@@ -246,7 +246,7 @@ Not present in the Metrics or Bitmap views.
 <!--
 #### Kern Pair Closeup...
 -->
-#### カーニングペアの詳細...
+#### カーニングペアの詳細... (Kern Pair Closeup...)
 
 <!--
 (Sorry about the name, I couldn't think of a better).
@@ -256,8 +256,9 @@ Table](../metricsview/#DeviceTable)" (which allows small corrections
 from the standard behavior at specified point sizes)
 -->
 (解りにくい名前ですみません。 
-「詳細」(Closeup) よりいい名前が思いつかなかったのです)。
-異なるポイントサイズにおける 2 つのグリフ間のカーニングを [見ることができ](../metricsview/#kern-pair-closeup) 、
+「詳細 (Closeup)」 よりいい名前が思いつかなかったのです)。
+異なるポイントサイズにおける 2 つのグリフ間のカーニングを
+[見ることができ](../metricsview/#kern-pair-closeup) 、
 [<span class="command">デバイステーブル</span>](../metricsview/#デバイステーブル)
 を構築することができます
 (このテーブルを用いると、指定されたポイントサイズにおいて標準とは少し異なるふるまいを指定することが可能です)
@@ -271,7 +272,7 @@ Not present in the Bitmap view.
 <!--
 #### VKern By Classes...
 -->
-#### クラス毎の縦書きカーニング
+#### クラス毎の縦書きカーニング... (VKern By Classes...)
 
 <!--
 This command is only available from the font and metrics views. It
@@ -287,7 +288,7 @@ manipulate vertical kerning classes.
 <!--
 #### VKern From HKern
 -->
-#### 横書きカーニングを縦書きに
+#### 横書きカーニングを縦書きに (VKern From HKern)
 
 <!--
 This command is only available from the font and metrics views. It
@@ -314,7 +315,7 @@ with a value of -50)
 <!--
 #### Remove All VKern Pairs
 -->
-#### 縦書きカーニングをすべて削除
+#### 縦書きカーニングをすべて削除 (Remove All VKern Pairs)
 
 <!--
 In the font view removes all vertical kern pairs (and kern classes) in
@@ -337,7 +338,7 @@ Not present in the Metrics or Bitmap views.
 <!--
 #### Set Vertical Advance...
 -->
-#### 縦書き時のグリフ幅を設定...
+#### 縦書き時のグリフ幅を設定(V)... (Set Vertical Advance...)
 
 <!--
 If vertical metrics are enabled for the font this will be active in the
@@ -351,6 +352,6 @@ It behaves exactly like Set Width... except it works on the vertical
 advance rather than the horizontal advance (width).
 -->
 これは
-<span class="command">幅を設定...</span>
+<span class="command">幅を設定(W)... (Set Width...)</span>
 と同じですが、
 横書き用の送り幅 (グリフの幅) ではなく縦書き用の送り幅を設定する点が異なります。
