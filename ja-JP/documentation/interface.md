@@ -92,7 +92,7 @@ title: FontForge Interface
     - [CID](cidmenu)
     - [マルチマスター (Multi Master)](mmmenu)
     - [ウィンドウ (Window)](windowmenu)
-    - [Help](helpmenu)
+    - [ヘルプ (Help)](helpmenu)
     - [Hot Keys](hotkeys)
 - [ウィンドウ](fontview)
     - [フォント (Font)](fontview)
