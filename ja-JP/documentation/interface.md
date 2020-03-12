@@ -90,7 +90,7 @@ title: FontForge Interface
     - [表示 (View)](viewmenu)
     - [メトリック (Metric)](metricsmenu)
     - [CID](cidmenu)
-    - [Multi Master](mmmenu)
+    - [マルチマスター (Multi Master)](mmmenu)
     - [Window](windowmenu)
     - [Help](helpmenu)
     - [Hot Keys](hotkeys)
