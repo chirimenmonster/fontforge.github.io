@@ -15,7 +15,7 @@ title: Help menu
 <!--
 #### Help
 -->
-#### ヘルプ( (Help)
+#### ヘルプ(H) (Help)
 
 <!--
 Invokes a browser and brings up contextual help on fontforge web site.
