@@ -31,7 +31,7 @@ text fields has the focus.
 <!--
 #### Undo
 -->
-#### 元に戻す(U)
+#### 元に戻す(U) (Undo)
 
 <!--
 In the outline view and the bitmap view this will undo the last command.
@@ -53,7 +53,7 @@ undoes the last operation on all selected glyphs.
 <!--
 #### Redo
 -->
-#### やり直し(R)
+#### やり直し(R) (Redo)
 
 <!--
 In the outline view and the bitmap view this will redo the last command
@@ -74,7 +74,7 @@ undoes the last operation on all selected glyphs.
 <!--
 #### Cut
 -->
-#### 切り取り(T)
+#### 切り取り(T) (Cut)
 
 <!--
 In the font view this command puts the foreground of all selected glyphs
@@ -115,7 +115,7 @@ then delete it. If there is no selection nothing happens.
 <!--
 #### Copy
 -->
-#### コピー(C)
+#### コピー(C) (Copy)
 
 <!--
 In the font view this command puts the foreground and hints of all
@@ -176,7 +176,7 @@ identify the point. See the section on
 <!--
 #### Copy Reference
 -->
-#### 参照をコピー(O)
+#### 参照をコピー(O) (Copy Reference)
 
 <!--
 In the font view this command puts a reference to all selected glyphs
@@ -192,7 +192,10 @@ current glyph into the clipboard (only available in foreground mode).
 (前面モードでのみ使用可能です)。
 
 
+<!--
 #### Copy Lookup Data
+-->
+#### ルックアップデータをコピー (Copy Lookup Data)
 
 <!--
 Copies lookup data (substitutions, ligatures, kerning, anchor points,
@@ -225,7 +228,7 @@ expected:
 <!--
 #### Copy Width
 -->
-#### 幅をコピー(W)
+#### 幅をコピー(W) (Copy Width)
 
 <!--
 In the Font View this command copies the widths of all selected glyphs
@@ -248,7 +251,7 @@ This command is not available in the Bitmap View.
 <!--
 #### Copy VWidth
 -->
-#### 高さをコピー(V)
+#### 高さをコピー(V) (Copy VWidth)
 
 <!--
 In the Font View this command copies the vertical widths of all selected
@@ -271,7 +274,7 @@ This command is not available in the Bitmap View.
 <!--
 #### Copy LBearing
 -->
-#### 左サイドベアリングをコピー(P)
+#### 左サイドベアリングをコピー(P) (Copy LBearing)
 
 <!--
 In the Font View this command copies the left side bearings of all
@@ -294,7 +297,7 @@ This command is not available in the Bitmap View.
 <!--
 #### Copy RBearing
 -->
-#### 右サイドベアリングをコピー(G)
+#### 右サイドベアリングをコピー(G) (Copy RBearing)
 
 <!--
 In the Font View this command copies the right side bearings of all
@@ -317,7 +320,7 @@ This command is not available in the Bitmap View.
 <!--
 #### Copy Grid Fit
 -->
-#### グリッド合わせをコピー(D)
+#### グリッド合わせをコピー(D) (Copy Grid Fit)
 
 <!--
 Only available in the outline glyph view and only if [View-\>Show Grid
@@ -334,7 +337,7 @@ the grid fit version of the glyph into the clipboard.
 <!--
 #### Paste
 -->
-#### 貼り付け(P)
+#### 貼り付け(P) (Paste)
 
 <!--
 In the Font View this command will paste whatever is in the clipboard
@@ -424,7 +427,7 @@ See the section on [selections](../../reference/selections/)
 <!--
 #### Paste Into
 -->
-#### 追加貼り付け
+#### 追加貼り付け (Paste Into)
 
 <!--
 Only available in the fontview. Just like Paste, except it does not
@@ -439,7 +442,7 @@ clear the contents of the glyph before adding to it.
 <!--
 #### Paste After
 -->
-#### 隣に貼り付け
+#### 隣に貼り付け (Paste After)
 
 <!--
 Only available in the fontview. Pastes the contents of the clipboard
@@ -466,7 +469,7 @@ This command is not present unless you modify configure-pfaedit.h
 <!--
 #### Same Glyph As
 -->
-#### 同じ文字として設定(M)
+#### 同じ文字として設定(M) (Same Glyph As)
 
 <!--
 Only available in the fontview. If the clipboard contains a single
@@ -505,7 +508,7 @@ Adobe は、それを避けるように勧めています。
 <!--
 #### Clear
 -->
-#### クリア(L)
+#### クリア(L) (Clear)
 
 <!--
 Similar to [Cut](#Cut) except it does not copy anything to the
@@ -518,7 +521,7 @@ clipboard.
 <!--
 #### Clear Background
 -->
-#### 背景をクリア(B)
+#### 背景をクリア(B) (Clear Background)
 
 <!--
 Only in the font view. This command clears the backgrounds of all
@@ -531,7 +534,7 @@ selected glyphs.
 <!--
 #### Merge
 -->
-#### 合併(M)
+#### 合併(M) (Merge)
 
 <!--
 This command is only available in the Outline View. If a point on a path
@@ -559,7 +562,7 @@ points will retain their slopes (unless both are corner points).
 <!--
 #### Join
 -->
-#### 線の接合(J)
+#### 線の接合(J) (Join)
 
 <!--
 This command is not available in the bitmap view. It looks for any paths
@@ -587,7 +590,7 @@ have selected points on them it will only attempt to join those paths.
 <!--
 #### Copy Fg To Bg
 -->
-#### 背景にコピー(F)
+#### 背景にコピー(F) (Copy Fg To Bg)
 
 <!--
 This command is only available in the Outline and Font Views. It cleans
@@ -601,7 +604,10 @@ images remain.
 注意: すべての背景画像は残ります。参照はコピーされません。
 
 
+<!-
 #### Copy Layer To Layer
+-->
+#### レイヤーをレイヤーにコピー (Copy Layer To Layer)
 
 <!--
 This command is only available in the Outline and Font Views. It brings
@@ -619,7 +625,7 @@ to append to it. Then it copies the contents of the source layer
 <!--
 #### Select
 -->
-#### 選択(S)
+#### 選択(S) (Select)
 
 <!--
 In the outline view there is a select menu, other views just have Select
@@ -636,7 +642,7 @@ All.
 <!--
 ##### Select All
 -->
-##### すべて選択(A)
+##### すべて選択(A) (Select All)
 
 <!--
 In the outline view it selects all points, all references (all images if
@@ -654,7 +660,7 @@ bitmap view it selects the current bitmap region.
 <!--
 ##### Invert Selection
 -->
-##### 選択範囲を反転(I)
+##### 選択範囲を反転(I) (Invert Selection)
 
 <!--
 Selects anything not selected, and deselects everything selected.
@@ -665,7 +671,7 @@ Selects anything not selected, and deselects everything selected.
 <!--
 ##### Deselect All
 -->
-##### すべて選択解除(D)
+##### すべて選択解除(D) (Deselect All)
 
 <!--
 Deselects anything selected
@@ -676,7 +682,7 @@ Deselects anything selected
 <!--
 ##### First Point
 -->
-##### 最初の端点(F)
+##### 最初の端点(F) (First Point)
 
 <!--
 Deselects everything and then selects the first point on the first path
@@ -688,7 +694,7 @@ of the glyph.
 <!--
 ##### First Point, Next Contour
 -->
-##### 次の輪郭の最初の点(O)
+##### 次の輪郭の最初の点(O) (First Point, Next Contour)
 
 <!--
 Deselects everything and then selects the first point on the next
@@ -701,7 +707,7 @@ contour. (If the last contour is selected then deselects everything).
 <!--
 ##### Next Point
 -->
-##### 次の端点(N)
+##### 次の端点(N) (Next Point)
 
 <!--
 Deselects the current point and selects the next point.
@@ -712,7 +718,7 @@ Deselects the current point and selects the next point.
 <!--
 ##### Prev Point
 -->
-##### 前の端点(P)
+##### 前の端点(P) (Prev Point)
 
 <!--
 Deselects the current point and selects the previous point
@@ -723,7 +729,7 @@ Deselects the current point and selects the previous point
 <!--
 ##### Next Control Point
 -->
-##### 次の制御点(X)
+##### 次の制御点(X) (Next Control Point)
 
 <!--
 Selects the "Next Control Point" of the current point.
@@ -734,7 +740,7 @@ Selects the "Next Control Point" of the current point.
 <!--
 ##### Prev Control Point
 -->
-##### 前の制御点(R)
+##### 前の制御点(R) (Prev Control Point)
 
 <!--
 Selects the "Prev Control Point" of the current point.
@@ -745,7 +751,7 @@ Selects the "Prev Control Point" of the current point.
 <!--
 ##### Point At
 -->
-##### 位置を指定して選択(T)
+##### 位置を指定して選択(T) (Point At)
 
 <!--
 Allows the user to enter an X,Y coordinate and selects the point at that
@@ -757,7 +763,7 @@ X 座標と Y 座標を入力して、その位置にある点を選択する事
 <!--
 ##### Points on Selected Contours
 -->
-##### 輪郭全体(C)
+##### 輪郭全体(C) (Points on Selected Contours)
 
 <!--
 If a contour contains any selected points, then select all points on the
@@ -769,7 +775,7 @@ contour.
 <!--
 ##### Select All Points & Refs
 -->
-##### すべての点と参照を選択(P)
+##### すべての点と参照を選択(P) (Select All Points & Refs)
 
 <!--
 Just like select all, but it doesn't select anchor points or the width
@@ -782,7 +788,7 @@ lines.
 <!--
 ##### Select Anchors
 -->
-##### アンカーを選択(C)
+##### アンカーを選択(C) (Select Anchors)
 
 <!--
 Select all the Anchor points in the glyph.
@@ -793,7 +799,7 @@ Select all the Anchor points in the glyph.
 <!--
 ##### (De)Select Width
 -->
-#### 幅を(選択解除)(W)
+#### 幅を(選択解除)(W) ((De)Select Width)
 
 <!--
 Toggles whether the width line is selected.
@@ -804,7 +810,7 @@ Toggles whether the width line is selected.
 <!--
 ##### (De)Select VWidth
 -->
-##### 高さ(を選択解除)(V)
+##### 高さ(を選択解除)(V) ((De)Select VWidth)
 
 <!--
 (if vertical metrics are enabled) Toggles whether the vertical width
@@ -817,7 +823,7 @@ line is selected.
 <!--
 ##### Select Points Affected by Current HintMask
 -->
-##### ヒントマスクが作用する点を選択
+##### ヒントマスクが作用する点を選択 (Select Points Affected by Current HintMask)
 
 <!--
 If a single point with a hintmask is selected, then this command selects
@@ -829,7 +835,7 @@ all points affected by that hintmask.
 <!--
 ##### Select by Color
 -->
-##### 色で選択(S)
+##### 色で選択(S) (Select by Color)
 
 <!--
 Only in the font view. Displays a submenu containing a list of colors
@@ -848,7 +854,10 @@ Shift キーを押しながら選択を行うことによって、
 色で指定したグリフを今までの選択内容に追加選択することができます。
 
 
+<!--
 ##### Select by Wildcard...
+-->
+##### ワイルドカードで選択... (Select by Wildcard...)
 
 <!--
 Select all glyphs that match the wildcard pattern specified. A glyph may
@@ -862,7 +871,10 @@ detaching .notdef.
 これは主に、.notdef を切り離すのに役立つのではないかと思います。
 
 
+<!--
 ##### Select by Script...
+-->
+##### スクリプトで選択... (Select by Script...)
 
 <!--
 Allows you to specify an OpenType script tag and then ff will select all
@@ -913,7 +925,10 @@ operation)
 (論理積 AND 作用)
 
 
+<!--
 ##### Glyphs worth outputting
+-->
+##### 出力する価値のあるグリフ (Glyphs worth outputting)
 
 <!--
 Generally this means that either the glyph's width has been set, or that
@@ -924,7 +939,10 @@ reference.
 その前景レイヤーの1つに何らかのデータ (輪郭または参照) があることを意味します。
 
 
+<!--
 ##### with only references
+-->
+##### 参照のみを持つグリフ (with only references)
 
 <!--
 Select all glyphs which contain at least one reference (in the active
@@ -933,7 +951,10 @@ layer) and no contours.
 (アクティブなレイヤー内で) 少なくとも1つの参照を持ち、輪郭を持たないすべてのグリフを選択します。
 
 
+<!--
 ##### Glyphs with only Splines
+-->
+##### スプラインのみを持つグリフ (Glyphs with only Splines)
 
 <!--
 Select all glyphs which contain at least one contour (in the active
@@ -942,7 +963,10 @@ layer) and no references.
 (アクティブなレイヤー内で) 少なくとも1つの輪郭を持ち、参照を持たないすべてのグリフを選択します。
 
 
+<!--
 ##### Glyphs with both
+-->
+##### 両方を持つグリフ (Glyphs with both)
 
 <!--
 Select all glyphs in the active layer with both contours and references.
@@ -956,7 +980,10 @@ FontForge にはそれを処理するためのさまざまなトリックがあ�
 そのようなものを修正したい場合があるかもしれません。
 
 
+<!--
 ##### Whitespace Glyphs
+-->
+##### 空白のグリフ (Whitespace Glyphs)
 
 <!--
 Select all glyphs which contain neither references nor contours (but
@@ -970,7 +997,7 @@ which have had their widths set).
 <!--
 ##### Changed
 -->
-##### 変更されたグリフ(C)
+##### 変更されたグリフ(C) (Changed)
 
 <!--
 Selects all changed glyphs
@@ -981,7 +1008,7 @@ Selects all changed glyphs
 <!--
 ##### Hinting Needed
 -->
-##### ヒントづけが必要なグリフ(H)
+##### ヒントづけが必要なグリフ(H) (Hinting Needed)
 
 <!--
 Selects all glyphs which FontForge thinks need to be hinted.
@@ -989,7 +1016,10 @@ Selects all glyphs which FontForge thinks need to be hinted.
 ヒントづけが必要だと FontForge が判断したすべてのグリフを選択します。
 
 
+<!--
 ##### Autohintable
+-->
+##### 自動ヒント可能 (Autohintable)
 
 <!--
 Selects all glyphs which FontForge thinks can be autohinted -- ie. all
@@ -1003,7 +1033,10 @@ FontForge が自動ヒント付けできると考えるすべてのグリフを�
 でマークされていないすべてのグリフです
 (この機能は FontForge が問題のグリフを自動ヒント付けする「必要がある」と考えているかどうかをチェックしません）。
 
+<!--
 ##### Select By Lookup Subtable...
+-->
+##### ルックアップサブテーブルによる選択... (Select By Lookup Subtable...)
 
 <!--
 Only in the font view. Brings up a [dlg](../selectbyatt/) which allows
@@ -1018,7 +1051,7 @@ features.
 <!--
 #### Find / Replace
 -->
-#### 検索 / 置換(I)
+#### 検索 / 置換(I) (Find / Replace)
 
 <!--
 Only in the font view, this brings up a [dialog](../search/) that
@@ -1034,7 +1067,7 @@ patterns.
 <!--
 #### Replace With Reference
 -->
-#### 参照に置換
+#### 参照に置換 (Replace With Reference)
 
 <!--
 Only in the font view, this command will search the font finding any
@@ -1086,7 +1119,7 @@ been changed by the command.
 <!--
 #### Unlink Reference
 -->
-#### 参照を解除(N)
+#### 参照を解除(N) (Unlink Reference)
 
 <!--
 This will remove a referenced glyph and replace it with the splines and
@@ -1098,7 +1131,7 @@ points (or bitmap raster) that make it up.
 <!--
 #### Copy From
 -->
-#### コピー元の指定(F)
+#### コピー元の指定(F) (Copy From)
 
 <!--
 Only available in the Font View.
@@ -1109,7 +1142,7 @@ Only available in the Font View.
 <!--
 ##### All Fonts
 -->
-##### すべてのフォント(A)
+##### すべてのフォント(A) (All Fonts)
 
 <!--
 If this is set then Copy (and Cut and Clear) will copy from the outline
@@ -1127,7 +1160,7 @@ font and from all the bitmap fonts
 <!--
 ##### Displayed Font
 -->
-##### 表示されているフォント(D)
+##### 表示されているフォント(D) (Displayed Font)
 
 <!--
 If this is set then Copy will only copy from the font currently being
@@ -1141,7 +1174,7 @@ displayed.
 <!--
 ##### Char Metadata
 -->
-##### グリフのメタデータ(M)
+##### グリフのメタデータ(M) (Char Metadata)
 
 <!--
 Normally [Copy](#Copy) does not copy the metadata (name, unicode encoding,
@@ -1159,7 +1192,7 @@ then it will.
 <!--
 ##### TrueType Instructions
 -->
-##### TrueType 命令
+##### TrueType 命令 (TrueType Instructions)
 
 <!--
 Controls whether truetype instructions should be copied with a glyph. If
@@ -1187,7 +1220,7 @@ Accented](../elementmenu/#Build.Accented.Composite.Glyph) glyph commands.
 <!--
 #### Remove Undoes
 -->
-#### アンドゥ履歴をクリア
+#### アンドゥ履歴をクリア (Remove Undoes)
 
 <!--
 Not available in the Metrics View. This allows you to free up some of
@@ -1212,4 +1245,5 @@ the memory FontForge is currently squandering on keeping track of Undoes
 -   ビットマップグリフビューで実行すると、
     ビットマップ編集操作の取り消し/再実行に必要なすべての記憶領域を解放します。
 -   フォントビューで実行すると、
-    選択中のすべてのグリフのアウトライン・ビットマップ・背景および前面の編集取り消し/再実行に必要なすべての記憶領域を解放します。
+    選択中のすべてのグリフのアウトライン・ビットマップ・背景、
+    および前面の編集取り消し/再実行に必要なすべての記憶領域を解放します。
