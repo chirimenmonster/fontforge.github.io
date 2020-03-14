@@ -21,7 +21,7 @@ This menu is only available in the Outline Character View.
 <!--
 #### Curve
 -->
-#### 曲線上の点(C)
+#### 曲線上の点(C) (Curve)
 
 <!--
 If all the selected points are Curve points then this entry will be
@@ -34,7 +34,7 @@ points.
 <!--
 #### Corner
 -->
-#### 角の点(O)
+#### 角の点(O) (Corner)
 
 <!--
 If all the selected points are Corner points then this entry will be
@@ -47,7 +47,7 @@ points.
 <!--
 #### Tangent
 -->
-#### 曲線の開始点(T)
+#### 曲線の開始点(T) (Tangent)
 
 <!--
 If all the selected points are Tangent points then this entry will be
@@ -60,7 +60,7 @@ points.
 <!--
 #### Make First
 -->
-#### 開始点に設定(M)
+#### 開始点に設定(M) (Make First)
 
 <!--
 If exactly one point is selected and it is on a closed path and it is
@@ -73,7 +73,7 @@ not the "first point" of that path, then it will become the first point.
 <!--
 #### Can Be Interpolated, Can't Be Interpolated
 -->
-#### 補間可能, 補間不可能
+#### 補間可能, 補間不可能 (Can Be Interpolated, Can't Be Interpolated)
 
 <!--
 When editing truetype curves, an on-curve point can be omitted from the
@@ -97,7 +97,7 @@ TrueType の曲線を編集中に、
 <!--
 #### Add Anchor Point...
 -->
-#### アンカーを追加(A)...
+#### アンカーを追加(A)... (Add Anchor Point...)
 
 ![](/assets/img/filemenu-agetinfo.png)
 
@@ -122,7 +122,10 @@ the [Element-\>Get Info command](../getinfo/#Anchors) for more info.
 を参照してください。
 
 
+<!--
 #### Acceptable Extrema
+-->
+#### 極地を受容する (Acceptable Extrema)
 
 <!--
 Tells the validator that it is OK for this spline to have extrema. You
@@ -134,7 +137,7 @@ select a spline by selecting its two end-points.
 <!--
 #### Make Line
 -->
-#### 直線に変換(L)
+#### 直線に変換(L) (Make Line)
 
 <!--
 If two adjacent points are selected then make the spline between them
@@ -153,7 +156,10 @@ make its control points be on top of the point
 その点から伸びる制御点をその点と同じ場所に設定します。
 
 
+<!--
 #### Make Arc
+-->
+#### 円弧を作成 (Make Arc)
 
 <!--
 If two adjacent points are selected then make the spline between them
@@ -207,7 +213,10 @@ FontForge は完全な楕円のコピーを背景レイヤーに配置します�
 -- これはデバッグ用でしたが、ちょっとクールだと思ったのでそのままにしました)。
 
 
+<!--
 #### Insert Point on Spline at...
+-->
+#### スプラインにポイントを挿入... (Insert Point on Spline at...)
 
 <!--
 Select the two end-points of a spline, then bring up this dialog. You
@@ -233,7 +242,10 @@ TrueType では、
 その点を出力ファイルに書き込むのを省略することができます。
 このコマンドは、そのような点を簡単に作成することができます。
 
+<!--
 #### Name Contour
+-->
+#### 輪郭に名前を付ける (Name Contour)
 
 <!--
 A contour may be named. This is designed for use in the Guide line (and
@@ -246,7 +258,10 @@ Background) layer. You can attach a mnemonic name to a guide line (like
 ("X-Height" や "Cap-Height" などのイメージしやすい)
 呼び名を付けることができます。
 
+<!--
 #### Make Clip Path
+-->
+#### クリップパスの作成 (Make Clip Path)
 
 <!--
 Only meaningful in Type3 fonts. For a more complete description see the

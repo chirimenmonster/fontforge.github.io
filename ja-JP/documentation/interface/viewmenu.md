@@ -233,7 +233,7 @@ the currently selected position.
 -->
 #### レイヤ (Layers)
 
-<1--
+<!--
 A submenu which only appears in the font view. It lets you chose which
 layer to display in the font view.
 -->
@@ -275,7 +275,7 @@ FontForge がサポートする高度な組版機能に関するテーブル
 <!--
 #### Display Substitutions
 -->
-#### 置換グリフを表示(U)...< (Display Substitutions)
+#### 置換グリフを表示(U)... (Display Substitutions)
 
 <!--
 Only in the font view. This allows you to select a simple substitution,

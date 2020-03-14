@@ -93,7 +93,7 @@ title: FontForge Interface
     - [マルチマスター (Multi Master)](mmmenu)
     - [ウィンドウ (Window)](windowmenu)
     - [ヘルプ (Help)](helpmenu)
-    - [Hot Keys](hotkeys)
+    - [ホットキー一覧 (Hot Keys)](hotkeys)
 - [ウィンドウ](fontview)
     - [フォント (Font)](fontview)
     - [アウトライングリフ (Outline Glyph)](charview)

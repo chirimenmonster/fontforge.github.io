@@ -604,7 +604,7 @@ images remain.
 注意: すべての背景画像は残ります。参照はコピーされません。
 
 
-<!-
+<!--
 #### Copy Layer To Layer
 -->
 #### レイヤーをレイヤーにコピー (Copy Layer To Layer)
