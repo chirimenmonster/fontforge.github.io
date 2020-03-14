@@ -56,7 +56,7 @@ title: The File Menu
 * [書き出し(T)&hellip; (Export&hellip;)](#書き出しt-export)
 * [取り込み(I)&hellip; (Import&hellip;)](#取り込みi-import)
 * [機能情報を統合&hellip; (Merge Feature Info&hellip;)](#機能情報を統合-merge-feature-info)
-* [ファイルを再読み込み(R) (Revert File)](#ファイルを再読み込みr-revert)
+* [ファイルを再読込(R) (Revert File)](#ファイルを再読込r-revert)
 * [バックアップを復元(B) (Revert to Backup)](#バックアップを復元b-revert-to-backup)
 * [グリフを戻す(Y) (Revert Glyph)](#グリフを戻すy-revert-glyph)
 * [特殊データを消去 (Clear Special Data)](#特殊データを消去-clear-special-data)
@@ -162,7 +162,7 @@ do the job.
 [autotrace](http://sourceforge.net/projects/autotrace/)
 がインストールされているならば、
 FontForge は METAFONT の mf ファイルを処理することができます。
-しかしながら、*pktrace や mftrace* などのスタンドアローンのプログラムに処理をしたほうがいいかもしれません。
+しかしながら、*pktrace* や *mftrace* などのスタンドアローンのプログラムに処理をしたほうがいいかもしれません。
 
 <!--
 When opening a TTC file, or a mac dfont -- files which potentially
@@ -182,7 +182,8 @@ TTC ファイルまたは mac dfont (複数のフォントを含む可能性の�
 開いているダイアログのファイル名に次のように追加します:
 `Helvetica.dfont(Helvetica Bold)`。
 そうでなくて、フォントインデックスがわかっている場合には
-`Helvetica.dfont（0）` (1ではなく0から始まります)
+`Helvetica.dfont(0)`
+(1ではなく0から始まります)
 のように追加します。
 
 <!--
@@ -630,7 +631,7 @@ Mac の dfont から)
 (これによりビットマップフォントから得た "A" を "A" のアウトライングリフの背景に置くことができます)、
 これによりトレース作業が簡単になります。
 自動トレースで実用的なアウトラインを生成するためには、
-大きなビットマップを読み込む必要があることにご注意ください。
+大きなビットマップを読み込む必要があることにご注意ください。<br>
 **注意** FontForge は pk ファイルからエンコーディングを読み込むことができません。
 pk ファイルを読み込んだ後で
 <span class="command">エンコーディングを強制</span>
