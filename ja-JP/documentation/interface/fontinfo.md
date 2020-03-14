@@ -1,8 +1,13 @@
 ---
 published: true
+layout: default.ja
+title: フォント情報
+---
+<!--
+published: true
 layout: default
 title: Font Info
----
+-->
 
 
 [table_of_contents]
@@ -10,6 +15,7 @@ title: Font Info
 
 ![](/assets/img/dialogs1-fontinfo.png)
 
+<!--
 The Font Info dialog is available from all views. It allows you to name
 your font and various other useful bits of information. In a [CID keyed
 font](../fontview/), things are more complex. Each CID keyed font is 
@@ -17,10 +23,26 @@ composed of man sub-fonts; this command works on the current sub-font
 while there is a [separate command](../cidmenu/#CID+Font+Info) to access 
 the information for the font as a whole -- that dialog looks the same. 
 The dialog is composed of many different sub dialogs.
+-->
+フォント情報ダイアログはすべてのビューから使用可能です。
+このメニューを使ってフォントに名前をつけたり、その他さまざまな有用な情報の各ビットを設定することができます。
+[CID キー指定フォント](../fontview/)
+では、事情はより複雑です。
+各々の CID キー指定フォントは多くのサブフォントから構成されています;
+このコマンドは現在のサブフォントを操作するためのものであり、
+フォント全体の集合体の情報にアクセスするためには
+[独立したコマンド](../cidmenu/#cid-font-info)
+があります
+-- このダイアログと見た目は同じです。
+このダイアログは多数の別種のサブダイアログから構成されています。
 
 
+<!--
 ### Names
+-->
+### 名前 (Names)
 
+<!--
 PostScript fonts have several different names, but basically there are
 two important ones: the family name (like Times) and the fontname (which
 is the family name with a bunch of modifiers like Bold Italic Condensed
@@ -30,39 +52,96 @@ while the others are for machines, this name can contain spaces (like
 name. All of these names should be in ASCII. If you wish to enter names
 with characters outside this range look at the [TTF Names](#TTF+Names)
 Section.
+-->
+PostScript フォントには何種類かの異なる名前がついていますが、
+そのうちで重要なのは基本的に 2 つです:
+ファミリー名 (Times など) とフォント名 (ファミリー名に多数の修飾子をつけたもの。
+例えば Bold Italic Condensed などが後ろにつく) です。
+フルネームは人間が読む目的でつけられていて、
+その他の機械が読むための項目と異なります。
+これは空白を含むことができます
+(例えば "New Century Schoolbook-Bold Condensed")。
+最後に、ウェイト名があります。
+これらの名前はすべて ASCII で書かなければなりません。
+この範囲に含まれない文字を含む名前をつけたい場合は、
+[TTF 名](#TTF+Names)
+のセクションを参照してください。
 
+<!--
 The copyright field can contain whatever you want to put there, but it's
 a good place to put a copyright.
+-->
+<span class="command">著作権フィールド(R)</span>
+は何でも入力したいものを入力できる場所ですが、
+ここには著作権表示を記入するのがいいでしょう。
 
+<!--
 In most fonts the version field is a string (and so has minimal
 constraints on it), but in CID keyed fonts it must be a floating point
 number.
+-->
+ほとんどのフォントではバージョンフィールドは文字列です
+(それには最低限の制限があります) が、
+CID フォントでは浮動小数点数でなければなりません。
 
+<!--
 You may also specify a separate version number to be used in any sfnt
 generated from this database; this should be a floating point number. Or
 you may leave this field blank. If you leave it blank FontForge will
 generate a default value based on other version information specified
 elsewhere.
+-->
+このデータベースから生成された sfnt で使用する別のバージョン番号を指定することもできます;
+これは浮動小数点数である必要があります。
+または、このフィールドを空白のままにすることもできます。
+空白のままにすると、FontForge は、
+他の場所で指定された他のバージョン情報に基づいてデフォルト値を生成します。
 
+<!--
 Normally when [generating a font](../generate/), FontForge will use the
 fontname as the base for the default filename of the font file (the base
 to which the extension is added). But that is not always what you want.
 You may wish to attach a version string to the fontname, or abbreviate
 it, etc. The `Base Filename` field allows you to specify this to
 fontforge.
+-->
+通常、
+[フォントを生成](../generate/)
+する場合、
+FontForge はフォント名をフォントファイルのデフォルトのファイル名のベース
+(拡張子が追加されるベース)
+として使用します。
+しかし、それはあなたが期待するものとは限りません。
+フォント名にバージョン文字列を添付したり、短縮名にしたりすることもできます。
+`BaseFilename`
+フィールドで、これを FontForge に指定できます。
 
+<!--
 Many of these names are similar to the english names of the [TTF
 Names](#TTF+Names) section. If nothing is specified in that
 section then the names specified here will be used by default in ttf
 files.
+-->
+これらの名前の多くは
+[TTF 名](#ttf-names)
+セクションの英語名に似ています。
+そのセクションで何も選択しなかった場合には、
+ここで指定した名前が TTF ファイルのデフォルトとして使用されます。
 
 
+<!--
 ### General
+-->
+### 一般情報 (General)
 
 ![](/assets/img/dialogs1-fontinfo-general.png)
 
+<!--
 This sub dialog contains a rather random collection of settings.
+-->
+このサブダイアログには、各種設定のかなり雑多な集まりが含まれます。
 
+<!--
 The Ascent and Descent are (in this current definition) Macintosh
 concepts rather than PostScript, their sum, however, provides the size
 of the em-square and that is very much a postscript concept. For
@@ -72,21 +151,57 @@ TrueType claims rasterization is faster if the sum is a power of 2).
 Since both TrueType and Type1 (postscript) fonts represent numbers as
 16-bit integers ascent and descent must be less than 32767. TrueType is
 more restrictive and requires their sum to be less than 16384.
+-->
+高さ (Ascent) と深さ (Descent) は、
+(現在の定義では) PostScript の概念よりも Macintosh の概念と言うべきです。
+とはいえ、それらの合計が EM 正方形のサイズとなるという点では
+PostScript の概念と似ています。
+PostScript フォントでは、
+この合計値を 1000 にするという強固な慣習があります。
+一方、TrueType フォントのほとんどでは 2048 になります
+(これも慣習ですが、TrueType の仕様書によると、
+合計が 2 の冪であるとラスタライズが高速に行えると主張しています)。
+TrueType と Type1 (PostScript) フォントはどちらも 16 ビット整数で表現されるので、
+高さと深さは 32767 より小さくなければなりません。
+TrueType では制限がさらにきつく、
+それらの合計が 16384 より小さくなければなりません。
 
+<!--
 If you change the size of the Em you may choose to have all the outlines
 (and kerning info) scaled to have the same proportion to the new value
 that they had to the old. Warning: **If your font has truetype
 instructions scaling may break the font as entries in the `'cvt   '`
 table will not be scaled.**
+-->
+EM のサイズを変更したときには、
+すべてのアウトライン (およびカーニング情報) を古い値から新しい値に変更したのと同じ比率で拡大・縮小します。
+警告: **フォントに TrueType 命令が含まれている場合、
+拡大・縮小を行うと、
+`'cvt...'`
+テーブルは拡大・縮小されないままなので、
+フォントは壊れるでしょう。**
 
+<!--
 The Italic Angle indicates the slant of the font. FontForge can attempt
 to guess a good value for you by looking at the stems of certain letters
 ("I" for instance).
+-->
+<span class="command">イタリックの傾き(I)</span>
+は、フォントの傾きを表します。
+FontForge はいくつかの文字 (例えば "I") のステムを見ることにより、
+適切な値の推測を試みることができます。
 
+<!--
 The underline position and height provide a program using this font a
 hint as to where it should place a line if it wants to underline text
 printed in this font.
+-->
+<span class="command">下線の位置(P)</span>
+と
+<span class="command">太さ(H)</span> は、このフォントを使うプログラムが下線つきテキストをこのフォントで印字しようとするときに、
+線をどこに引くかに関するヒントを提供します。
 
+<!--
 If you want your font to have vertical metrics (generally this means you
 are working on a CJK font) then check the `[*] Has Vertical   Metrics`
 checkbox. This will enable the Vertical Origin field, and will mean that
@@ -94,32 +209,75 @@ when you generate a truetype or opentype font a vertical metrics table
 will be added. The Vertical Origin is the vertical offset from the
 origin of the design coordinate system to the origin for the purposes of
 vertical metrics.
+-->
+作成中のフォントに縦書きメトリックが存在する場合
+(一般には、これは CJK フォントをつくっているということですが)
+<span class="command">[*] 縦書きメトリックが存在(V)</span>
+チェックボックスがチェックされます。
+これをチェックすると
+<span class="command">縦書きの基準点(O)</span>
+フィールドが使用可能になり、
+それによって TrueType または OpenType フォントを出力するときに、
+縦書きメトリックテーブルが追加されることになります。
+縦書きの基準点は、デザイン座標系の原点から、
+縦書きメトリックで用いられる原点への垂直方向のオフセットです。
 
+<!--
 Sadly the encoding is not always sufficient for understanding the font's
 behavior. For example a unicode font designed for a chinese system will
 look very different from a unicode font for a japanese system (The same
 unicode character may map to very different chinese or japanese glyphs).
 To handle this FontForge has the concept of "Interpretation".
+-->
+残念ながらエンコーディングは、フォントのふるまいを理解するのに常に十分なわけではありません。
+例えば、中国語の表記法に合わせて作られた Unicode フォントは、
+日本語の表記法に合わせて作られた Unicode フォントとは大きく異なる見かけをもつでしょう
+(中国語と日本語で大きく異なるグリフが同一の Unicode 文字に割り当てられています)。
+これを扱うために (および他のいくつかの目的のために) FontForge は "解釈" という概念をもっています。
 
+<!--
 When you create a new glyph in a font, fontforge will assign it a name
 based on the current [NameLists](../encodingmenu/#NameLists).
+-->
+フォント内に新しいグリフを作成すると、
+FontForge は現在の
+[名前リスト](../encodingmenu/#NameLists)
+に基づいて名前を割り当てます。
 
 
+<!--
 ### Layers
+-->
+### レイヤー (Layers)
 
 ![](/assets/img/dialogs1-fontinfo-layers.png)
 
+<!--
 You may control how many and what types of layers are available in your
 font.
+-->
+フォントで使用できるレイヤーの数とタイプを制御できます。
 
+<!--
 Fonts may be either outlined or stroked, or type3. You may choose
 which kind of font you want.
+-->
+フォントは、アウトラインまたはストローク、または Type3 のいずれかです。
+必要なフォントの種類を選択できます。
 
+<!--
 You may also decide what kind of splines you want in the font in
 general, often all the layers will use the same type of splines (so
 there are radio buttons to make that easy), but it isn't required each
 layer may be in its own format.
+-->
+また、一般的にフォントに必要なスプラインの種類を決定することもできます。
+多くの場合、すべてのレイヤーは同じタイプのスプラインを使用します
+(したがって、簡単に設定できるようにラジオボタンがあります)
+が、
+必須ではなく、各レイヤーに個別の形式を指定することができます。
 
+<!--
 If you mark a layer as quadratic (or check `[*] All layers Quadratic`)
 then FontForge will use quadratic [Bézier](/en-US/tutorials/overview/#spline) 
 splines for this layer rather than cubic Béziers, this means that 
@@ -131,20 +289,58 @@ it correctly for your font means you get a clearer idea of what the outlines
 will look like. I find quadratic splines harder to edit with because each spline 
 is less flexible, but the advantage of actually seeing what your truetype font
 will look like may outweigh that.
+-->
+レイヤーを 2 次スプラインにしている場合
+(または、
+<span class="command">[*] すべてのレイヤーを 2 次スプラインに (All layers Quadratic)</span>
+をチェックしている場合)、
+FontForge は 3 次 Béziers スプラインでなく、
+2 次
+[Bézier](../..//tutorials/overview/#spline)
+スプラインをこのフォントに使用します。
+言い替えれば、
+FontForge が PostScript (または OpenType) の曲線フォーマットではなく、
+TrueType 元来のフォーマットで編集を行うということです。
+FontForge がフォントを出力するとき、
+内部フォーマットがどちらであっても、
+そのフォントフォーマットが必要とする方式に変換を行いますので、
+これが間違って設定されていても問題は起こりません。
+しかし、これを正しく設定しておくことにより、
+アウトラインがどのように見えるかについてより明白に把握することができます。
+個人的経験では、2 次スプラインのほうが自由度が低く
+(かつ、FontForge の多くのコマンドが動作しない) ため、
+編集がいっそう困難ですが、
+TrueType フォントがどう表示されるかを実際に見ることの利点はそれに勝ります。
 
+<!--
 You may also mark a layer as a foreground layer or a background layer.
 Background layers can hold images. Pasting into an empty glyph in a
 background layer will not set the width. Splines in background layers do
 not make a glyph worth outputting.
+-->
+レイヤーを前景レイヤーまたは背景レイヤーとしてマークすることもできます。
+背景レイヤーには画像を置くことができます。
+背景レイヤーに空のグリフを貼り付けても、幅は設定されません。
+背景レイヤーのスプラインは、出力対象となるグリフを作成しません。
 
 
+<!--
 ### PostScript Unique ID
+-->
+### PostScript ユニーク ID (PostScript Unique ID)
 
 ![](/assets/img/dialogs1-fontinfo-psuid.png)
 
+<!--
 **NOTE:** [Adobe now says](http://permalink.gmane.org/gmane.comp.fonts.fontforge.user/173) that both XUID and UniqueID
 are unnecessary.
+-->
+**注意:**
+Adobe は現在では、
+XUID や UniqueID はどちらも
+[不要だと言っています](http://permalink.gmane.org/gmane.comp.fonts.fontforge.user/173)。
 
+<!--
 The XUID field is a collection of numbers separated by spaces and
 enclosed in brackets. This allows you to specify the extended unique ID
 of the font. If you have set the XUID preference entry then FontForge
@@ -155,7 +351,21 @@ generate a postscript font, that font's XUID (if present) will be
 incremented by 1 (This incrementing does not happen in CID-keyed fonts,
 where the XUID behavior is too complex for this simple trick). (The XUID
 field is only meaningful in PostScript fonts).
+-->
+XUID フィールドは、空白で区切られた数値の集まりを括弧でくくったものです。
+フォントの拡張ユニーク ID はこれを用いて指定することができます。
+XUID プリファレンス項目が既に設定されているならば、
+FontForge はすべての新しいフォントに対して
+(指定した値の後に各フォントに一意な数値を付け加えて)
+その値を設定します。
+Adobe は、フォントが変更されるたびに
+XUID を毎回変更することを推奨しているので、
+PostScript フォントを生成するたびごとにフォントの XUID (存在する場合) は  1 ずつ加えられます
+(この増加は CID フォントでは行いません。
+CID フォントでは XUID の扱いがこの単純なトリックでは対処しきれないほど非常に複雑だからです)。
+(XUID フィールドは、PostScript フォントでのみ意味があります)。
 
+<!--
 The UniqueID field is an older convention for the same purpose as XUID.
 If you do not fill in this field then FontForge will pick a random
 number for you in the allowable range. If you want your font to have no
@@ -163,33 +373,78 @@ unique id then give this the value of -1. If you have talked to Adobe
 and been assigned a real UniqueID then you may use this field, otherwise
 leave it blank. (The UniqueID field is only meaningful in PostScript
 fonts)
+-->
+UniqueID フィールドは XUID と同じ目的をもつ、
+より以前からの慣習です。
+このフィールドに値が入っていない場合は、
+FontForge は許される範囲からランダムな値を選びます。
+フォントにユニーク ID を設定したくない場合は、
+この値を -1 にしてください。
+もしあなたが Adobe に連絡して正式なユニーク ID を割り当てられたならば、
+このフィールドを使うことができます。
+それ以外の場合は空白にしておいてください。
+(XUID フィールドは、PostScript フォントでのみ意味があります)。
 
 
+<!--
 ### Private -- font-wide postscript hinting
+-->
+### PostScript の Private 辞書 --フォント全体に適用される PostScript のヒント (Private -- font-wide postscript hinting)
 
 
 ![](/assets/img/dialogs1-fontinfo-private.png)
 
+<!--
 This sub-dialog shows most entries in the font's Private dictionary. 
 The interesting things in this dictionary are mostly concerned with hints
 appropriate for the entire font. I shall not go into detail about 
 the meanings of the various entries, that is best understood by reading 
 [Adobe's Type1 specification](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF).
+-->
+このサブダイアログは、
+フォントの Private 辞書内のほとんどの項目を表示します。
+この辞書内にある興味深い事柄のほとんどが、
+フォント全体に適用されるヒントに関連するものです。
+それら多数の項目の詳細にここで立ち入るつもりはありません。
+それを理解するには
+[Adobe の Type1 仕様書](http://partners.adobe.com/asn/developer/PDFS/TN/T1_SPEC.PDF)
+を読むのが最善の方法です。
 
+<!--
 Don't try to change these until you understand what they mean.
+-->
+これらの項目が何を意味するか理解するまでは、これらを変更しようとしてはいけません。
 
+<!--
 The dialog is shown at right. It consists of a list of dictionary
 key/value pairs. The keys are on the left, values on the right.
 Generally you will want to use the standard PostScript keys (these are
 available from a pulldown list that appears when you press one of the
 little grey buttons).
+-->
+右に表示されているのがこのダイアログです。
+それはキー/値ペア辞書のリストを含んでいます。
+左がキー、右が値です。
+一般に、標準 PostScript キー
+(小さな灰色のボタンを押すと表示されるプルダウンリストから利用できます)
+を使用します。
 
+<!--
 Note: The values must be things which PostScript can parse. This means
 that `ForceBold` must have a value of "false" or "true", and "False" or
 "faux" will not work. Similarly the decimal point in numbers must be "."
 (not ","). If you enter a "," by mistake FontForge will convert it for
 you.
+-->
+注： 値は、PostScript が解析できるものでなければなりません。
+つまり、
+`ForceBold` の値は "false" または "true" でなければならず、
+"False" または "faux" は動作しません。
+同様に、数字の小数点は "." （"," ではなく） でなければなりません。
+誤って "," を入力した場合、
+FontForge が変換してくれます。
 
+<!--
 For example the `BlueValues` entry specifies certain key regions of the
 font in a vertical direction. For instance it might contain the baseline
 serif, the x-height serif, the cap-height serif. It is expressed as an
@@ -197,19 +452,53 @@ array of numbers, grouped in pairs. The first number of a pair is the
 low end of the region and the second is the high end. So in the example
 at right, the value of `BlueValues` is
 `[-20 0 437 457 583 603 623   643`.
+-->
+たとえば、
+`BlueValues` エントリは、垂直方向のフォントの特定のキー領域を指定します。
+たとえば、ベースラインセリフ、x-height セリフ、cap-height セリフが含まれる場合があります。
+ペアにグループ化された数値の配列として表されます。
+ペアの最初の数字は領域の下端であり、
+2番目は上端です。
+したがって、右の例では、BlueValuesの値は
+`[-20 0 437 457 583 603 623 643`
+です。
 
+<!--
 When the `[Guess]` button is enabled FontForge thinks it can make a
 reasonable guess for the value of the currently selected entry.
+-->
+<span class="command">推測(G)</span>
+ボタンが押せる状態のとき、
+FontForge は現在選択されている項目の妥当な値を推定することが可能だと判断しています。
 
+<!--
 The `[Histogram]` button is similar, it will bring up a [dialog showing
 a histogram](../histogram/) of the values of an attribute of the font.
 The hope is that this will allow you to pick a good value for the entry.
+-->
+<span class="command">柱状図(H)</span>
+ボタンも同様で、
+フォントのある属性の値を
+[柱状グラフとして表示するダイアログ](../histogram/)
+を起動します。
+その項目の適切な値をフォント作成者が選ぶことができるように用意された機能です。
 
+<!--
 You may also delete an entry from the dictionary with the
 `[Delete]   `button. Some entries (such as `BlueValues`) must be present
 in any type1 font, but you may still delete them. FontForge will simply
 guess at a reasonable value when it needs to generate the font.
+-->
+また、
+<span class="command">削除(R)</span>
+ボタンを押せば辞書から項目を削除できます。
+いくつかの項目
+(<span class="command">BlueValues</span> など)
+はすべての Type1 フォントで設定する必要がある項目ですが、
+それらの項目も削除することができます。
+FontForge はフォントを出力するために値が必要になったときに妥当な値を単純に推測します。
 
+<!--
 Certain keys affect things other than hints. The `lenIV` entry controls
 how much random padding is placed around the type1 strings when the font
 is generated. Normally this will be 4, but if you want to save space (4
@@ -218,9 +507,26 @@ value. The UniqueID key represents the font's Unique postscript ID. If
 you provide a value here then FontForge will copy it into the UniqueID
 field in the Font Dictionary. (this is different from True Type's
 UniqueID. They perform the same function but are formatted differently).
+-->
+いくつかのキーはヒント以外のものに影響を与えます。
+項目
+`lenIV`
+は、フォントが生成されるときの Type1 文字列の先頭に置かれるランダムなパディングが何バイトになるかを制御します。
+通常はこれは 4 ですが、
+スペースを節約したい場合
+(PFB フォーマットではグリフ 1 個ごとに 4 バイト、PFA では 8 バイト)
+他の値を選択できます。
+UniqueID キーは、フォントのユニーク PostScript ID を表します。
+ここで値を設定した場合は、FontForge はその値をフォント辞書の UniqueID syー琉度にコピーするだけです。
+ここで UniqueID を設定しなかった場合、
+FontForge は自分でランダムな値を生成します
+(これは TrueType の UniqueID とは異なります。それらは同じ機能ですが、フォーマットが異なります)。
 
+<!--
 Some of these entries are only meaningful for PostScript fonts, others
 will be used by the truetype autoinstructor.
+-->
+これらの項目は PostScript フォントでのみ意味をもちます。
 
 
 ### OS/2
