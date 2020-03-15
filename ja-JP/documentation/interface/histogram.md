@@ -1,17 +1,32 @@
 ---
 published: true
+layout: default.ja
+title: 柱状グラフダイアログ
+---
+<!--
+published: true
 layout: default
 title: The histogram dialog
----
+-->
 
 [table_of_contents]
 
 
+<!--
 The histogram dialog is used to display three things which are useful
 for setting the some of the global hinting values that live in the
 PostScript [Private dictionary](../fontinfo/#Private+--+(font-wide+postscript+hinting\)). The dialog can
 display
+-->
+柱状グラフダイアログは、
+PostScript
+[プライベート辞書](../fontinfo/#postscript-の-private-辞書-フォント全体に適用される-postscript-のヒント-private--font-wide-postscript-hinting)
+に含まれる、
+フォント全体に適用されるヒント値のいくつかを設定するのに役立つ
+3 つの情報を表示します。
+このダイアログは以下の情報を表示することができます:
 
+<!--
 -   the distribution of horizontal stem widths
      which is helpful in setting [StdHW] and [StemSnapH]
 -   the distribution of vertical stem widths
@@ -19,26 +34,62 @@ display
 -   and the distribution of the minimal and maximal vertical positions
     of each glyph
      which is helpful in setting [BlueValues] and [OtherBlues]
+-->
+-   水平方向のステム幅の分布<br>
+     これは、\[StdHW] と \[StemSnapH] の設定の参考になります。
+-   垂直方向のステム幅の分布<br>
+     これは、\[StdVW] と \[StemSnapV] の設定の参考になります。
+-   各グリフの垂直位置の最小値と最大値<br>
+     これは \[BlueValues] と \[OtherBlues] を設定するのに役立ちます。
 
+<!--
 Moving the mouse around the histogram at the top of the dialog will
 cause little popups to appear showing how many stems there are with a
 given width, how that compares to the maximum count, and what glyphs
 have that width.
+-->
+マウスをダイアログの上部に表示されている柱状グラフの上で動かすと、
+小さなポップアップが現れて、
+そこに一致する幅を持つステムが何本あるか、
+それが最大値と比べてどの程度の割合か、
+その幅をもつグリフはいくつあるかを表示します。
 
+<!--
 For both HStem and VStem, if you click on a histogram bar then that
 width will become the new value for Std[H/V]W, and will be the sole
 value for StemSnap[H/V]. Shift-clicking on a bar will add that width to
 StemSnap[H/V].
+-->
+HStem と VStem のどちらかを表示しているときは、
+柱状グラフバーの上でクリックすると、
+クリックした位置にあたる幅が Std\[H/V]W の新しい値となり、
+StemSnap\[H/V] はその値 1 個だけを含むように変更されます。
+Shift キーを押しながらバーをクリックした場合、
+StemSnap\[H/V] にその幅が追加されます。
 
+<!--
 For BlueValues, entries must be made in pairs, and FontForge can't tell
 until the second value is selected where the pair should be placed. So
 for BlueValues you must click on two histogram bars (click on the
 leftmost one first). Then if the second value is negative both will be
 added to OtherBlues, otherwise both will be added to BlueValues.
+-->
+BlueValues の場合は、各項目の値はペアで指定しなければならないので、
+FontForge は 2 番目の値が選択されていないとどこにペアを配置するのか理解できません。
+ですから、BlueValues を指定するときには、柱状グラフに含まれる 2 本のバーをクリックしなければなりません
+(左側を先にクリックしてください)。
+次にクリックした 2 番目の値が負である場合は、
+それらは OtherBlues に追加され、それ以外の場合は BlueValues に追加されます。
 
+<!--
 The BarWidth textfield allows you to change the width of the histogram
 bars. The default value is 6 pixels wide.
+-->
+バーの幅 (BarWidth) テキストフィールドを使うと、
+柱状グラフのバーの太さを変更することができます。
+デフォルトの太さは、横幅 6 ピクセルです。
 
+<!--
 The SumAround textfield is an attempt to give you a feel for the
 distribution if it has been smeared out. If SumAround is 0 then the
 count displayed for a given width is the number of stems with that
@@ -48,22 +99,56 @@ values of SumAround give wider smearing. Just because a given width is
 at a local maxima does not mean that it is the appropriate value to be
 entered in the StemSnap array, you may find that if you smear things out
 a bit that a near-by value would be a slightly better choice.
+-->
+許容誤差 (SumAround) テキストフィールドは、
+分布値を広げたときにどう見えるかを指定する試みです。
+許容誤差が 0 の時は、ある幅に対して表示されている値は、
+その幅をもつステムの本数であり、
+許容誤差が 1 の時は、そこに 1 ユニット広いステムと狭いステムの本数も加わり、
+より大きな許容誤差を指定したときは、より拾い範囲に広げられることになります。
+ある幅が局所的な極大値をとっていても、
+必ずしもそれが配列 StemSnap に格納する値として適切なわけではなく、
+分布値をすこし広げることにより、
+少し外れた値の方がわずかによい選択であることに気づくかもしれません。
 
+<!--
 Pressing [OK] will set the indicated values in the font's private
 dictionary.
+-->
+<span class="command">OK</span>
+を押すと、表示されている値がフォントのプライベート辞書に設定されます。
 
+<!--
 When invoked from the [font info dialog](../fontinfo/#Private+--+(font-wide+postscript+hinting\)) these
 dialogs will display information on all glyphs. When invoked from the
 Hint->Histograms menu of the font view then only information on
 selected glyphs will be shown (if no glyphs are selected, then again
 information will come from all glyphs). Characters containing references
 will not be counted.
+-->
+[フォント情報ダイアログ](../fontinfo/#postscript-の-private-辞書-フォント全体に適用される-postscript-のヒント-private--font-wide-postscript-hinting)
+から起動したとき、
+これらの値はすべてのグリフに関する情報を表示します。
+フォントビューの
+<span class="command">ヒント(I)-\>柱状グラフ</span>
+メニューから起動したときには、
+選択中のグリフに関する情報のみを表示します
+(グリフが何も選択されていないと気は、上と同様にすべてのグリフから情報を抽出します)。
+参照を含む文字は勘定に入りません。
 
+<!--
 FontForge can automatically generate these values for you (this dialog
 gives you the information you need to make your own choices which may be
 better than what FontForge will do on its own -- it uses essentially
 these data itself). This will happen when you generate a postscript font
 and the font has no BlueValues or StemSnap information associated with
 it, or when you use the [Element->Font Info->Private](../fontinfo/#Private+--+(font-wide+postscript+hinting\)) dialog.
-
-
+-->
+FontForge は自動的にこれらの値を生成することができます
+(このダイアログは、FontForge が自動で行う選択
+-- 本質的に、これらと同じデータを使用して行います
+-- よりもおそらく適切な選択を手動で行いたい場合に必要となる情報を提供するものです)。
+この処理は、PostScript を出力する時に、
+フォントに BlueValues または StemSnap の情報が含まれていないときか、
+[<span class="command">エレメント(L)->フォント情報(F)->PS Private辞書</span>](../fontinfo/#postscript-の-private-辞書-フォント全体に適用される-postscript-のヒント-private--font-wide-postscript-hinting)
+ダイアログを選択したときに行われます。
