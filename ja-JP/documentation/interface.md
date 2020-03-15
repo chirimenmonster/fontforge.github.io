@@ -108,7 +108,7 @@ title: FontForge Interface
     - [点、参照情報 (Point, Reference Information)](getinfo)
     - [Type3 レイヤー情報 (Type3 Layer Information)](multilayer#レイヤ情報ダイアログ-the-layer-info-dialog)
     - [ビットマップ属性 (Bitmap Properties)](bdfinfo)
-    - [Baseline Information](baseline)
+    - [ベースライン情報 (Baseline Information)](baseline)
     - [Justification Information](justify)
     - [Math information](math)
     - [Multiple Master Information](multiplemaster)
