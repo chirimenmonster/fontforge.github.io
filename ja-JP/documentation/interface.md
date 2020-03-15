@@ -109,7 +109,7 @@ title: FontForge Interface
     - [Type3 レイヤー情報 (Type3 Layer Information)](multilayer#レイヤ情報ダイアログ-the-layer-info-dialog)
     - [ビットマップ属性 (Bitmap Properties)](bdfinfo)
     - [ベースライン情報 (Baseline Information)](baseline)
-    - [Justification Information](justify)
+    - [ジャスティフィケーション情報 (Justification Information)](justify)
     - [Math information](math)
     - [Multiple Master Information](multiplemaster)
     - [Lookups and Subtables](lookups)
