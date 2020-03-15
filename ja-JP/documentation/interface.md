@@ -104,7 +104,7 @@ title: FontForge Interface
 - [ダイアログ 1](fontinfo)
     - [フォント情報 (Font Info)](fontinfo)
         - [柱状グラフダイアログ (Histogram Dialog)](histogram)
-    - [Glyph Information](charinfo)
+    - [グリフ情報 (Glyph Information)](charinfo)
     - [Point, Reference Information](getinfo)
     - [Type3 Layer Information](multilayer#The+Layer+Info+dialog)
     - [Bitmap Properties](bdfinfo)

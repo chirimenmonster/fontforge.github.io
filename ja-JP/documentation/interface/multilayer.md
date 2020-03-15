@@ -39,7 +39,7 @@ cubic** and the font type option to **Type3 Multi Layered Font**.
 <!--
 ### Multi Layered editing in the outline view
 -->
-### アウトラインビューでの複数レイヤ編集
+### アウトラインビューでの複数レイヤ編集 (Multi Layered editing in the outline view)
 
 <!--
 In the image at left we have a glyph drawn by stroking two paths. One
@@ -103,7 +103,7 @@ Clicking with the right button brings up the layer menu which contains:
 <!--
 #### Layer Info...
 -->
-#### レイヤ情報...
+#### レイヤ情報... (Layer Info...)
 
 <!--
 Brings up the [Layer Info](#Layer) dialog on the current
@@ -117,7 +117,7 @@ layer (same as double clicking)
 <!--
 #### New Layer...
 -->
-#### 新しいレイヤ...
+#### 新しいレイヤ... (New Layer...)
 
 <!--
 Creates a new layer and brings up the [Layer
@@ -133,7 +133,7 @@ appear at the bottom of the layer list and will be drawn last)
 <!--
 #### Del Layer
 -->
-#### レイヤを削除
+#### レイヤを削除 (Del Layer)
 
 <!--
 Deletes the current layer (you may not delete the last layer in a glyph)
@@ -145,7 +145,7 @@ Deletes the current layer (you may not delete the last layer in a glyph)
 <!--
 #### First
 -->
-#### 最初
+#### 最初 (First)
 
 <!--
 Make the current layer the first one to be drawn.
@@ -156,7 +156,7 @@ Make the current layer the first one to be drawn.
 <!--
 #### Earlier
 -->
-#### 前に
+#### 前に (Earlier)
 
 <!--
 Make the current layer be drawn earlier. (swaps it with the layer above
@@ -169,7 +169,7 @@ it)
 <!--
 #### Later
 -->
-#### 後に
+#### 後に (Later)
 
 <!--
 Makes the current layer be drawn later. (swaps it with the layer below
@@ -182,7 +182,7 @@ it)
 <!--
 #### Last
 -->
-#### 最後
+#### 最後 (Last)
 
 <!--
 Makes the current layer be drawn last.
@@ -193,7 +193,7 @@ Makes the current layer be drawn last.
 <!--
 ### Images
 -->
-### 画像
+### 画像 (Images)
 
 <!--
 Images are allowed in Type3 fonts. You can use the
@@ -222,7 +222,7 @@ FontForge は画像の歪み、反転または回転変換を行いません。
 <!--
 ### Clipping Path
 -->
-### クリッピングパス
+### クリッピングパス (Clipping Path)
 
 <!--
 Each layer in a Type 3 font may have its own clipping path. A clipping
@@ -264,7 +264,7 @@ image. If no contour is selected then there will be no clipping path.
 <!--
 ### The Layer Info dialog
 -->
-### レイヤ情報ダイアログ
+### レイヤ情報ダイアログ (The Layer Info dialog)
 
 <!--
 This dialog describes various attributes of the way the splines (or
@@ -359,7 +359,7 @@ a gradual change from one color to another (a gradient).
 <!--
 ### Gradients
 -->
-### グラデーション
+### グラデーション (Gradients)
 
 ![](/assets/img/windows-GradientDlg.png)
 
@@ -403,7 +403,7 @@ circles until the final radius (and final color) is attained.
 <!--
 ### Patterns
 -->
-### パターン
+### パターン (Patterns)
 
 ![](/assets/img/windows-TilePatternDlg.png)
 

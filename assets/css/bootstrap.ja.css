@@ -1,17 +1,45 @@
 
 /* override style for ja-JP documents */
-body {
-  /*
-  font-family: 'Merriweather', Georgia, "Times New Roman", Times,
-    'Hiragino Kaku Gothic ProN',
-    'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', 'ＭＳ ゴシック',
-    serif;
-  */
-  font-family: "Helvetica Neue", Helvetica, Arial, 
-    'Hiragino Kaku Gothic ProN',
-    'ヒラギノ角ゴ ProN W3', 'メイリオ', 'Meiryo', 'ＭＳ ゴシック',
-    sans-serif;
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 100;
 }
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Helvetica, Arial,
+    'Yu Gothic', YuGothic, Verdana, Meiryo, sans-serif;
+}
+
+/*
+blockquote p,
+.big-text blockquote p {
+  font-size: 20px;
+  line-height: 32px;
+}
+*/
 
 code, pre {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
@@ -26,5 +54,5 @@ textarea {
 }
 
 .navbar-search .search-query {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
