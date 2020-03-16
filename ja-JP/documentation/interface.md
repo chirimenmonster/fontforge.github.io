@@ -110,7 +110,7 @@ title: FontForge Interface
     - [ビットマップ属性 (Bitmap Properties)](bdfinfo)
     - [ベースライン情報 (Baseline Information)](baseline)
     - [ジャスティフィケーション情報 (Justification Information)](justify)
-    - [Math information](math)
+    - [数学情報 (Math information)](math)
     - [Multiple Master Information](multiplemaster)
     - [Lookups and Subtables](lookups)
     - [The Metric View](metricsview)
